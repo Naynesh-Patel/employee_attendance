@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swipe_button/flutter_swipe_button.dart';
 import 'package:get/get.dart';
 import 'package:horizontal_date_picker_flutter/horizontal_date_picker_flutter.dart';
 
@@ -462,33 +461,6 @@ class _HomeTabState extends State<HomeTab> {
                             ],
                           ),
                         ),
-                        SwipeButton(
-                          thumbPadding: const EdgeInsets.all(3),
-                          thumb: Icon(
-                            Icons.chevron_right,
-                            color: Colors.white,
-                          ),
-                          // elevationThumb: 2,
-                          // elevationTrack: 2,
-                          child: Text(
-                            "Swipe to ...".toUpperCase(),
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          onSwipe: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text("Swipped"),
-                                backgroundColor: Colors.green,
-                              ),
-                            );
-                          },
-                        ),
-                        // CustomButton(
-                        //     buttonText: "Swipe to Check In", onTap: () {})
                       ],
                     ),
                   ),

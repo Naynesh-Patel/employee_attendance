@@ -38,7 +38,9 @@ dependencies:
   get: ^4.6.6
   flutter_svg: ^2.0.9
   horizontal_date_picker_flutter: ^0.0.1
-  flutter_swipe_button: ^1.0.1
+
+
+
 
 dev_dependencies:
   flutter_test:
