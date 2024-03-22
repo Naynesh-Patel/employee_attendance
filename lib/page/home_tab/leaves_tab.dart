@@ -1,4 +1,5 @@
 import 'package:employee_attendance/controller/leaves_controller.dart';
+import 'package:employee_attendance/page/home_tab/apply_leaves_tab.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -36,7 +37,9 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
         ),
         actions: [
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.to(ApplyLeaves());
+            },
             child: Image.asset(
               'assets/images/add_icon.png',
               height: 20,
@@ -179,7 +182,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(offset: Offset(0, 1),
                         // color: Colors.black38,
                           blurRadius: 15,
@@ -281,7 +284,118 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
 
                   );
                 }, ),
-                Text('byy'),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: 3,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder:(context, index) {
+                        return Container(
+                          margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: const [
+                                BoxShadow(offset: Offset(0, 1),
+                                    // color: Colors.black38,
+                                    blurRadius: 15,
+                                    color: Color(0xffF5F5F5)
+                                )
+                              ]
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text("Date",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    const Text('Apr 15, 2023',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w900
+                                      ),
+                                    ),
+                                    const Text('-',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w900
+                                      ),
+                                    ),
+                                    const Expanded(child: Text('Apr 18, 2023',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w900
+                                      ),
+                                    )),
+                                    Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                                        decoration: BoxDecoration(
+                                            color: const Color(0xffF5FCFB),
+                                            borderRadius: BorderRadius.circular(5)
+                                        ),
+                                        child: const Text("Approved",
+                                          style: TextStyle(
+                                              color: Color(0xff61CDC7)
+                                          ),
+                                        ))
+                                  ],
+                                ),
+                                Container(
+                                  margin: EdgeInsets.symmetric(vertical: 10),
+                                  height: 3,
+                                  width: double.maxFinite,
+                                  color: const Color(0xffF7F7F8),
+                                ),
+                                const Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Apply Days",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600
+                                      ),
+                                    ),
+                                    Text("Leave Balance",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600
+                                      ),
+                                    ),
+                                    Text("Approved By",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("3 Days",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w900
+                                      ),
+                                    ),
+
+                                    Text("16",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w900
+                                      ),
+                                    ),
+                                    Text("Martin Deo",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w900
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                        );
+                      }, ),
               ]),
             )
           ],
