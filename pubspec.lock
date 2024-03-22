@@ -86,6 +86,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.10+1"
+  flutter_swipe_button:
+    dependency: "direct main"
+    description:
+      name: flutter_swipe_button
+      sha256: e3b933e809d6aa869ffed03a1aef25d45182f338677bdbe26cf4f919847d8ce3
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -99,6 +107,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.6"
+  horizontal_date_picker_flutter:
+    dependency: "direct main"
+    description:
+      name: horizontal_date_picker_flutter
+      sha256: "2266e6547b7a487891c2cbe30537241bf5208a1685b2c3f1f10718eda1c65df3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   http:
     dependency: transitive
     description:
