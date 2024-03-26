@@ -1,4 +1,3 @@
-import 'package:employee_attendance/page/home_tab/leaves_tab.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -42,11 +41,11 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                 TextFormField(
+                TextFormField(
                   validator: (value) {
-                    if(value!.isEmpty){
+                    if (value!.isEmpty) {
                       return 'filled it';
-                    } else{
+                    } else {
                       return null;
                     }
                   },
@@ -54,15 +53,15 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                     color: Colors.black,
                   ),
                   decoration: const InputDecoration(
-                    labelText: 'Title',
-                    labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 12),
-                    contentPadding: EdgeInsets.all(8),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xff3085FE))),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xff3085FE))),
-                    border: OutlineInputBorder()
-                  ),
+                      labelText: 'Title',
+                      labelStyle:
+                          TextStyle(color: Color(0xff3085FE), fontSize: 12),
+                      contentPadding: EdgeInsets.all(8),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff3085FE))),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff3085FE))),
+                      border: OutlineInputBorder()),
                 ),
                 const SizedBox(
                   height: 25,
@@ -86,9 +85,10 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                       return null;
                     }
                   },
-                  decoration:  const InputDecoration(
-                    labelText: 'Leave Type',
-                      labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 12),
+                  decoration: const InputDecoration(
+                      labelText: 'Leave Type',
+                      labelStyle:
+                          TextStyle(color: Color(0xff3085FE), fontSize: 12),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xff3085FE))),
                       enabledBorder: OutlineInputBorder(
@@ -111,12 +111,10 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                 const SizedBox(
                   height: 25,
                 ),
-                 TextFormField(
-                  style: const TextStyle(
-                    color: Colors.black
-                  ),
+                TextFormField(
+                  style: const TextStyle(color: Colors.black),
                   validator: (value) {
-                    if(value!.isEmpty){
+                    if (value!.isEmpty) {
                       return 'enter number';
                     } else {
                       return null;
@@ -124,11 +122,12 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                   },
                   keyboardType: const TextInputType.numberWithOptions(),
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xff3085FE))),
                       labelText: 'Contact Number',
-                      labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 12),
+                      labelStyle:
+                          TextStyle(color: Color(0xff3085FE), fontSize: 12),
                       contentPadding: EdgeInsets.all(8),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xff3085FE))),
@@ -151,7 +150,7 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                   },
                   child: TextFormField(
                     validator: (value) {
-                      if(value!.isEmpty){
+                      if (value!.isEmpty) {
                         return 'select date';
                       } else {
                         return null;
@@ -161,11 +160,12 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                     style: const TextStyle(color: Colors.black),
                     enabled: false,
                     decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+                        border: OutlineInputBorder(),
                         disabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xff3085FE))),
                         labelText: 'Start Date',
-                        labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 12),
+                        labelStyle:
+                            TextStyle(color: Color(0xff3085FE), fontSize: 12),
                         suffixIcon: Icon(
                           Icons.calendar_month_outlined,
                           color: Colors.black,
@@ -194,7 +194,7 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                   },
                   child: TextFormField(
                     validator: (value) {
-                      if(value!.isEmpty){
+                      if (value!.isEmpty) {
                         return 'select date';
                       } else {
                         return null;
@@ -204,11 +204,12 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                     style: const TextStyle(color: Colors.black),
                     enabled: false,
                     decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+                        border: OutlineInputBorder(),
                         disabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xff3085FE))),
                         labelText: 'End Date',
-                        labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 12),
+                        labelStyle:
+                            TextStyle(color: Color(0xff3085FE), fontSize: 12),
                         suffixIcon: Icon(
                           Icons.calendar_month_outlined,
                           color: Colors.black,
@@ -223,38 +224,31 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                 const SizedBox(
                   height: 25,
                 ),
-                 const Text("Reason for Leave",
-                 style: TextStyle(
-                   color: Color(0xff3085FE)
-                 ),
-                 ),
-                  TextFormField(
-                   maxLines: null,
-                   textInputAction: TextInputAction.done,
+                const Text(
+                  "Reason for Leave",
+                  style: TextStyle(color: Color(0xff3085FE)),
+                ),
+                TextFormField(
+                  maxLines: null,
+                  textInputAction: TextInputAction.done,
                   textAlignVertical: TextAlignVertical.top,
                   style: const TextStyle(
                     color: Colors.black,
                   ),
                   validator: (value) {
-                    if(value!.isEmpty){
+                    if (value!.isEmpty) {
                       return 'enter reason';
                     } else {
                       return null;
                     }
                   },
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xff3085FE)
+                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff3085FE)),
                       ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xff3085FE)
-                      )
-                    )
-                  ),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff3085FE)))),
                 ),
               ],
             ),
@@ -262,60 +256,63 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.transparent,
+          color: Colors.transparent,
           elevation: 0,
-          child: CustomButton(buttonText: 'Apply Leave', onTap: (){
-            if (_formKey.currentState!.validate()){
-              showModalBottomSheet(context: context, builder: (context) {
-                return Container(
-                  height: 500,
-                  width: double.maxFinite,
-                  child: Column(
-                    children: [
-                      Lottie.asset('assets/json/done.json',height: 250),
-                      const Text('Leave Applied',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 20
+          child: CustomButton(
+              buttonText: 'Apply Leave',
+              onTap: () {
+                if (_formKey.currentState!.validate()) {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SizedBox(
+                        height: Get.height,
+                        width: double.maxFinite,
+                        child: Column(
+                          children: [
+                            Lottie.asset('assets/json/done.json', height: 250),
+                            const Text(
+                              'Leave Applied',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w900, fontSize: 20),
+                            ),
+                            const Text(
+                              'Successfully',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w900, fontSize: 20),
+                            ),
+                            const Text(
+                              'Your Leave has been',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                  color: Color(0xff67696C)),
+                            ),
+                            const Text(
+                              'applied successfully',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                  color: Color(0xff67696C)),
+                            ),
+                            const SizedBox(height: 20),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child: CustomButton(
+                                  buttonText: 'Done',
+                                  onTap: () {
+                                    Get.back();
+                                    Get.back();
+                                  }),
+                            )
+                          ],
                         ),
-                      ),
-                      const Text('Successfully',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 20
-                        ),
-                      ),
-                      const Text('Your Leave has been',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            color: Color(0xff67696C)
-                        ),
-                      ),
-                      const Text('applied successfully',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            color: Color(0xff67696C)
-                        ),
-                      ),
-                      const SizedBox(
-                          height: 20),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: CustomButton(buttonText: 'Done', onTap: (){
-                          Get.back();
-                          Get.back();
-                        }),
-                      )
-                    ],
-                  ),
-                );
-              },);
-            }
-
-          })
-      ),
+                      );
+                    },
+                  );
+                }
+              })),
     );
   }
 }

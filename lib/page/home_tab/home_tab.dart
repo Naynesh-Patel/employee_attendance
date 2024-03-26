@@ -1,3 +1,4 @@
+import 'package:employee_attendance/profile_pages/notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:horizontal_date_picker_flutter/horizontal_date_picker_flutter.dart';
@@ -47,7 +48,9 @@ class _HomeTabState extends State<HomeTab> {
                 width: 20,
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(const NotificationPage());
+                  },
                   child: const Icon(
                     Icons.notifications,
                     color: Colors.black,
@@ -436,9 +439,7 @@ class _HomeTabState extends State<HomeTab> {
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                               color: Color(0xffC8DEFE)),
-                          onSwipeCallback: () {
-                            print("Swiped - Perform some operation");
-                          },
+                          onSwipeCallback: () {},
                           height: 60,
                         ),
                       ],

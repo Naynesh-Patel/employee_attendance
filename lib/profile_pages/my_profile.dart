@@ -8,15 +8,15 @@ class MyProfilePage extends StatefulWidget {
   State<MyProfilePage> createState() => _MyProfilePageState();
 }
 
-class _MyProfilePageState extends State<MyProfilePage> with TickerProviderStateMixin{
-
+class _MyProfilePageState extends State<MyProfilePage>
+    with TickerProviderStateMixin {
   late TabController tabController;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    tabController=TabController(length: 3, vsync: this);
+    tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -32,14 +32,14 @@ class _MyProfilePageState extends State<MyProfilePage> with TickerProviderStateM
         leading: IconButton(
           onPressed: () {
             Get.back();
-          }, icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          },
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10),
         child: Column(
-          children: [
-          ],
+          children: [],
         ),
       ),
     );

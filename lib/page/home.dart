@@ -45,13 +45,13 @@ class _HomeState extends State<Home> {
         indicatorPadding: const EdgeInsets.all(5.0),
         indicatorColor: Colors.white,
         tabs: [
-          Tab(
+          const Tab(
               icon: Icon(
             Icons.home,
             color: Colors.grey,
             size: 30,
           )),
-          Tab(
+          const Tab(
               icon: Icon(
             Icons.calendar_month_rounded,
             color: Colors.grey,

@@ -72,7 +72,7 @@ class _LoginState extends State<Login> {
                 const CustomTextField(
                   labelText: "Password",
                   // hintText: 'Password',
-                  suffixFixWidget: Icon(Icons.lock),
+                  suffixFixWidget: Icon(Icons.visibility),
                 ),
                 const SizedBox(
                   height: 10,
