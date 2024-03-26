@@ -63,42 +63,6 @@ class _HomeTabState extends State<HomeTab> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //   children: [
-                  //     Image.asset(
-                  //       "assets/images/profile_home.png",
-                  //       height: 56,
-                  //       width: 56,
-                  //     ),
-                  //     const Column(
-                  //       crossAxisAlignment: CrossAxisAlignment.start,
-                  //       children: [
-                  //         Text(
-                  //           "Michael Mitc",
-                  //           style: TextStyle(
-                  //               fontWeight: FontWeight.w400,
-                  //               color: Color(0xff313437),
-                  //               fontSize: 19),
-                  //         ),
-                  //         Text(
-                  //           "Lead UI/UX Designer",
-                  //           style: TextStyle(
-                  //               fontWeight: FontWeight.w400,
-                  //               color: Color(0xff313437),
-                  //               fontSize: 14),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //     const SizedBox(
-                  //       width: 20,
-                  //     ),
-                  //     const Icon(
-                  //       Icons.notifications,
-                  //       size: 30,
-                  //     )
-                  //   ],
-                  // ),
                   HorizontalDatePicker(
                     borderRadius: BorderRadius.circular(12),
                     unSelectedItemColor: Colors.white,

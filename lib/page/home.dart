@@ -50,25 +50,25 @@ class _HomeState extends State<Home> {
               icon: Icon(
             Icons.home,
             size: 30,
-            color: Colors.black,
+            color: Colors.grey,
           )),
           const Tab(
               icon: Icon(
             Icons.calendar_month_rounded,
             size: 30,
-            color: Colors.black,
+            color: Colors.grey,
           )),
           Tab(
               icon: Image.asset(
             "assets/images/holiday.png",
             height: 30,
-            color: Colors.black,
+            color: Colors.grey,
           )),
           Tab(
               icon: Image.asset(
             "assets/images/profile.png",
             height: 30,
-            color: Colors.black,
+            color: Colors.grey,
           )),
         ],
       ),
