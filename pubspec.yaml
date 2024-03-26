@@ -37,7 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   get: ^4.6.6
   flutter_svg: ^2.0.9
-  image_picker: ^1.0.7
+  pinput: ^1.2.2
+#  image_picker: ^1.0.7
+
 
 dev_dependencies:
   flutter_test:

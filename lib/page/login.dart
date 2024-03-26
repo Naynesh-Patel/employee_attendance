@@ -4,6 +4,8 @@ import 'package:employee_attendance/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../forgot_password/forgot_password_page.dart';
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -81,7 +83,9 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(const ForgotPassword());
+                      },
                       child: const Text(
                         "Forgot Password",
                         style: TextStyle(
