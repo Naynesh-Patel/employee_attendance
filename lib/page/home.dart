@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
           Tab(icon: Image.asset("assets/images/home.png")),
           Tab(icon: Image.asset("assets/images/leave.png")),
           Tab(icon: Image.asset("assets/images/holiday.png")),
-          Tab(icon: Image.asset("assets/images/profile.png")),
+          Tab(icon: Image.asset("assets/images/profile_home.png",height: 20,)),
         ],
       ),
     );
