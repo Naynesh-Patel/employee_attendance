@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:horizontal_date_picker_flutter/horizontal_date_picker_flutter.dart';
+import 'package:swipeable_button_flutter/swipebutton.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -19,7 +20,7 @@ class _HomeTabState extends State<HomeTab> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
-                "assets/images/profile_home.png",
+                "assets/images/ic_profile_home.png",
                 height: 56,
                 width: 56,
               ),
@@ -424,6 +425,21 @@ class _HomeTabState extends State<HomeTab> {
                               ),
                             ],
                           ),
+                        ),
+                        SwipeButton(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          iconColor: const Color(0xff4390FD),
+                          swipeButtonColor: Colors.white,
+                          backgroundColor: const Color(0xff4390FD),
+                          text: "Swipe to Check In",
+                          buttonTextStyle: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xffC8DEFE)),
+                          onSwipeCallback: () {
+                            print("Swiped - Perform some operation");
+                          },
+                          height: 60,
                         ),
                       ],
                     ),
