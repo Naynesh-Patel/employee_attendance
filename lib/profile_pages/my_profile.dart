@@ -1,3 +1,4 @@
+import 'package:employee_attendance/widget/listTile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,15 +9,15 @@ class MyProfilePage extends StatefulWidget {
   State<MyProfilePage> createState() => _MyProfilePageState();
 }
 
-class _MyProfilePageState extends State<MyProfilePage> with TickerProviderStateMixin{
-
+class _MyProfilePageState extends State<MyProfilePage>
+    with TickerProviderStateMixin {
   late TabController tabController;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    tabController=TabController(length: 3, vsync: this);
+    tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -32,13 +33,78 @@ class _MyProfilePageState extends State<MyProfilePage> with TickerProviderStateM
         leading: IconButton(
           onPressed: () {
             Get.back();
-          }, icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          },
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
+            TabBar(
+              indicator: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: const Color(0xff3085FE),
+              ),
+              labelColor: Colors.white,
+              labelStyle: const TextStyle(fontWeight: FontWeight.w600),
+              unselectedLabelColor: Colors.black,
+              unselectedLabelStyle:
+                  const TextStyle(fontWeight: FontWeight.w600),
+              controller: tabController,
+              tabs: [
+                Tab(
+                  child: Container(
+                    width: double.maxFinite,
+                    height: double.maxFinite,
+                    decoration: BoxDecoration(
+                        // color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: const Center(child: Text('Personal')),
+                  ),
+                ),
+                Tab(
+                  child: Container(
+                    width: double.maxFinite,
+                    height: double.maxFinite,
+                    decoration: BoxDecoration(
+                        // color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: const Center(child: Text('Professional')),
+                  ),
+                ),
+                Tab(
+                  child: Container(
+                    width: double.maxFinite,
+                    height: double.maxFinite,
+                    decoration: BoxDecoration(
+                        // color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: const Center(child: Text('Documents')),
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: TabBarView(controller: tabController, children: [
+Column(
+  children: [
+        textsTile(text1: "Full Name", text2: "Parth Patel"),
+        textsTile(text1: "Email Address", text2: "p12@gmail.com"),
+        textsTile(text1: "Phone Number", text2: "0123456789"),
+        textsTile(text1: "Address", text2: "33,surat"),
+  ],
+),
+               Column(
+                children: [
+                  textsTile(text1: "Employee ID", text2: "1282"),
+                  textsTile(text1: "Designation", text2: ""),
+                ],
+               ),
+                Text("chee"),
+
+              ]),
+            )
           ],
         ),
       ),
