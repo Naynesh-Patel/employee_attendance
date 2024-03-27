@@ -51,7 +51,7 @@ class _HomeTabState extends State<HomeTab> {
                     Get.to(const NotificationPage());
                   },
                   child: const Icon(
-                    Icons.notifications,
+                    Icons.notifications_none,
                     color: Colors.black,
                     size: 30,
                   )),
