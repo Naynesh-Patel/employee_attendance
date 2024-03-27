@@ -38,36 +38,36 @@ class _HomeState extends State<Home> {
   Widget menu() {
     return Container(
       color: const Color(0xFFffffff),
-      child: TabBar(
+      child: const TabBar(
         labelColor: Colors.white,
         unselectedLabelColor: Colors.white70,
         indicatorSize: TabBarIndicatorSize.tab,
-        indicatorPadding: const EdgeInsets.all(5.0),
+        indicatorPadding: EdgeInsets.all(5.0),
         indicatorColor: Colors.white,
         tabs: [
-          const Tab(
+          Tab(
               icon: Icon(
             Icons.home,
-            color: Colors.grey,
+            color: Color(0xff000000),
             size: 30,
           )),
-          const Tab(
+          Tab(
               icon: Icon(
             Icons.calendar_month_rounded,
-            color: Colors.grey,
+            color: Color(0xff000000),
             size: 30,
           )),
           Tab(
-              icon: Image.asset(
-            "assets/images/holiday.png",
-            height: 30,
-            color: Colors.grey,
+              icon: Icon(
+            Icons.beach_access,
+            color: Color(0xff000000),
+            size: 30,
           )),
           Tab(
-              icon: Image.asset(
-            "assets/images/profile.png",
-            height: 30,
-            color: Colors.grey,
+              icon: Icon(
+            Icons.person,
+            color: Color(0xff000000),
+            size: 30,
           )),
         ],
       ),

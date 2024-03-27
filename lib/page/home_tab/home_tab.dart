@@ -2,7 +2,6 @@ import 'package:employee_attendance/profile_pages/notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:horizontal_date_picker_flutter/horizontal_date_picker_flutter.dart';
-import 'package:swipeable_button_flutter/swipebutton.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -70,8 +69,14 @@ class _HomeTabState extends State<HomeTab> {
                   HorizontalDatePicker(
                     borderRadius: BorderRadius.circular(12),
                     unSelectedItemColor: Colors.white,
-                    monthTextStyle: const TextStyle(color: Color(0xff000000)),
-                    weekDayTextStyle: const TextStyle(color: Color(0xff000000)),
+                    monthTextStyle: const TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400),
+                    weekDayTextStyle: const TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400),
                     selectedItemColor: const Color(0xff4390FD),
                     onDateTap: (p0) {},
                     startDate: DateTime.now(),
@@ -113,19 +118,24 @@ class _HomeTabState extends State<HomeTab> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(12)),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                     children: [
-                                      Image.asset(
-                                        "assets/images/ic_cheak.png",
-                                        height: 35,
+                                      // Image.asset(
+                                      //   "assets/images/ic_cheak.png",
+                                      //   height: 35,
+                                      // ),
+
+                                      Icon(
+                                        Icons.login,
+                                        color: Colors.blue,
                                       ),
-                                      const SizedBox(
+                                      SizedBox(
                                         width: 10,
                                       ),
-                                      const Text(
+                                      Text(
                                         "Check In",
                                         style: TextStyle(
                                             fontSize: 13,
@@ -134,14 +144,14 @@ class _HomeTabState extends State<HomeTab> {
                                       )
                                     ],
                                   ),
-                                  const Text(
+                                  Text(
                                     "10:20am",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 19,
                                         color: Color(0xff2B2E31)),
                                   ),
-                                  const Text(
+                                  Text(
                                     "On Time",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
@@ -157,19 +167,23 @@ class _HomeTabState extends State<HomeTab> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(12)),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                     children: [
-                                      Image.asset(
-                                        "assets/images/cheakout.png",
-                                        height: 35,
+                                      Icon(
+                                        Icons.login,
+                                        color: Colors.blue,
                                       ),
-                                      const SizedBox(
+                                      // Image.asset(
+                                      //   "assets/images/cheakout.png",
+                                      //   height: 35,
+                                      // ),
+                                      SizedBox(
                                         width: 10,
                                       ),
-                                      const Text(
+                                      Text(
                                         "Check Out",
                                         style: TextStyle(
                                             fontSize: 13,
@@ -178,14 +192,14 @@ class _HomeTabState extends State<HomeTab> {
                                       )
                                     ],
                                   ),
-                                  const Text(
+                                  Text(
                                     "07:00 pm",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 19,
                                         color: Color(0xff2B2E31)),
                                   ),
-                                  const Text(
+                                  Text(
                                     "Go Home",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
@@ -210,19 +224,23 @@ class _HomeTabState extends State<HomeTab> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(12)),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                     children: [
-                                      Image.asset(
-                                        "assets/images/ic_break.png",
-                                        height: 35,
+                                      // Image.asset(
+                                      //   "assets/images/ic_break.png",
+                                      //   height: 35,
+                                      // ),
+                                      Icon(
+                                        Icons.free_breakfast,
+                                        color: Colors.blue,
                                       ),
-                                      const SizedBox(
+                                      SizedBox(
                                         width: 10,
                                       ),
-                                      const Text(
+                                      Text(
                                         "Break Time",
                                         style: TextStyle(
                                             fontSize: 13,
@@ -231,14 +249,14 @@ class _HomeTabState extends State<HomeTab> {
                                       )
                                     ],
                                   ),
-                                  const Text(
+                                  Text(
                                     "00:30min",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 19,
                                         color: Color(0xff2B2E31)),
                                   ),
-                                  const Text(
+                                  Text(
                                     "Avg Time 30",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
@@ -254,19 +272,23 @@ class _HomeTabState extends State<HomeTab> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(12)),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                     children: [
-                                      Image.asset(
-                                        "assets/images/ic_day.png",
-                                        height: 35,
+                                      // Image.asset(
+                                      //   "assets/images/ic_day.png",
+                                      //   height: 35,
+                                      // ),
+                                      Icon(
+                                        Icons.calendar_month_rounded,
+                                        color: Colors.blue,
                                       ),
-                                      const SizedBox(
+                                      SizedBox(
                                         width: 10,
                                       ),
-                                      const Text(
+                                      Text(
                                         "Total Days",
                                         style: TextStyle(
                                             fontSize: 13,
@@ -275,14 +297,14 @@ class _HomeTabState extends State<HomeTab> {
                                       )
                                     ],
                                   ),
-                                  const Text(
+                                  Text(
                                     "28",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 19,
                                         color: Color(0xff2B2E31)),
                                   ),
-                                  const Text(
+                                  Text(
                                     "Working Days",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
@@ -329,14 +351,18 @@ class _HomeTabState extends State<HomeTab> {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(12)),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Image.asset(
-                                "assets/images/ic_cheak.png",
-                                height: 35,
+                              Icon(
+                                Icons.login,
+                                color: Colors.blue,
                               ),
-                              const Column(
+                              // Image.asset(
+                              //   "assets/images/ic_cheak.png",
+                              //   height: 35,
+                              // ),
+                              Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -354,7 +380,7 @@ class _HomeTabState extends State<HomeTab> {
                                   ),
                                 ],
                               ),
-                              const Column(
+                              Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -383,14 +409,18 @@ class _HomeTabState extends State<HomeTab> {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(12)),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Image.asset(
-                                "assets/images/ic_cheak.png",
-                                height: 35,
+                              // Image.asset(
+                              //   "assets/images/ic_cheak.png",
+                              //   height: 35,
+                              // ),
+                              Icon(
+                                Icons.free_breakfast,
+                                color: Colors.blue,
                               ),
-                              const Column(
+                              Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -408,7 +438,7 @@ class _HomeTabState extends State<HomeTab> {
                                   ),
                                 ],
                               ),
-                              const Column(
+                              Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
@@ -429,19 +459,19 @@ class _HomeTabState extends State<HomeTab> {
                             ],
                           ),
                         ),
-                        SwipeButton(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          iconColor: const Color(0xff4390FD),
-                          swipeButtonColor: Colors.white,
-                          backgroundColor: const Color(0xff4390FD),
-                          text: "Swipe to Check In",
-                          buttonTextStyle: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xffC8DEFE)),
-                          onSwipeCallback: () {},
-                          height: 60,
-                        ),
+                        // SwipeButton(
+                        //   padding: const EdgeInsets.symmetric(horizontal: 10),
+                        //   iconColor: const Color(0xff4390FD),
+                        //   swipeButtonColor: Colors.white,
+                        //   backgroundColor: const Color(0xff4390FD),
+                        //   text: "Swipe to Check In",
+                        //   buttonTextStyle: const TextStyle(
+                        //       fontSize: 16,
+                        //       fontWeight: FontWeight.w400,
+                        //       color: Color(0xffC8DEFE)),
+                        //   onSwipeCallback: () {},
+                        //   height: 60,
+                        // ),
                       ],
                     ),
                   ),

@@ -50,7 +50,7 @@ class _NotificationPageState extends State<NotificationPage> {
                 "Please accept my leave request  ",
                 "April 12,2023,at 20:20 PM"),
             const Divider(),
-            notification("assets/images/ic_profile_home.png", "system update ",
+            notification("assets/images/profile.png", "system update ",
                 "Please update to newest app", "April 12,2023,at 20:20 PM"),
             const Divider(),
           ],

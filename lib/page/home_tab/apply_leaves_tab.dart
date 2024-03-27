@@ -269,6 +269,7 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                         height: Get.height,
                         width: double.maxFinite,
                         child: Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Lottie.asset('assets/json/done.json', height: 250),
                             const Text(

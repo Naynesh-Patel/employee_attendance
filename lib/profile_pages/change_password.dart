@@ -10,7 +10,6 @@ class ChangePassword extends StatefulWidget {
 }
 
 class _ChangePasswordState extends State<ChangePassword> {
-  bool passwordvalue = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +85,9 @@ class _ChangePasswordState extends State<ChangePassword> {
         margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         child: CustomButton(
           buttonText: 'Update',
-          onTap: () {},
+          onTap: () {
+            Get.back();
+          },
         ),
       ),
     );
