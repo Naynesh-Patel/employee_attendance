@@ -1,10 +1,11 @@
-
+import 'dart:io';
 
 import 'package:employee_attendance/controller/profile_controller.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:employee_attendance/widget/listTile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+// import 'package:image_picker/image_picker.dart';
 
 import '../../profile_pages/my_profile.dart';
 import '../../profile_pages/privacy_policy.dart';
@@ -20,7 +21,6 @@ class ProfileTab extends StatefulWidget {
 class _ProfileTabState extends State<ProfileTab> {
 
   ProfileController profileController=Get.find();
-  // final ImagePicker picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +38,8 @@ class _ProfileTabState extends State<ProfileTab> {
                 Stack(alignment: Alignment.bottomRight, children: [
                 Image.asset("assets/images/user_profile.png",height: 120),
                   FloatingActionButton.small(
-                    shape: const CircleBorder(),
                     onPressed: () async {
-                      // final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+                      // profileController.image = await profileController.picker.pickImage(source: ImageSource.gallery);
                     },
                     child: Image.asset("assets/images/camera.png"),
                   ),
@@ -64,7 +63,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                CustomButton(buttonText: "Edit Profile", onTap: () {}),
+                CustomButton(buttonText: "Edit Profie", onTap: () {}),
                 // SizedBox(
                 //   width: double.maxFinite,
                 //   height: Get.height * 0.07,

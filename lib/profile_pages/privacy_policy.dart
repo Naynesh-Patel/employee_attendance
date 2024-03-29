@@ -49,7 +49,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                   height: Get.height * 0.02,
                 ),
                 Text(profileController.text3,style: const TextStyle(
-                    height: 1.3,fontSize: 16
+                    height: 1.3,fontSize: 15
                 )),
                 SizedBox(
                   height: Get.height * 0.02,
@@ -61,13 +61,13 @@ class PrivacyPolicyPage extends StatelessWidget {
                   height: Get.height * 0.02,
                 ),
                 Text(profileController.text4,style: const TextStyle(
-                    height: 1.4,fontSize: 16
+                    height: 1.4,fontSize: 15
                 ),),
                 Text(profileController.text5,style: const TextStyle(
-                    height: 1.4,fontSize: 16
+                    height: 1.4,fontSize: 15
                 ),),
                 Text(profileController.text6,style: const TextStyle(
-                    height: 1.4,fontSize: 16
+                    height: 1.4,fontSize: 15
                 ),),
               ],
             ),
