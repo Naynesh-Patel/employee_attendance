@@ -12,6 +12,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,17 +38,37 @@ class _HomeState extends State<Home> {
   Widget menu() {
     return Container(
       color: const Color(0xFFffffff),
-      child: TabBar(
+      child: const TabBar(
         labelColor: Colors.white,
         unselectedLabelColor: Colors.white70,
         indicatorSize: TabBarIndicatorSize.tab,
-        indicatorPadding: const EdgeInsets.all(5.0),
+        indicatorPadding: EdgeInsets.all(5.0),
         indicatorColor: Colors.white,
         tabs: [
-          Tab(icon: Image.asset("assets/images/home.png")),
-          Tab(icon: Image.asset("assets/images/leave.png")),
-          Tab(icon: Image.asset("assets/images/holiday.png")),
-          Tab(icon: Image.asset("assets/images/profile.png")),
+          Tab(
+              icon: Icon(
+            Icons.home,
+            color: Color(0xff000000),
+            size: 30,
+          )),
+          Tab(
+              icon: Icon(
+            Icons.calendar_month_rounded,
+            color: Color(0xff000000),
+            size: 30,
+          )),
+          Tab(
+              icon: Icon(
+            Icons.beach_access,
+            color: Color(0xff000000),
+            size: 30,
+          )),
+          Tab(
+              icon: Icon(
+            Icons.person,
+            color: Color(0xff000000),
+            size: 30,
+          )),
         ],
       ),
     );

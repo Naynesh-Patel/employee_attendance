@@ -23,11 +23,12 @@ class _CustomButtonState extends State<CustomButton> {
         constraints: const BoxConstraints(maxHeight: 50),
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8), color: const Color(0xff3085FE)),
+            borderRadius: BorderRadius.circular(8),
+            color: const Color(0xff3085FE)),
         child: Center(
             child: Text(
           widget.buttonText,
-          style:  const TextStyle(color: Color(0xffD7E7FE), fontSize: 17),
+          style: const TextStyle(color: Color(0xffD7E7FE), fontSize: 17),
         )),
       ),
     );

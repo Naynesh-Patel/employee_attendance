@@ -41,28 +41,25 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                 const SizedBox(
                   height: 16,
                 ),
-                 TextFormField(
+                TextFormField(
                   validator: (value) {
-                    if(value!.isEmpty){
+                    if (value!.isEmpty) {
                       return 'filled it';
-                    } else{
+                    } else {
                       return null;
                     }
                   },
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 12
-                  ),
+                  style: const TextStyle(color: Colors.black, fontSize: 12),
                   decoration: const InputDecoration(
-                    labelText: 'Title',
-                    labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 10),
-                    contentPadding: EdgeInsets.all(8),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xff3085FE))),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xff3085FE))),
-                    border: OutlineInputBorder()
-                  ),
+                      labelText: 'Title',
+                      labelStyle:
+                          TextStyle(color: Color(0xff3085FE), fontSize: 10),
+                      contentPadding: EdgeInsets.all(8),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff3085FE))),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff3085FE))),
+                      border: OutlineInputBorder()),
                 ),
                 const SizedBox(
                   height: 23,
@@ -70,12 +67,17 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                 DropdownButtonFormField<String>(
                   items: const [
                     DropdownMenuItem(
-                        value: "Medical Leave", child: Text("Medical Leave",style: TextStyle(fontSize: 12))),
+                        value: "Medical Leave",
+                        child: Text("Medical Leave",
+                            style: TextStyle(fontSize: 12))),
                     DropdownMenuItem(
-                        value: "Family Leave", child: Text("Family Leave",style: TextStyle(fontSize: 12))),
+                        value: "Family Leave",
+                        child: Text("Family Leave",
+                            style: TextStyle(fontSize: 12))),
                     DropdownMenuItem(
                       value: "Casual Leave",
-                      child: Text("Casual Leave",style: TextStyle(fontSize: 12)),
+                      child:
+                          Text("Casual Leave", style: TextStyle(fontSize: 12)),
                     )
                   ],
 
@@ -86,9 +88,10 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                       return null;
                     }
                   },
-                  decoration:  const InputDecoration(
-                    labelText: 'Leave Type',
-                      labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 10),
+                  decoration: const InputDecoration(
+                      labelText: 'Leave Type',
+                      labelStyle:
+                          TextStyle(color: Color(0xff3085FE), fontSize: 10),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xff3085FE))),
                       enabledBorder: OutlineInputBorder(
@@ -111,12 +114,10 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                 const SizedBox(
                   height: 23,
                 ),
-                 TextFormField(
-                  style: const TextStyle(
-                    color: Colors.black,fontSize: 12
-                  ),
+                TextFormField(
+                  style: const TextStyle(color: Colors.black, fontSize: 12),
                   validator: (value) {
-                    if(value!.isEmpty){
+                    if (value!.isEmpty) {
                       return 'enter number';
                     } else {
                       return null;
@@ -124,11 +125,12 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                   },
                   keyboardType: const TextInputType.numberWithOptions(),
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xff3085FE))),
                       labelText: 'Contact Number',
-                      labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 11),
+                      labelStyle:
+                          TextStyle(color: Color(0xff3085FE), fontSize: 11),
                       contentPadding: EdgeInsets.all(8),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xff3085FE))),
@@ -151,24 +153,26 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                   },
                   child: TextFormField(
                     validator: (value) {
-                      if(value!.isEmpty){
+                      if (value!.isEmpty) {
                         return 'select date';
                       } else {
                         return null;
                       }
                     },
                     controller: formatSDate,
-                    style: const TextStyle(color: Colors.black,fontSize: 12),
+                    style: const TextStyle(color: Colors.black, fontSize: 12),
                     enabled: false,
                     decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+                        border: OutlineInputBorder(),
                         disabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xff3085FE))),
                         labelText: 'Start Date',
-                        labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 11),
+                        labelStyle:
+                            TextStyle(color: Color(0xff3085FE), fontSize: 11),
                         suffixIcon: Icon(
                           Icons.calendar_month_outlined,
-                          color: Colors.black,size: 23,
+                          color: Colors.black,
+                          size: 23,
                         ),
                         hintText: '',
                         contentPadding: EdgeInsets.all(8),
@@ -194,23 +198,25 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                   },
                   child: TextFormField(
                     validator: (value) {
-                      if(value!.isEmpty){
+                      if (value!.isEmpty) {
                         return 'select date';
                       } else {
                         return null;
                       }
                     },
                     controller: formatEDate,
-                    style: const TextStyle(color: Colors.black,fontSize: 12),
+                    style: const TextStyle(color: Colors.black, fontSize: 12),
                     enabled: false,
                     decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+                        border: OutlineInputBorder(),
                         disabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xff3085FE))),
                         labelText: 'End Date',
-                        labelStyle: TextStyle(color: Color(0xff3085FE),fontSize: 11),
+                        labelStyle:
+                            TextStyle(color: Color(0xff3085FE), fontSize: 11),
                         suffixIcon: Icon(
-                          Icons.calendar_month_outlined,size: 23,
+                          Icons.calendar_month_outlined,
+                          size: 23,
                           color: Colors.black,
                         ),
                         hintText: '',
@@ -223,39 +229,30 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                 const SizedBox(
                   height: 19,
                 ),
-                 const Text("Reason for Leave",
-                 style: TextStyle(
-                   color: Color(0xff3085FE),fontSize: 12
-                 ),
-                 ),
-                  const SizedBox(height: 4),
-                  TextFormField(
-                   maxLines: null,
-                   textInputAction: TextInputAction.done,
+                const Text(
+                  "Reason for Leave",
+                  style: TextStyle(color: Color(0xff3085FE), fontSize: 12),
+                ),
+                const SizedBox(height: 4),
+                TextFormField(
+                  maxLines: null,
+                  textInputAction: TextInputAction.done,
                   textAlignVertical: TextAlignVertical.top,
-                  style: const TextStyle(
-                    color: Colors.black,fontSize: 14
-                  ),
+                  style: const TextStyle(color: Colors.black, fontSize: 14),
                   validator: (value) {
-                    if(value!.isEmpty){
+                    if (value!.isEmpty) {
                       return 'enter reason';
                     } else {
                       return null;
                     }
                   },
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xff3085FE)
+                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff3085FE)),
                       ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xff3085FE)
-                      )
-                    )
-                  ),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff3085FE)))),
                 ),
               ],
             ),
@@ -263,7 +260,7 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.transparent,
+          color: Colors.transparent,
           elevation: 0,
           child: CustomButton(buttonText: 'Apply Leave', onTap: (){
             if (_formKey.currentState!.validate()){

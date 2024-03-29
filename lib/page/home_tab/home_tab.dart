@@ -1,4 +1,7 @@
+import 'package:employee_attendance/profile_pages/notification.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:horizontal_date_picker_flutter/horizontal_date_picker_flutter.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -11,15 +14,18 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Row(
+        appBar: AppBar(
+          backgroundColor: const Color(0xffFFFFFF),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
-                "assets/images/profile_home.png",
-                height: 40,
+                "assets/images/ic_profile_home.png",
+                height: 56,
+                width: 56,
               ),
               const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Michael Mitc",
@@ -37,11 +43,442 @@ class _HomeTabState extends State<HomeTab> {
                   ),
                 ],
               ),
+              const SizedBox(
+                width: 20,
+              ),
+              TextButton(
+                  onPressed: () {
+                    Get.to(const NotificationPage());
+                  },
+                  child: const Icon(
+                    Icons.notifications_none,
+                    color: Colors.black,
+                    size: 30,
+                  )),
             ],
           ),
-          const Center(child: Text("home"))
-        ],
-      ),
-    );
+        ),
+        body: ListView(
+          shrinkWrap: true,
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HorizontalDatePicker(
+                    borderRadius: BorderRadius.circular(12),
+                    unSelectedItemColor: Colors.white,
+                    monthTextStyle: const TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400),
+                    weekDayTextStyle: const TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400),
+                    selectedItemColor: const Color(0xff4390FD),
+                    onDateTap: (p0) {},
+                    startDate: DateTime.now(),
+                    endDate: DateTime.now().add(const Duration(days: 40)),
+                    dayTextStyle:
+                        const TextStyle(color: Color(0xff000000), fontSize: 20),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: Get.height,
+                    width: Get.width,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        // color: Colors.grey.withOpacity(0.1)
+                        color: const Color(0xffFAFAFA)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Today Attendance",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xff2F3135),
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 15),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      // Image.asset(
+                                      //   "assets/images/ic_cheak.png",
+                                      //   height: 35,
+                                      // ),
+
+                                      Icon(
+                                        Icons.login,
+                                        color: Colors.blue,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text(
+                                        "Check In",
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xff626467)),
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    "10:20am",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 19,
+                                        color: Color(0xff2B2E31)),
+                                  ),
+                                  Text(
+                                    "On Time",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: Color(0xff46494C)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 15),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.login,
+                                        color: Colors.blue,
+                                      ),
+                                      // Image.asset(
+                                      //   "assets/images/cheakout.png",
+                                      //   height: 35,
+                                      // ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text(
+                                        "Check Out",
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xff626467)),
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    "07:00 pm",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 19,
+                                        color: Color(0xff2B2E31)),
+                                  ),
+                                  Text(
+                                    "Go Home",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: Color(0xff46494C)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 15),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      // Image.asset(
+                                      //   "assets/images/ic_break.png",
+                                      //   height: 35,
+                                      // ),
+                                      Icon(
+                                        Icons.free_breakfast,
+                                        color: Colors.blue,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text(
+                                        "Break Time",
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xff626467)),
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    "00:30min",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 19,
+                                        color: Color(0xff2B2E31)),
+                                  ),
+                                  Text(
+                                    "Avg Time 30",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: Color(0xff46494C)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 15),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      // Image.asset(
+                                      //   "assets/images/ic_day.png",
+                                      //   height: 35,
+                                      // ),
+                                      Icon(
+                                        Icons.calendar_month_rounded,
+                                        color: Colors.blue,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text(
+                                        "Total Days",
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xff626467)),
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    "28",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 19,
+                                        color: Color(0xff2B2E31)),
+                                  ),
+                                  Text(
+                                    "Working Days",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: Color(0xff46494C)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "YourActivity",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400, fontSize: 15),
+                              ),
+                              TextButton(
+                                onPressed: () {},
+                                child: const Text(
+                                  "ViewAll",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12,
+                                      color: Color(0xff69A4F7)),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12)),
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Icon(
+                                Icons.login,
+                                color: Colors.blue,
+                              ),
+                              // Image.asset(
+                              //   "assets/images/ic_cheak.png",
+                              //   height: 35,
+                              // ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "CheckIn",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 15),
+                                  ),
+                                  Text(
+                                    "April 17, 2023",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                        color: Color(0xffC7C9CD)),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "10:00am",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 15),
+                                  ),
+                                  Text(
+                                    "On Time",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                        color: Color(0xffC7C9CD)),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12)),
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              // Image.asset(
+                              //   "assets/images/ic_cheak.png",
+                              //   height: 35,
+                              // ),
+                              Icon(
+                                Icons.free_breakfast,
+                                color: Colors.blue,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "BreakIn",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 15),
+                                  ),
+                                  Text(
+                                    "April 17, 2023",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                        color: Color(0xffC7C9CD)),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "12:30am",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 15),
+                                  ),
+                                  Text(
+                                    "On Time",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12,
+                                        color: Color(0xffC7C9CD)),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        // SwipeButton(
+                        //   padding: const EdgeInsets.symmetric(horizontal: 10),
+                        //   iconColor: const Color(0xff4390FD),
+                        //   swipeButtonColor: Colors.white,
+                        //   backgroundColor: const Color(0xff4390FD),
+                        //   text: "Swipe to Check In",
+                        //   buttonTextStyle: const TextStyle(
+                        //       fontSize: 16,
+                        //       fontWeight: FontWeight.w400,
+                        //       color: Color(0xffC8DEFE)),
+                        //   onSwipeCallback: () {},
+                        //   height: 60,
+                        // ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ));
   }
 }
