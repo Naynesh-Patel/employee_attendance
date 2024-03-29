@@ -1,8 +1,6 @@
 import 'package:employee_attendance/controller/leaves_controller.dart';
 import 'package:employee_attendance/page/home_tab/apply_leaves_tab.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class LeavesTab extends StatefulWidget {
@@ -31,14 +29,14 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
       appBar: AppBar(
         title: const Text('All Leaves',
         style: TextStyle(
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
           fontSize: 16
         ),
         ),
         actions: [
           InkWell(
             onTap: () {
-              Get.to(ApplyLeaves());
+              Get.to(const ApplyLeaves());
             },
             child: Image.asset(
               'assets/images/add_icon.png',
@@ -68,7 +66,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                   border: Border.all(
                     color: const Color(0xff3085FE)),
                     style: const TextStyle(
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w600,
                       fontSize: 17,
                       color: Color(0xff3085FE)
                     )
@@ -84,7 +82,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                         color: const Color(0xffA3D139)
                       ),
                       style: const TextStyle(
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w600,
                         fontSize: 17,
                         color: Color(0xffA3D139)
                       )
@@ -102,7 +100,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                   border: Border.all(
                     color: const Color(0xff30BEB6)),
                     style: const TextStyle(
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w600,
                       fontSize: 17,
                       color: Color(0xff30BEB6)
                     )
@@ -115,10 +113,10 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                   text3: '10',
                       boxColor: const Color(0xffFFF9F8),
                       border: Border.all(
-                        color: Color(0xffFF7F74)
+                        color: const Color(0xffFF7F74)
                       ),
                       style: const TextStyle(
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w600,
                         fontSize: 17,
                         color: Color(0xffFF8E84)
                       )
@@ -199,24 +197,24 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                         children: [
                           const Text("Date",
                             style: TextStyle(
-                                fontWeight: FontWeight.w600,fontSize: 11
+                                fontWeight: FontWeight.w400,fontSize: 11
                             ),
                           ),
                           Row(
                             children: [
                               const Text('Apr 15, 2023',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w900,fontSize: 13
+                                    fontWeight: FontWeight.w600,fontSize: 13
                                 ),
                               ),
                               const Text('-',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w900,fontSize: 13
+                                    fontWeight: FontWeight.w600,fontSize: 13
                                 ),
                               ),
                               const Expanded(child: Text('Apr 18, 2023',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w900,fontSize: 13
+                                    fontWeight: FontWeight.w600,fontSize: 13
                                 ),
                               )),
                               Container(
@@ -243,17 +241,17 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                             children: [
                               Text("Apply Days",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w600,fontSize: 11
+                                    fontWeight: FontWeight.w400,fontSize: 11
                                 ),
                               ),
                               Text("Leave Balance",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w600,fontSize: 12
+                                    fontWeight: FontWeight.w400,fontSize: 12
                                 ),
                               ),
                               Text("Approved By",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w600,fontSize: 11
+                                    fontWeight: FontWeight.w400,fontSize: 11
                                 ),
                               ),
                             ],
@@ -263,18 +261,18 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                             children: [
                               Text("3 Days",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w900,fontSize: 12
+                                    fontWeight: FontWeight.w600,fontSize: 12
                                 ),
                               ),
 
                               Text("16",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w900,fontSize: 11
+                                    fontWeight: FontWeight.w600,fontSize: 11
                                 ),
                               ),
                               Text("Martin Deo",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w900,fontSize: 13
+                                    fontWeight: FontWeight.w600,fontSize: 13
                                 ),
                               ),
                             ],
@@ -311,24 +309,24 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                               children: [
                                 const Text("Date",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w600,fontSize: 11
+                                      fontWeight: FontWeight.w400,fontSize: 11
                                   ),
                                 ),
                                 Row(
                                   children: [
                                     const Text('Apr 15, 2023',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w900,fontSize: 13
+                                          fontWeight: FontWeight.w600,fontSize: 13
                                       ),
                                     ),
                                     const Text('-',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w900,fontSize: 13
+                                          fontWeight: FontWeight.w600,fontSize: 13
                                       ),
                                     ),
                                     const Expanded(child: Text('Apr 18, 2023',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w900,fontSize: 13
+                                          fontWeight: FontWeight.w600,fontSize: 13
                                       ),
                                     )),
                                     Container(
@@ -355,17 +353,17 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                   children: [
                                     Text("Apply Days",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w600,fontSize: 11
+                                          fontWeight: FontWeight.w400,fontSize: 11
                                       ),
                                     ),
                                     Text("Leave Balance",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w600,fontSize: 12
+                                          fontWeight: FontWeight.w400,fontSize: 12
                                       ),
                                     ),
                                     Text("Approved By",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w600,fontSize: 11
+                                          fontWeight: FontWeight.w400,fontSize: 11
                                       ),
                                     ),
                                   ],
@@ -375,18 +373,18 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                   children: [
                                     Text("3 Days",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w900,fontSize: 12
+                                          fontWeight: FontWeight.w600,fontSize: 12
                                       ),
                                     ),
 
                                     Text("16",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w900,fontSize: 11
+                                          fontWeight: FontWeight.w600,fontSize: 11
                                       ),
                                     ),
                                     Text("Martin Deo",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w900,fontSize: 13
+                                          fontWeight: FontWeight.w600,fontSize: 13
                                       ),
                                     ),
                                   ],

@@ -11,7 +11,8 @@ class LeavesController extends GetxController {
       Color? boxColor,
       BoxBorder? border,
         TextStyle? style
-      }) {
+      })
+  {
     return Container(
       height: 130,
       width: double.maxFinite,
@@ -28,12 +29,12 @@ class LeavesController extends GetxController {
           children: [
             Text(
               text1,
-              style: const TextStyle(fontWeight: FontWeight.w900,fontSize: 15.8),
+              style: const TextStyle(fontWeight: FontWeight.w600,fontSize: 15.8),
             ),
             Expanded(
                 child: Text(
               text2,
-              style: const TextStyle(fontWeight: FontWeight.w900,fontSize: 15.8),
+              style: const TextStyle(fontWeight: FontWeight.w600,fontSize: 15.8),
             )),
             Text(text3,
               style: style,
