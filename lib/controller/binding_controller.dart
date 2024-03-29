@@ -10,7 +10,7 @@ class BindingController with Bindings {
   void dependencies() {
     Get.lazyPut<AuthController>(() => AuthController(), fenix: true);
     Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
-    Get.lazyPut<LevesController>(() => LevesController(), fenix: true);
+    Get.lazyPut<LeavesController>(() => LeavesController(), fenix: true);
     Get.lazyPut<HolidayController>(() => HolidayController(), fenix: true);
     Get.lazyPut<ProfileController>(() => ProfileController(), fenix: true);
   }
