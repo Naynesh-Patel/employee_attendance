@@ -14,6 +14,7 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffFAFAFA),
       appBar: AppBar(
         backgroundColor: const Color(0xffFFFFFF),
         title: Row(
@@ -30,7 +31,7 @@ class _HomeTabState extends State<HomeTab> {
                 Text(
                   "Michael Mitc",
                   style: TextStyle(
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.bold,
                       color: Color(0xff313437),
                       fontSize: 19),
                 ),
@@ -62,7 +63,7 @@ class _HomeTabState extends State<HomeTab> {
         shrinkWrap: true,
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -81,8 +82,10 @@ class _HomeTabState extends State<HomeTab> {
                   onDateTap: (p0) {},
                   startDate: DateTime.now(),
                   endDate: DateTime.now().add(const Duration(days: 40)),
-                  dayTextStyle:
-                      const TextStyle(color: Color(0xff000000), fontSize: 20),
+                  dayTextStyle: const TextStyle(
+                      color: Color(0xff000000),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 10,
@@ -100,13 +103,19 @@ class _HomeTabState extends State<HomeTab> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        "Today Attendance",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Color(0xff2F3135),
-                          fontWeight: FontWeight.w400,
+                      const Padding(
+                        padding: EdgeInsets.only(left: 15),
+                        child: Text(
+                          "Today Attendance",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xff2F3135),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -114,7 +123,7 @@ class _HomeTabState extends State<HomeTab> {
                         children: [
                           Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 15),
+                                horizontal: 20, vertical: 15),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
@@ -123,17 +132,12 @@ class _HomeTabState extends State<HomeTab> {
                               children: [
                                 Row(
                                   children: [
-                                    // Image.asset(
-                                    //   "assets/images/ic_cheak.png",
-                                    //   height: 35,
-                                    // ),
-
                                     Icon(
                                       Icons.login,
                                       color: Colors.blue,
                                     ),
                                     SizedBox(
-                                      width: 15,
+                                      width: 10,
                                     ),
                                     Text(
                                       "Check In",
@@ -147,8 +151,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(
                                   "10:20am",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
                                       color: Color(0xff2B2E31)),
                                 ),
                                 Text(
@@ -163,7 +167,7 @@ class _HomeTabState extends State<HomeTab> {
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 15),
+                                horizontal: 20, vertical: 15),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
@@ -181,7 +185,7 @@ class _HomeTabState extends State<HomeTab> {
                                     //   height: 35,
                                     // ),
                                     SizedBox(
-                                      width: 15,
+                                      width: 10,
                                     ),
                                     Text(
                                       "Check Out",
@@ -195,8 +199,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(
                                   "07:00 pm",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
                                       color: Color(0xff2B2E31)),
                                 ),
                                 Text(
@@ -220,7 +224,7 @@ class _HomeTabState extends State<HomeTab> {
                         children: [
                           Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 15),
+                                horizontal: 20, vertical: 15),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
@@ -238,7 +242,7 @@ class _HomeTabState extends State<HomeTab> {
                                       color: Colors.blue,
                                     ),
                                     SizedBox(
-                                      width: 15,
+                                      width: 10,
                                     ),
                                     Text(
                                       "Break Time",
@@ -252,8 +256,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(
                                   "00:30min",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
                                       color: Color(0xff2B2E31)),
                                 ),
                                 Text(
@@ -268,7 +272,7 @@ class _HomeTabState extends State<HomeTab> {
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 15),
+                                horizontal: 20, vertical: 15),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
@@ -286,7 +290,7 @@ class _HomeTabState extends State<HomeTab> {
                                       color: Colors.blue,
                                     ),
                                     SizedBox(
-                                      width: 15,
+                                      width: 10,
                                     ),
                                     Text(
                                       "Total Days",
@@ -300,8 +304,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(
                                   "28",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
                                       color: Color(0xff2B2E31)),
                                 ),
                                 Text(
@@ -328,7 +332,7 @@ class _HomeTabState extends State<HomeTab> {
                             const Text(
                               "YourActivity",
                               style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 15),
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                             TextButton(
                               onPressed: () {},
@@ -368,8 +372,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(
                                   "CheckIn",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
                                 ),
                                 Text(
                                   "April 17, 2023",
@@ -386,8 +390,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(
                                   "10:00am",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
                                 ),
                                 Text(
                                   "On Time",
@@ -426,8 +430,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(
                                   "BreakIn",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
                                 ),
                                 Text(
                                   "April 17, 2023",
@@ -444,8 +448,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(
                                   "12:30am",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
                                 ),
                                 Text(
                                   "On Time",

@@ -1,10 +1,9 @@
-import 'dart:io';
-
 import 'package:employee_attendance/controller/profile_controller.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:employee_attendance/widget/listTile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 // import 'package:image_picker/image_picker.dart';
 
 import '../../profile_pages/my_profile.dart';
@@ -19,8 +18,7 @@ class ProfileTab extends StatefulWidget {
 }
 
 class _ProfileTabState extends State<ProfileTab> {
-
-  ProfileController profileController=Get.find();
+  ProfileController profileController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +34,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   height: Get.height * 0.05,
                 ),
                 Stack(alignment: Alignment.bottomRight, children: [
-                Image.asset("assets/images/user_profile.png",height: 120),
+                  Image.asset("assets/images/user_profile.png", height: 120),
                   FloatingActionButton.small(
                     onPressed: () async {
                       // profileController.image = await profileController.picker.pickImage(source: ImageSource.gallery);
@@ -84,7 +82,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 ),
                 listTile(
                     onTap: () {
-Get.to(const MyProfilePage());
+                      Get.to(const MyProfilePage());
                     },
                     data: "My Profile",
                     image: "assets/images/profile_home.png",
@@ -109,16 +107,19 @@ Get.to(const MyProfilePage());
                     image: "assets/images/privacy_policy.png",
                     icon: Icons.arrow_forward_ios_outlined),
                 ListTile(
-                  onTap: () {},
-                  leading: Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xfffff2f1),
-                      ),
-                      child: Image.asset("assets/images/logout.png",height: 20,color: const Color(0xffFE6C42))),
-                  title: const Text("Log Out",style: TextStyle(color: Color(0xffFE6C42),fontWeight: FontWeight.w500))
-                ),
+                    onTap: () {},
+                    leading: Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xfffff2f1),
+                        ),
+                        child: Image.asset("assets/images/logout.png",
+                            height: 20, color: const Color(0xffFE6C42))),
+                    title: const Text("Log Out",
+                        style: TextStyle(
+                            color: Color(0xffFE6C42),
+                            fontWeight: FontWeight.w500))),
               ],
             ),
           ),

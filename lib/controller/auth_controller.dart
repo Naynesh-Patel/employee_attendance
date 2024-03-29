@@ -4,4 +4,6 @@ import 'package:get/get.dart';
 class AuthController extends GetxController {
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
+
+  RxBool passwordVisible = false.obs;
 }

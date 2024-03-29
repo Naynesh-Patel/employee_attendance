@@ -38,36 +38,61 @@ class _HomeState extends State<Home> {
   Widget menu() {
     return Container(
       color: const Color(0xFFffffff),
-      child: const TabBar(
+      child: TabBar(
         labelColor: Colors.white,
         unselectedLabelColor: Colors.white70,
         indicatorSize: TabBarIndicatorSize.tab,
-        indicatorPadding: EdgeInsets.all(5.0),
+        indicatorPadding: const EdgeInsets.all(5.0),
         indicatorColor: Colors.white,
         tabs: [
+          // Tab(
+          //     icon: Icon(
+          //   Icons.home,
+          //   color: Color(0xff000000),
+          //   size: 30,
+          // )
+          // ),
+          // Tab(
+          //     icon: Icon(
+          //   Icons.calendar_month_rounded,
+          //   color: Color(0xff000000),
+          //   size: 30,
+          // )),
+          // Tab(
+          //     icon: Icon(
+          //   Icons.beach_access,
+          //   color: Color(0xff000000),
+          //   size: 30,
+          // )),
+          // Tab(
+          //     icon: Icon(
+          //   Icons.person,
+          //   color: Color(0xff000000),
+          //   size: 30,
+          // )),
           Tab(
-              icon: Icon(
-            Icons.home,
-            color: Color(0xff000000),
-            size: 30,
+              icon: Image.asset(
+            "assets/images/home.png",
+            height: 25,
+            color: Colors.black,
           )),
           Tab(
-              icon: Icon(
-            Icons.calendar_month_rounded,
-            color: Color(0xff000000),
-            size: 30,
+              icon: Image.asset(
+            "assets/images/calendar.png",
+            height: 25,
+            color: Colors.black,
           )),
           Tab(
-              icon: Icon(
-            Icons.beach_access,
-            color: Color(0xff000000),
-            size: 30,
+              icon: Image.asset(
+            "assets/images/holiday.png",
+            height: 25,
+            color: Colors.black,
           )),
           Tab(
-              icon: Icon(
-            Icons.person,
-            color: Color(0xff000000),
-            size: 30,
+              icon: Image.asset(
+            "assets/images/profile_home.png",
+            height: 25,
+            color: Colors.black,
           )),
         ],
       ),

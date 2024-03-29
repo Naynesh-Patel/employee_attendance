@@ -1,5 +1,5 @@
 import 'package:employee_attendance/page/home_tab/splash.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'controller/binding_controller.dart';
@@ -21,9 +21,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          fontFamily: "Spectral-Regular",
+          primaryColor: Colors.black,
+          useMaterial3: false),
       initialBinding: BindingController(),
       home: const Splash(),
     );
   }
 }
-

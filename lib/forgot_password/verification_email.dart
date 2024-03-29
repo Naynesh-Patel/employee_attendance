@@ -13,7 +13,6 @@ class VerificationEmail extends StatefulWidget {
 }
 
 class _VerificationEmailState extends State<VerificationEmail> {
-
   final _pinPutController = TextEditingController();
 
   @override
@@ -55,7 +54,9 @@ class _VerificationEmailState extends State<VerificationEmail> {
                   height: Get.height * 0.04,
                 ),
                 Center(child: Image.asset("assets/images/forgot_password.png")),
-                SizedBox(height: Get.height*0.04,),
+                SizedBox(
+                  height: Get.height * 0.04,
+                ),
                 PinPut(
                     fieldsCount: 4,
                     eachFieldHeight: 70.0,
@@ -74,23 +75,27 @@ class _VerificationEmailState extends State<VerificationEmail> {
                     followingFieldDecoration: BoxDecoration(
                       border: Border.all(color: Colors.black12),
                       borderRadius: BorderRadius.circular(20),
-                    )
-                ),
+                    )),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(
                       onPressed: () {},
-                      child:  Text("Resend it",style: TextStyle(
-                          color: Colors.blue
-                      ),),
+                      child: Text(
+                        "Resend it",
+                        style: TextStyle(color: Colors.blue),
+                      ),
                     )
                   ],
                 ),
-                SizedBox(height: Get.height*0.02,),
-                CustomButton(buttonText: "Verify", onTap: () {
-                  Get.to(const NewPassword());
-                } )
+                SizedBox(
+                  height: Get.height * 0.02,
+                ),
+                CustomButton(
+                    buttonText: "Verify",
+                    onTap: () {
+                      Get.to(const NewPassword());
+                    })
               ],
             ),
           ),
