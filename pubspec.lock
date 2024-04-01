@@ -251,6 +251,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.4.0"
+  pinput:
+    dependency: "direct main"
+    description:
+      name: pinput
+      sha256: "27eb69042f75755bdb6544f6e79a50a6ed09d6e97e2d75c8421744df1e392949"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.2"
   pointycastle:
     dependency: transitive
     description:
@@ -296,14 +304,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  swipeable_button_flutter:
-    dependency: "direct main"
-    description:
-      name: swipeable_button_flutter
-      sha256: "4b5ad2750d749b8169d01a402fa675f4f58df33aaffd2543c3acb6559736c4e6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.3"
   term_glyph:
     dependency: transitive
     description:

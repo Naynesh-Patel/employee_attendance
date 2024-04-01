@@ -148,6 +148,7 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                         lastDate: DateTime(2030));
 
                     sDate.text = date.toString();
+
                     formatSDate.text = DateFormat("dd-MMM-yyyy").format(date!);
                     setState(() {});
                   },
