@@ -11,6 +11,8 @@ class HomeTab extends StatefulWidget {
 }
 
 class _HomeTabState extends State<HomeTab> {
+  bool isButtonSwiped = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
