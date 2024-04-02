@@ -1,7 +1,6 @@
 import 'package:employee_attendance/controller/binding_controller.dart';
 import 'package:employee_attendance/controller/leaves_controller.dart';
 import 'package:employee_attendance/page/home_tab/apply_leaves_tab.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -45,7 +44,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
         actions: [
           InkWell(
             onTap: () {
-              Get.to(const ApplyLeaves(),binding: BindingController());
+              Get.to(const ApplyLeaves(), binding: BindingController());
             },
             child: Image.asset(
               'assets/images/add_icon.png',
@@ -69,7 +68,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
               Row(
                 children: [
                   Expanded(
-                    child:container(
+                    child: container(
                         text1: 'Leave',
                         text2: 'Balance',
                         text3: '20',
@@ -81,7 +80,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                             color: Color(0xff3085FE))),
                   ),
                   Expanded(
-                      child:container(
+                      child: container(
                           text1: 'Leave',
                           text2: 'Approved',
                           text3: '2',
@@ -196,11 +195,12 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                               children: [
                                 Row(
                                   children: [
-                                    Expanded(
+                                    const Expanded(
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          const Text(
+                                          Text(
                                             "Date",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w500,
@@ -209,25 +209,25 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                           ),
                                           Row(
                                             children: [
-                                              const Text(
+                                              Text(
                                                 'Apr 15, 2023',
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.w900,
                                                     fontSize: 13),
                                               ),
-                                              const Text(
+                                              Text(
                                                 ' - ',
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.w900,
                                                     fontSize: 13),
                                               ),
-                                              const Expanded(
+                                              Expanded(
                                                   child: Text(
-                                                    'Apr 18, 2023',
-                                                    style: TextStyle(
-                                                        fontWeight: FontWeight.w900,
-                                                        fontSize: 13),
-                                                  )),
+                                                'Apr 18, 2023',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w900,
+                                                    fontSize: 13),
+                                              )),
                                             ],
                                           ),
                                         ],
@@ -239,7 +239,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                       decoration: BoxDecoration(
                                           color: const Color(0xffF5FCFB),
                                           borderRadius:
-                                          BorderRadius.circular(5)),
+                                              BorderRadius.circular(5)),
                                       child: Text(
                                         "Approved",
                                         style: TextStyle(
@@ -262,7 +262,8 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Apply Days",
@@ -272,15 +273,16 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                               color: Color(0xff4C4E51)),
                                         ),
                                         Text(
-                                              "3 Days",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w900,
-                                                  fontSize: 12),
-                                            ),
+                                          "3 Days",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w900,
+                                              fontSize: 12),
+                                        ),
                                       ],
                                     ),
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Leave Balance",
@@ -289,16 +291,17 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                               fontSize: 12,
                                               color: Color(0xff4C4E51)),
                                         ),
-                                            Text(
-                                              "16",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w900,
-                                                  fontSize: 11),
-                                            ),
+                                        Text(
+                                          "16",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w900,
+                                              fontSize: 11),
+                                        ),
                                       ],
                                     ),
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Approved By",
@@ -307,20 +310,16 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                               fontSize: 11,
                                               color: Color(0xff4C4E51)),
                                         ),
-                                            Text(
-                                              "Martin Deo",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w900,
-                                                  fontSize: 13),
-                                            ),
-                                          ],
+                                        Text(
+                                          "Martin Deo",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w900,
+                                              fontSize: 13),
                                         ),
                                       ],
                                     ),
-
-
-
-
+                                  ],
+                                ),
                               ],
                             ),
                           ),
@@ -356,7 +355,8 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                   children: [
                                     Expanded(
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           const Text(
                                             "Date",
@@ -381,11 +381,11 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                               ),
                                               const Expanded(
                                                   child: Text(
-                                                    'Apr 18, 2023',
-                                                    style: TextStyle(
-                                                        fontWeight: FontWeight.w900,
-                                                        fontSize: 13),
-                                                  )),
+                                                'Apr 18, 2023',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w900,
+                                                    fontSize: 13),
+                                              )),
                                             ],
                                           ),
                                         ],
@@ -397,7 +397,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                       decoration: BoxDecoration(
                                           color: const Color(0xffFFF9F8),
                                           borderRadius:
-                                          BorderRadius.circular(5)),
+                                              BorderRadius.circular(5)),
                                       child: Text(
                                         "Rejected",
                                         style: TextStyle(
@@ -417,10 +417,11 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                 ),
                                 const Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Apply Days",
@@ -438,7 +439,8 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                       ],
                                     ),
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Leave Balance",
@@ -456,7 +458,8 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                                       ],
                                     ),
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           "Approved By",

@@ -144,33 +144,36 @@ class _LoginState extends State<Login> {
                 const SizedBox(
                   height: 20,
                 ),
-                Container(
-                  width: Get.width,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(24),
-                      border:
-                          Border.all(color: const Color(0xffEEEFF0), width: 1)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "assets/images/google.png",
-                        height: 25,
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      const Text(
-                        "Google",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                          color: Color(0xff484A4D),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: Get.width,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(24),
+                        border: Border.all(
+                            color: const Color(0xffEEEFF0), width: 1)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/images/google.png",
+                          height: 25,
                         ),
-                      ),
-                    ],
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        const Text(
+                          "Google",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Color(0xff484A4D),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
