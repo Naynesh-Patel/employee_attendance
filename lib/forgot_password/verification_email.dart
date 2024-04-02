@@ -61,17 +61,14 @@ class _VerificationEmailState extends State<VerificationEmail> {
                   "Enter Verification Code",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
-                  height: Get.height * 0.01,
-                ),
                 const Text(
-                  "we have sent the code verification to your email.",
+                  "We have sent the code verification to your email.",
                   style: TextStyle(color: Colors.grey),
                 ),
                 SizedBox(
-                  height: Get.height * 0.03,
+                  height: Get.height * 0.04,
                 ),
-                Center(child: Image.asset("assets/images/verification_code.png")),
+                Center(child: Image.asset("assets/images/verification_code.png",height: Get.height * 0.36,)),
                 SizedBox(height: Get.height*0.05,),
                 PinPut(
                     fieldsCount: 4,

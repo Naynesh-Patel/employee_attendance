@@ -47,9 +47,6 @@ class _NewPasswordState extends State<NewPassword> {
                   "Enter New Password",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),
-                // SizedBox(
-                //   height: Get.height * 0.001,
-                // ),
                 const Text(
                   "Please enter your new password.",
                   style: TextStyle(color: Colors.grey),
@@ -57,7 +54,7 @@ class _NewPasswordState extends State<NewPassword> {
                 SizedBox(
                   height: Get.height * 0.03,
                 ),
-                Center(child: Image.asset("assets/images/new_password.png",height: Get.height*0.30)),
+                Center(child: Image.asset("assets/images/new_password.png",height: Get.height*0.33)),
                 SizedBox(
                   height: Get.height * 0.05,
                 ),
@@ -76,9 +73,9 @@ class _NewPasswordState extends State<NewPassword> {
                       ),
                       labelText: "Enter New Password",
                       labelStyle: const TextStyle(
-                        color: Colors.black
+                        color: Colors.blue
                       ),
-                      contentPadding: const EdgeInsets.all(5),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                       suffixIcon: IconButton(
                         icon: Icon(passwordVisible
                             ? Icons.visibility
@@ -113,9 +110,9 @@ class _NewPasswordState extends State<NewPassword> {
                       ),
                       labelText: "Re-Enter Password",
                       labelStyle: const TextStyle(
-                          color: Colors.black
+                          color: Colors.blue
                       ),
-                      contentPadding: const EdgeInsets.all(5),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                       suffixIcon: IconButton(
                         icon: Icon(passwordVisible
                             ? Icons.visibility

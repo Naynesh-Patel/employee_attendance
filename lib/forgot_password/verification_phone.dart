@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:employee_attendance/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -65,9 +63,6 @@ class _VerificationPhoneState extends State<VerificationPhone> {
                       "Enter Verification Code",
                       style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                     ),
-                    SizedBox(
-                      height: Get.height * 0.01,
-                    ),
                     const Text(
                       "we have sent the code verification to your mobile number.",
                       style: TextStyle(color: Colors.grey),
@@ -75,8 +70,8 @@ class _VerificationPhoneState extends State<VerificationPhone> {
                     SizedBox(
                       height: Get.height * 0.03,
                     ),
-                    Center(child: Image.asset("assets/images/verification_code.png")),
-                    SizedBox(height: Get.height*0.05,),
+                    Center(child: Image.asset("assets/images/verification_code.png",height: Get.height * 0.35)),
+                    SizedBox(height: Get.height*0.04,),
                 PinPut(
                   fieldsCount: 4,
                     eachFieldHeight: Get.height*0.08,

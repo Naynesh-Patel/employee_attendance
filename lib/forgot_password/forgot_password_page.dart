@@ -1,3 +1,4 @@
+import 'package:employee_attendance/controller/auth_controller.dart';
 import 'package:employee_attendance/forgot_password/verification_email.dart';
 import 'package:employee_attendance/forgot_password/verification_phone.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
@@ -13,7 +14,8 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
-  int selectedOption = 0;
+
+  AuthController authController=Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +49,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   "Forgot password 🤔",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),
-                // SizedBox(
-                //   height: Get.height * 0.001,
-                // ),
                 const Text(
                   "Select which contact details should we use to rest your password.",
                   style: TextStyle(color: Colors.grey),
@@ -70,7 +69,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   decoration: BoxDecoration(
                       border: Border.all(
                         color:
-                            selectedOption != 1 ? Colors.black12 : Colors.blue,
+                            authController.selectedOption != 1 ? Colors.black12 : Colors.blue,
                       ),
                       borderRadius: BorderRadius.circular(10)),
                   child: Row(
@@ -79,7 +78,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         margin: const EdgeInsets.symmetric(horizontal: 8),
                         padding: const EdgeInsets.all(9),
                         decoration: BoxDecoration(
-                            color: selectedOption != 1
+                            color: authController.selectedOption != 1
                                 ? Colors.grey.shade200
                                 : Colors.blue,
                             borderRadius: BorderRadius.circular(5)),
@@ -87,7 +86,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           "assets/images/email.png",
                           height: 18,
                           color:
-                              selectedOption != 1 ? Colors.black : Colors.white,
+                              authController.selectedOption != 1 ? Colors.black : Colors.white,
                         ),
                       ),
                       const Column(
@@ -113,9 +112,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         return Colors.black12;
                       }),
                       value: 1,
-                      groupValue: selectedOption,
+                      groupValue: authController.selectedOption,
                       onChanged: (value) {
-                        selectedOption = value!;
+                        authController.selectedOption = value!;
                         setState(() {});
                       },
                     ),
@@ -123,100 +122,74 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ],
                   ),
                 ),
-                // ListTile(
-                //     shape: OutlineInputBorder(
-                //         borderSide:
-                //         BorderSide(
-                //           color: selectedOption!=1?Colors.black12:Colors.blue,
-                //         ),
-                //         borderRadius: BorderRadius.circular(10)),
-                //     leading: Container(
-                //       padding: const EdgeInsets.all(8),
-                //       decoration: BoxDecoration(
-                //           color: selectedOption!=1?Colors.grey.shade200:Colors.blue,
-                //           borderRadius: BorderRadius.circular(3)),
-                //       child: Image.asset("assets/images/email.png",height: 20,color: selectedOption!=1?Colors.black:Colors.white,),
-                //     ),
-                //     title: const Text(
-                //       "Email",
-                //       style: TextStyle(fontWeight: FontWeight.w500),
-                //     ),
-                //     subtitle: const Text("parth@gmail.com"),
-                //     trailing: Transform.scale(
-                //       scale: 1.4,
-                //       child: Radio(
-                //         // activeColor: Colors.blue,
-                //         fillColor: MaterialStateProperty.resolveWith((states) {
-                //           if (states.contains(MaterialState.selected)) {
-                //             return Colors.blue;
-                //           }
-                //           // inactive
-                //           return Colors.black12;
-                //         }),
-                //         value: 1,
-                //         groupValue: selectedOption,
-                //         onChanged: (value) {
-                //           selectedOption = value!;
-                //           setState(() {});
-                //         },
-                //       ),
-                //     )),
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                ListTile(
-                    shape: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: selectedOption != 2
-                              ? Colors.black12
-                              : Colors.blue,
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                    leading: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          color: selectedOption != 2
-                              ? Colors.grey.shade200
-                              : Colors.blue,
-                          borderRadius: BorderRadius.circular(3)),
-                      child: Image.asset(
-                        "assets/images/telephone.png",
-                        height: 20,
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 6),
+                  decoration: BoxDecoration(
+                      border: Border.all(
                         color:
-                            selectedOption != 2 ? Colors.black : Colors.white,
+                        authController.selectedOption != 2 ? Colors.black12 : Colors.blue,
                       ),
-                    ),
-                    title: const Text(
-                      "Phone Number",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    subtitle: const Text("0128212820"),
-                    trailing: Transform.scale(
-                      scale: 1.4,
-                      child: Radio(
-                        // activeColor: Colors.blue,
-                        fillColor: MaterialStateProperty.resolveWith((states) {
-                          if (states.contains(MaterialState.selected)) {
-                            return Colors.blue;
-                          }
-                          // inactive
-                          return Colors.black12;
-                        }),
-                        value: 2,
-                        groupValue: selectedOption,
-                        onChanged: (value) {
-                          selectedOption = value!;
-                          setState(() {});
-                        },
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 8),
+                        padding: const EdgeInsets.all(9),
+                        decoration: BoxDecoration(
+                            color: authController.selectedOption != 2
+                                ? Colors.grey.shade200
+                                : Colors.blue,
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Image.asset(
+                          "assets/images/telephone.png",
+                          height: 18,
+                          color:
+                          authController.selectedOption != 2 ? Colors.black : Colors.white,
+                        ),
                       ),
-                    )),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Phone Number",
+                            style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15),
+                          ),
+                          Text("0128212820"),
+                        ],
+                      ),
+                      const Spacer(),
+                      Transform.scale(
+                        scale: 1.4,
+                        child: Radio(
+                          // activeColor: Colors.blue,
+                          fillColor: MaterialStateProperty.resolveWith((states) {
+                            if (states.contains(MaterialState.selected)) {
+                              return Colors.blue;
+                            }
+                            // inactive
+                            return Colors.black12;
+                          }),
+                          value: 2,
+                          groupValue: authController.selectedOption,
+                          onChanged: (value) {
+                            authController.selectedOption = value!;
+                            setState(() {});
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                ),
                 SizedBox(
                   height: Get.height * 0.04,
                 ),
                 CustomButton(
                     buttonText: "Continue",
                     onTap: () {
-                      selectedOption != 1
+                      authController.selectedOption != 1
                           ? Get.to(const VerificationPhone())
                           : Get.to(const VerificationEmail());
                     })

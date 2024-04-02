@@ -9,6 +9,8 @@ class AuthController extends GetxController {
 
   final pinPutController = TextEditingController();
 
+  int selectedOption = 0;
+
   late Timer timer;
   RxInt start = 30.obs;
 
