@@ -15,6 +15,13 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   AuthController authController = Get.find();
+  bool passwordVisible = false;
+  @override
+  void initState() {
+    super.initState();
+    passwordVisible = true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,15 +87,21 @@ class _LoginState extends State<Login> {
                   height: 20,
                 ),
                 CustomTextField(
-                  labelText: "Password",
-                  style: const TextStyle(
-                    fontSize: 13,
-                  ),
-                  // hintText: 'Password',
-                  suffixFixWidget: Icon(authController.passwordVisible.value
-                      ? Icons.visibility_off
-                      : Icons.visibility),
-                ),
+                    labelText: "Password",
+                    style: const TextStyle(
+                      fontSize: 13,
+                    ),
+                    // hintText: 'Password',
+                    suffixFixWidget: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          passwordVisible = !passwordVisible;
+                        });
+                      },
+                      icon: Icon(passwordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                    )),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
