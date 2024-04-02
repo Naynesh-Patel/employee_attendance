@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 // import 'package:image_picker/image_picker.dart';
 
 class ProfileController extends GetxController {
@@ -9,6 +11,9 @@ class ProfileController extends GetxController {
   String text5 = "All the Lorem Ipsum generators on theInternet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.";
   String text6 = "The generated Lorem Ipsum is there fore always free from repetition, injected humour, or non-characteristic words etc.";
 
-  // final ImagePicker picker = ImagePicker();
-  // XFile? image;
+  late TabController tabController;
+
+  final ImagePicker picker = ImagePicker();
+  XFile? image;
+
 }

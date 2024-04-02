@@ -1,9 +1,13 @@
+import 'dart:async';
+
+import 'package:employee_attendance/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
 import '../widget/custom_button.dart';
 import 'new_password.dart';
+
 
 class VerificationEmail extends StatefulWidget {
   const VerificationEmail({super.key});
@@ -13,7 +17,21 @@ class VerificationEmail extends StatefulWidget {
 }
 
 class _VerificationEmailState extends State<VerificationEmail> {
-  final _pinPutController = TextEditingController();
+
+  AuthController authController=Get.find();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    authController.startTimer();
+  }
+
+  @override
+  void dispose() {
+    authController.timer.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +44,7 @@ class _VerificationEmailState extends State<VerificationEmail> {
           onPressed: () {
             Get.back();
           },
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black,size: 20,),
         ),
       ),
       body: ListView(
@@ -41,61 +59,58 @@ class _VerificationEmailState extends State<VerificationEmail> {
                 ),
                 const Text(
                   "Enter Verification Code",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
-                ),
-                SizedBox(
-                  height: Get.height * 0.01,
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),
                 const Text(
-                  "we have sent the code verification to your email.",
+                  "We have sent the code verification to your email.",
                   style: TextStyle(color: Colors.grey),
                 ),
                 SizedBox(
                   height: Get.height * 0.04,
                 ),
-                Center(child: Image.asset("assets/images/forgot_password.png")),
-                SizedBox(
-                  height: Get.height * 0.04,
-                ),
+                Center(child: Image.asset("assets/images/verification_code.png",height: Get.height * 0.36,)),
+                SizedBox(height: Get.height*0.05,),
                 PinPut(
                     fieldsCount: 4,
-                    eachFieldHeight: 70.0,
-                    eachFieldWidth: 65,
+                    eachFieldHeight: Get.height*0.08,
+                    eachFieldWidth: Get.height*0.08,
                     eachFieldMargin: const EdgeInsets.symmetric(horizontal: 10),
-                    controller: _pinPutController,
+                    controller: authController.pinPutController,
                     submittedFieldDecoration: BoxDecoration(
                       border: Border.all(color: Colors.blue),
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     selectedFieldDecoration: BoxDecoration(
                       color: Colors.blue.shade50,
                       border: Border.all(color: Colors.blue),
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     followingFieldDecoration: BoxDecoration(
                       border: Border.all(color: Colors.black12),
-                      borderRadius: BorderRadius.circular(20),
-                    )),
+                      borderRadius: BorderRadius.circular(10),
+                    )
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    Obx(() => authController.start.value!=0?Text("${authController.start.value}"):const SizedBox.shrink(),),
                     TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Resend it",
-                        style: TextStyle(color: Colors.blue),
-                      ),
+                      onPressed: () {
+                        if(authController.start.value==0) {
+                          authController.start.value = 30;
+                          authController.startTimer();
+                        }
+                      },
+                      child:  const Text("Resend it",style: TextStyle(
+                          color: Colors.blue
+                      ),),
                     )
                   ],
                 ),
-                SizedBox(
-                  height: Get.height * 0.02,
-                ),
-                CustomButton(
-                    buttonText: "Verify",
-                    onTap: () {
-                      Get.to(const NewPassword());
-                    })
+                SizedBox(height: Get.height*0.02,),
+                CustomButton(buttonText: "Verify", onTap: () {
+                  Get.to(const NewPassword());
+                } )
               ],
             ),
           ),
