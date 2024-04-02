@@ -53,7 +53,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   FloatingActionButton.small(
                     backgroundColor: const Color(0xff3085FE),
                     shape: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.transparent),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(10)),
                     onPressed: () async {
                       profileController.image = await profileController.picker

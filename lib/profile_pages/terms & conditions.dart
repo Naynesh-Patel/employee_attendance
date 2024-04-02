@@ -15,6 +15,7 @@ class TermsConditionsPage extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.white,
         centerTitle: true,
+        elevation: 0,
         title: const Text(
           "Terms & Conditions",
           style: TextStyle(
@@ -36,7 +37,7 @@ class TermsConditionsPage extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

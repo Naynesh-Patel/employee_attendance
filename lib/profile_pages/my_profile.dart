@@ -28,6 +28,7 @@ class _MyProfilePageState extends State<MyProfilePage>
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.white,
+        elevation: 0,
         centerTitle: true,
         title: const Text(
           "My Profile",
@@ -48,7 +49,7 @@ class _MyProfilePageState extends State<MyProfilePage>
             )),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
             SizedBox(height: Get.height * 0.02),
@@ -77,6 +78,7 @@ class _MyProfilePageState extends State<MyProfilePage>
                           BoxDecoration(borderRadius: BorderRadius.circular(8)),
                       child: const Center(
                           child: Text('Personal',
+                              maxLines: 1,
                               style: TextStyle(fontWeight: FontWeight.w400))),
                     ),
                   ),
@@ -89,6 +91,7 @@ class _MyProfilePageState extends State<MyProfilePage>
                           borderRadius: BorderRadius.circular(8)),
                       child: const Center(
                           child: Text('Professional',
+                              maxLines: 1,
                               style: TextStyle(fontWeight: FontWeight.w400))),
                     ),
                   ),
@@ -102,6 +105,7 @@ class _MyProfilePageState extends State<MyProfilePage>
                       child: const Center(
                           child: Text(
                         'Documents',
+                        maxLines: 1,
                         style: TextStyle(fontWeight: FontWeight.w400),
                       )),
                     ),

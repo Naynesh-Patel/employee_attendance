@@ -50,7 +50,7 @@ class _VerificationEmailState extends State<VerificationEmail> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -71,15 +71,16 @@ class _VerificationEmailState extends State<VerificationEmail> {
                 Center(
                     child: Image.asset(
                   "assets/images/verification_code.png",
-                  height: Get.height * 0.36,
+                  height: Get.height * 0.37
+                      ,
                 )),
                 SizedBox(
                   height: Get.height * 0.05,
                 ),
                 PinPut(
                     fieldsCount: 4,
-                    eachFieldHeight: Get.height * 0.08,
-                    eachFieldWidth: Get.height * 0.08,
+                    eachFieldHeight: Get.height * 0.07,
+                    eachFieldWidth: Get.height * 0.07,
                     eachFieldMargin: const EdgeInsets.symmetric(horizontal: 10),
                     controller: authController.pinPutController,
                     submittedFieldDecoration: BoxDecoration(

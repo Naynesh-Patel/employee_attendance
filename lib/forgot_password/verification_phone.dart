@@ -53,7 +53,7 @@ class _VerificationPhoneState extends State<VerificationPhone> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -75,26 +75,26 @@ class _VerificationPhoneState extends State<VerificationPhone> {
                     child: Image.asset("assets/images/verification_code.png",
                         height: Get.height * 0.35)),
                 SizedBox(
-                  height: Get.height * 0.04,
+                  height: Get.height * 0.05,
                 ),
                 PinPut(
                     fieldsCount: 4,
-                    eachFieldHeight: Get.height * 0.08,
-                    eachFieldWidth: Get.height * 0.08,
+                    eachFieldHeight: Get.height * 0.07,
+                    eachFieldWidth: Get.height * 0.07,
                     eachFieldMargin: const EdgeInsets.symmetric(horizontal: 10),
                     controller: authController.pinPutController,
                     submittedFieldDecoration: BoxDecoration(
                       border: Border.all(color: Colors.blue),
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     selectedFieldDecoration: BoxDecoration(
                       color: Colors.blue.shade50,
                       border: Border.all(color: Colors.blue),
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     followingFieldDecoration: BoxDecoration(
                       border: Border.all(color: Colors.black12),
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                     )),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
