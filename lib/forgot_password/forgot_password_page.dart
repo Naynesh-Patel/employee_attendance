@@ -2,6 +2,7 @@ import 'package:employee_attendance/forgot_password/verification_email.dart';
 import 'package:employee_attendance/forgot_password/verification_phone.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -25,7 +26,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           onPressed: () {
             Get.back();
           },
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+            size: 20,
+          ),
         ),
       ),
       body: ListView(
@@ -40,11 +45,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
                 const Text(
                   "Forgot password 🤔",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
-                  height: Get.height * 0.01,
-                ),
+                // SizedBox(
+                //   height: Get.height * 0.001,
+                // ),
                 const Text(
                   "Select which contact details should we use to rest your password.",
                   style: TextStyle(color: Colors.grey),
@@ -52,62 +57,134 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 SizedBox(
                   height: Get.height * 0.03,
                 ),
-                Center(child: Image.asset("assets/images/forgot_password.png")),
+                Center(
+                    child: Image.asset(
+                  "assets/images/forgot_password.png",
+                  height: Get.height * 0.30,
+                )),
                 SizedBox(
                   height: Get.height * 0.04,
                 ),
-                ListTile(
-                    shape: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(
-                          color: selectedOption!=1?Colors.black12:Colors.blue,
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                    leading: Container(
-                      padding: const EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                          color: selectedOption!=1?Colors.grey.shade200:Colors.blue,
-                          borderRadius: BorderRadius.circular(3)),
-                      child: Image.asset("assets/images/email.png",height: 20,color: selectedOption!=1?Colors.black:Colors.white,),
-                    ),
-                    title: const Text(
-                      "Email",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    subtitle: const Text("parth@gmail.com"),
-                    trailing: Transform.scale(
-                      scale: 1.4,
-                      child: Radio(
-                        // activeColor: Colors.blue,
-                        fillColor: MaterialStateProperty.resolveWith((states) {
-                          if (states.contains(MaterialState.selected)) {
-                            return Colors.blue;
-                          }
-                          // inactive
-                          return Colors.black12;
-                        }),
-                        value: 1,
-                        groupValue: selectedOption,
-                        onChanged: (value) {
-                          selectedOption = value!;
-                          setState(() {});
-                        },
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 6),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color:
+                            selectedOption != 1 ? Colors.black12 : Colors.blue,
                       ),
-                    )),
-                SizedBox(height: Get.height*0.02,),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 8),
+                        padding: const EdgeInsets.all(9),
+                        decoration: BoxDecoration(
+                            color: selectedOption != 1
+                                ? Colors.grey.shade200
+                                : Colors.blue,
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Image.asset(
+                          "assets/images/email.png",
+                          height: 18,
+                          color:
+                              selectedOption != 1 ? Colors.black : Colors.white,
+                        ),
+                      ),
+                      const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Email",
+                            style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15),
+                          ),
+                          Text("parth@gmail.com"),
+                        ],
+                      ),
+            const Spacer(),
+            Transform.scale(
+                    scale: 1.4,
+                    child: Radio(
+                      // activeColor: Colors.blue,
+                      fillColor: MaterialStateProperty.resolveWith((states) {
+                        if (states.contains(MaterialState.selected)) {
+                          return Colors.blue;
+                        }
+                        // inactive
+                        return Colors.black12;
+                      }),
+                      value: 1,
+                      groupValue: selectedOption,
+                      onChanged: (value) {
+                        selectedOption = value!;
+                        setState(() {});
+                      },
+                    ),
+                  )
+                    ],
+                  ),
+                ),
+                // ListTile(
+                //     shape: OutlineInputBorder(
+                //         borderSide:
+                //         BorderSide(
+                //           color: selectedOption!=1?Colors.black12:Colors.blue,
+                //         ),
+                //         borderRadius: BorderRadius.circular(10)),
+                //     leading: Container(
+                //       padding: const EdgeInsets.all(8),
+                //       decoration: BoxDecoration(
+                //           color: selectedOption!=1?Colors.grey.shade200:Colors.blue,
+                //           borderRadius: BorderRadius.circular(3)),
+                //       child: Image.asset("assets/images/email.png",height: 20,color: selectedOption!=1?Colors.black:Colors.white,),
+                //     ),
+                //     title: const Text(
+                //       "Email",
+                //       style: TextStyle(fontWeight: FontWeight.w500),
+                //     ),
+                //     subtitle: const Text("parth@gmail.com"),
+                //     trailing: Transform.scale(
+                //       scale: 1.4,
+                //       child: Radio(
+                //         // activeColor: Colors.blue,
+                //         fillColor: MaterialStateProperty.resolveWith((states) {
+                //           if (states.contains(MaterialState.selected)) {
+                //             return Colors.blue;
+                //           }
+                //           // inactive
+                //           return Colors.black12;
+                //         }),
+                //         value: 1,
+                //         groupValue: selectedOption,
+                //         onChanged: (value) {
+                //           selectedOption = value!;
+                //           setState(() {});
+                //         },
+                //       ),
+                //     )),
+                SizedBox(
+                  height: Get.height * 0.02,
+                ),
                 ListTile(
                     shape: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(
-                          color: selectedOption!=2?Colors.black12:Colors.blue,
+                        borderSide: BorderSide(
+                          color: selectedOption != 2
+                              ? Colors.black12
+                              : Colors.blue,
                         ),
                         borderRadius: BorderRadius.circular(10)),
                     leading: Container(
-                      padding: const EdgeInsets.all(7),
+                      padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                          color: selectedOption!=2?Colors.grey.shade200:Colors.blue,
+                          color: selectedOption != 2
+                              ? Colors.grey.shade200
+                              : Colors.blue,
                           borderRadius: BorderRadius.circular(3)),
-                      child: Image.asset("assets/images/telephone.png",height: 20,color: selectedOption!=2?Colors.black:Colors.white,),
+                      child: Image.asset(
+                        "assets/images/telephone.png",
+                        height: 20,
+                        color:
+                            selectedOption != 2 ? Colors.black : Colors.white,
+                      ),
                     ),
                     title: const Text(
                       "Phone Number",
@@ -133,10 +210,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         },
                       ),
                     )),
-                SizedBox(height: Get.height*0.04,),
-                CustomButton(buttonText: "Continue", onTap: () {
-selectedOption!=1?Get.to(const VerificationPhone()):Get.to(const VerificationEmail());
-                } )
+                SizedBox(
+                  height: Get.height * 0.04,
+                ),
+                CustomButton(
+                    buttonText: "Continue",
+                    onTap: () {
+                      selectedOption != 1
+                          ? Get.to(const VerificationPhone())
+                          : Get.to(const VerificationEmail());
+                    })
               ],
             ),
           ),

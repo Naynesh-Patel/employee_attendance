@@ -13,17 +13,18 @@ class PrivacyPolicyPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.white,
-        elevation: 0,
-        title: const Text("Privacy Policy",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+        title: const Text(
+          "Privacy Policy",
+          style: TextStyle(fontSize: 15,
+              letterSpacing: 0.5,
+              fontWeight: FontWeight.w900),
         ),
+        leading: IconButton(onPressed: () {
+          Get.back();
+        }, icon: const Icon(Icons.arrow_back_ios_new,size: 20,)),
       ),
       body: ListView(
         children: [
@@ -49,7 +50,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                   height: Get.height * 0.02,
                 ),
                 Text(profileController.text3,style: const TextStyle(
-                    height: 1.3,fontSize: 15
+                    height: 1.3
                 )),
                 SizedBox(
                   height: Get.height * 0.02,
@@ -61,13 +62,13 @@ class PrivacyPolicyPage extends StatelessWidget {
                   height: Get.height * 0.02,
                 ),
                 Text(profileController.text4,style: const TextStyle(
-                    height: 1.4,fontSize: 15
+                    height: 1.4
                 ),),
                 Text(profileController.text5,style: const TextStyle(
-                    height: 1.4,fontSize: 15
+                    height: 1.4
                 ),),
                 Text(profileController.text6,style: const TextStyle(
-                    height: 1.4,fontSize: 15
+                    height: 1.4
                 ),),
               ],
             ),
