@@ -18,14 +18,13 @@ class AuthController extends GetxController {
     const oneSec = Duration(seconds: 1);
     timer = Timer.periodic(
       oneSec,
-          (Timer timer) {
+      (Timer timer) {
         if (start.value == 0) {
-            timer.cancel();
+          timer.cancel();
         } else {
-            start--;
+          start--;
         }
       },
     );
   }
-
 }

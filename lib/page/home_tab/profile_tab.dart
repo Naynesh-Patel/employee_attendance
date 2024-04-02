@@ -19,7 +19,6 @@ class ProfileTab extends StatefulWidget {
 }
 
 class _ProfileTabState extends State<ProfileTab> {
-
   ProfileController profileController = Get.find();
 
   @override
@@ -37,8 +36,8 @@ class _ProfileTabState extends State<ProfileTab> {
                 ),
                 Stack(alignment: Alignment.bottomRight, children: [
                   SizedBox(
-                    height: Get.height*0.16,
-                    width: Get.width*0.35,
+                    height: Get.height * 0.16,
+                    width: Get.width * 0.35,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(60),
                       child: profileController.image == null
@@ -46,16 +45,15 @@ class _ProfileTabState extends State<ProfileTab> {
                               "assets/images/user_profile.png",
                             )
                           : Image.file(
-                        File(profileController.image!.path),
-                        fit: BoxFit.cover,
+                              File(profileController.image!.path),
+                              fit: BoxFit.cover,
                             ),
                     ),
                   ),
                   FloatingActionButton.small(
                     backgroundColor: const Color(0xff3085FE),
                     shape: OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.transparent),
+                        borderSide: const BorderSide(color: Colors.transparent),
                         borderRadius: BorderRadius.circular(10)),
                     onPressed: () async {
                       profileController.image = await profileController.picker

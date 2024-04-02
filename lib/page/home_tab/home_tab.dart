@@ -1,6 +1,6 @@
 import 'package:employee_attendance/profile_pages/notification.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swipe_button/flutter_swipe_button.dart';
+// import 'package:flutter_swipe_button/flutter_swipe_button.dart';
 import 'package:get/get.dart';
 import 'package:horizontal_date_picker_flutter/horizontal_date_picker_flutter.dart';
 
@@ -82,7 +82,8 @@ class _HomeTabState extends State<HomeTab> {
             shrinkWrap: true,
             children: [
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -140,7 +141,7 @@ class _HomeTabState extends State<HomeTab> {
                             children: [
                               Expanded(
                                 child: Container(
-                                  height: 133,
+                                  // height: 133,
                                   width: double.maxFinite,
                                   margin: const EdgeInsets.all(8),
                                   decoration: BoxDecoration(
@@ -148,234 +149,272 @@ class _HomeTabState extends State<HomeTab> {
                                     color: Colors.white,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 20),
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                       Row(
-                                         children: [
-                                           Container(
-                                             padding: const EdgeInsets.all(8),
-                                             decoration: BoxDecoration(
-                                               color: const Color(0xffEAF3FF),
-                                               borderRadius: BorderRadius.circular(10)
-                                             ),
-                                             child: Image.asset('assets/images/check-in_icon.png',
-                                             height: 15,width: 15,
-                                             ),
-                                           ),
-                                           const SizedBox(width: 10),
-                                           const Text("Check In",
-                                             style: TextStyle(
-                                                 fontSize: 14,
-                                                 fontWeight: FontWeight.w400,
-                                                 color: Color(0xff2E3034)),
-                                           )
-
-                                         ],
-                                       ),
-                                        // SizedBox(height: 12),
-                                        const Text('10:20 am',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18,
-                                              color: Color(0xff2B2E31)),
-                                        ),
-                                        // SizedBox(height: 6),
-                                        const Text('On Time',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14,
-                                              color: Color(0xff46494C)),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                  child: Container(
-                                    height: 133,
-                                    width: double.maxFinite,
-                                    margin: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: Colors.white,
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Container(
-                                                padding: const EdgeInsets.all(8),
-                                                decoration: BoxDecoration(
-                                                    color: const Color(0xffEAF3FF),
-                                                    borderRadius: BorderRadius.circular(10)
-                                                ),
-                                                child: Image.asset('assets/images/check_out_icon.png',
-                                                  height: 15,width: 15,
-                                                ),
-                                              ),
-                                              const SizedBox(width: 10),
-                                              const Text("Check Out",
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w400,
-                                                    color: Color(0xff2E3034)),
-                                              )
-
-                                            ],
-                                          ),
-                                          // SizedBox(height: 12),
-                                          const Text('07:00 pm',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18,
-                                                color: Color(0xff2B2E31)),
-                                          ),
-                                          // SizedBox(height: 6),
-                                          const Text('Go Home',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 14,
-                                                color: Color(0xff46494C)),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  height: 133,
-                                  width: double.maxFinite,
-                                  margin: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.white,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              padding: const EdgeInsets.all(9),
-                                              decoration: BoxDecoration(
-                                                  color: const Color(0xffEAF3FF),
-                                                  borderRadius: BorderRadius.circular(10)
-                                              ),
-                                              child: Image.asset('assets/images/break-time_icon.png',
-                                                height: 15,width: 15,
-                                              ),
-                                            ),
-                                            const SizedBox(width: 8),
-                                            const Text("Break Time",
-                                              style: TextStyle(
-                                                  fontSize: 13.8,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: Color(0xff2E3034)),
-                                            )
-
-                                          ],
-                                        ),
-                                        // SizedBox(height: 12),
-                                        const Text('00:30 min',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18,
-                                              color: Color(0xff2B2E31)),
-                                        ),
-                                        const Text('Avg Time 30 min',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 13,
-                                              color: Color(0xff46494C)),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  height: 133,
-                                  width: double.maxFinite,
-                                  margin: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.white,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Row(
                                           children: [
                                             Container(
                                               padding: const EdgeInsets.all(8),
                                               decoration: BoxDecoration(
-                                                  color: const Color(0xffEAF3FF),
-                                                  borderRadius: BorderRadius.circular(10)
-                                              ),
-                                              child: Image.asset('assets/images/calendar_icon_colour.png',
-                                                height: 15,width: 15,
+                                                  color:
+                                                      const Color(0xffEAF3FF),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Image.asset(
+                                                'assets/images/check-in_icon.png',
+                                                height: 15,
+                                                width: 15,
                                               ),
                                             ),
                                             const SizedBox(width: 10),
-                                            const Text("Total Days",
+                                            const Text(
+                                              "Check In",
                                               style: TextStyle(
-                                                  fontSize: 14,
+                                                  fontSize: 12,
                                                   fontWeight: FontWeight.w400,
                                                   color: Color(0xff2E3034)),
                                             )
-
                                           ],
                                         ),
-                                        const Text('28',
+                                        // SizedBox(height: 12),
+                                        const Text(
+                                          '10:20 am',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 18,
+                                              fontSize: 14,
                                               color: Color(0xff2B2E31)),
                                         ),
-                                        const Text('Working Days',
+                                        // SizedBox(height: 6),
+                                        const Text(
+                                          'On Time',
                                           style: TextStyle(
                                               fontWeight: FontWeight.w400,
-                                              fontSize: 14,
+                                              fontSize: 12,
                                               color: Color(0xff46494C)),
                                         )
                                       ],
                                     ),
                                   ),
-                                ),),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  // height: 133,
+                                  width: double.maxFinite,
+                                  margin: const EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 20),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Container(
+                                              padding: const EdgeInsets.all(8),
+                                              decoration: BoxDecoration(
+                                                  color:
+                                                      const Color(0xffEAF3FF),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Image.asset(
+                                                'assets/images/check_out_icon.png',
+                                                height: 15,
+                                                width: 15,
+                                              ),
+                                            ),
+                                            const SizedBox(width: 10),
+                                            const Text(
+                                              "Check Out",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Color(0xff2E3034)),
+                                            )
+                                          ],
+                                        ),
+                                        // SizedBox(height: 12),
+                                        const Text(
+                                          '07:00 pm',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                              color: Color(0xff2B2E31)),
+                                        ),
+                                        // SizedBox(height: 6),
+                                        const Text(
+                                          'Go Home',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 12,
+                                              color: Color(0xff46494C)),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  // height: 133,
+                                  width: double.maxFinite,
+                                  margin: const EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 20),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Container(
+                                              padding: const EdgeInsets.all(9),
+                                              decoration: BoxDecoration(
+                                                  color:
+                                                      const Color(0xffEAF3FF),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Image.asset(
+                                                'assets/images/break-time_icon.png',
+                                                height: 15,
+                                                width: 15,
+                                              ),
+                                            ),
+                                            const SizedBox(width: 8),
+                                            const Text(
+                                              "Break Time",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Color(0xff2E3034)),
+                                            )
+                                          ],
+                                        ),
+                                        // SizedBox(height: 12),
+                                        const Text(
+                                          '00:30 min',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                              color: Color(0xff2B2E31)),
+                                        ),
+                                        const Text(
+                                          'Avg Time 30 min',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 12,
+                                              color: Color(0xff46494C)),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  // height: 133,
+                                  width: double.maxFinite,
+                                  margin: const EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 20),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Container(
+                                              padding: const EdgeInsets.all(8),
+                                              decoration: BoxDecoration(
+                                                  color:
+                                                      const Color(0xffEAF3FF),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Image.asset(
+                                                'assets/images/calendar_icon_colour.png',
+                                                height: 15,
+                                                width: 15,
+                                              ),
+                                            ),
+                                            const SizedBox(width: 10),
+                                            const Text(
+                                              "Total Days",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Color(0xff2E3034)),
+                                            )
+                                          ],
+                                        ),
+                                        const Text(
+                                          '28',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                              color: Color(0xff2B2E31)),
+                                        ),
+                                        const Text(
+                                          'Working Days',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 12,
+                                              color: Color(0xff46494C)),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                           const SizedBox(
                             height: 10,
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 const Text(
                                   "Your Activity",
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 17),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 17),
                                 ),
                                 TextButton(
                                   onPressed: () {},
@@ -397,17 +436,18 @@ class _HomeTabState extends State<HomeTab> {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
-                            child:  Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Container(
                                   padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                       color: const Color(0xffEAF3FF),
-                                      borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  child: Image.asset('assets/images/check-in_icon.png',
-                                    height: 15,width: 15,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Image.asset(
+                                    'assets/images/check-in_icon.png',
+                                    height: 15,
+                                    width: 15,
                                   ),
                                 ),
                                 const Column(
@@ -457,17 +497,18 @@ class _HomeTabState extends State<HomeTab> {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12)),
-                            child:  Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Container(
                                   padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                       color: const Color(0xffEAF3FF),
-                                      borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  child: Image.asset('assets/images/break-time_icon.png',
-                                    height: 15,width: 15,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Image.asset(
+                                    'assets/images/break-time_icon.png',
+                                    height: 15,
+                                    width: 15,
                                   ),
                                 ),
                                 const Column(
@@ -509,7 +550,6 @@ class _HomeTabState extends State<HomeTab> {
                               ],
                             ),
                           ),
-
                         ],
                       ),
                     ),
@@ -518,36 +558,36 @@ class _HomeTabState extends State<HomeTab> {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 40,horizontal: 10),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SwipeButton.expand(
-                // trackPadding: EdgeInsets.symmetric(horizontal: 10),
-                // thumbPadding: EdgeInsets.symmetric(horizontal: 10),
-                thumb: const Icon(
-                  Icons.arrow_forward_outlined,
-                  color: Color(0xff64A3FE),
-                ),
-                activeThumbColor: Colors.white,
-                activeTrackColor: const Color(0xff428EFB),
-                onSwipe: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text("Checked In "),
-                      backgroundColor: Colors.green,
-                    ),
-                  );
-                },
-                child: const Text(
-                  "Swipe to Check In",
-                  style: TextStyle(
-                    color: Color(0xffF3F8FF),
-                  ),
-                ),
-              ),
-            ),
-          )
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
+          //   child: Align(
+          //     alignment: Alignment.bottomCenter,
+          //     child: SwipeButton.expand(
+          //       // trackPadding: EdgeInsets.symmetric(horizontal: 10),
+          //       // thumbPadding: EdgeInsets.symmetric(horizontal: 10),
+          //       thumb: const Icon(
+          //         Icons.arrow_forward_outlined,
+          //         color: Color(0xff64A3FE),
+          //       ),
+          //       activeThumbColor: Colors.white,
+          //       activeTrackColor: const Color(0xff428EFB),
+          //       onSwipe: () {
+          //         ScaffoldMessenger.of(context).showSnackBar(
+          //           const SnackBar(
+          //             content: Text("Checked In "),
+          //             backgroundColor: Colors.green,
+          //           ),
+          //         );
+          //       },
+          //       child: const Text(
+          //         "Swipe to Check In",
+          //         style: TextStyle(
+          //           color: Color(0xffF3F8FF),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );

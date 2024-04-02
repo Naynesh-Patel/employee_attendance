@@ -10,6 +10,13 @@ class ChangePassword extends StatefulWidget {
 }
 
 class _ChangePasswordState extends State<ChangePassword> {
+  bool passwordVisible = false;
+  @override
+  void initState() {
+    super.initState();
+    passwordVisible = true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,11 +49,20 @@ class _ChangePasswordState extends State<ChangePassword> {
               style: const TextStyle(
                 color: Colors.black,
               ),
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                   labelText: 'Password',
                   labelStyle: TextStyle(color: Color(0xff3085FE), fontSize: 12),
                   contentPadding: EdgeInsets.all(8),
-                  suffixIcon: Icon(Icons.visibility),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        passwordVisible = !passwordVisible;
+                      });
+                    },
+                    icon: Icon(passwordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                  ),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xff3085FE))),
                   enabledBorder: OutlineInputBorder(
@@ -64,14 +80,23 @@ class _ChangePasswordState extends State<ChangePassword> {
                   return null;
                 }
               },
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.black,
               ),
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                   labelText: 'Confirm Password',
                   labelStyle: TextStyle(color: Color(0xff3085FE), fontSize: 12),
                   contentPadding: EdgeInsets.all(8),
-                  suffixIcon: Icon(Icons.visibility),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        passwordVisible = !passwordVisible;
+                      });
+                    },
+                    icon: Icon(passwordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                  ),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xff3085FE))),
                   enabledBorder: OutlineInputBorder(
