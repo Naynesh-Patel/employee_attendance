@@ -61,6 +61,7 @@ class _HomeState extends State<Home> {
 
   Widget menu() {
     return Container(
+
       color: const Color(0xFFffffff),
       child: TabBar(
         labelColor: Colors.white,
@@ -97,7 +98,7 @@ class _HomeState extends State<Home> {
           // )),
           Tab(
               icon: Image.asset(
-            "assets/images/home.png",
+            "assets/images/home_icon.png",
             height: 24,
             color: selectedColor == 0 ? Colors.blue : Colors.black,
           )),
@@ -121,6 +122,7 @@ class _HomeState extends State<Home> {
           )),
         ],
       ),
+
     );
   }
 }
