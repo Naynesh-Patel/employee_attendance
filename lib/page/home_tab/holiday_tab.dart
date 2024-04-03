@@ -13,6 +13,7 @@ class _HolidayTabState extends State<HolidayTab> {
     return Scaffold(
       backgroundColor: const Color(0xffFAFAFA),
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.white,
         title: const Text(
           'Holiday List',
@@ -31,7 +32,6 @@ class _HolidayTabState extends State<HolidayTab> {
                 itemBuilder: (context, index) {
                   return Container(
                     width: double.maxFinite,
-                    height: 100,
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     padding: const EdgeInsets.only(right: 20),
                     decoration: BoxDecoration(
@@ -72,6 +72,7 @@ class _HolidayTabState extends State<HolidayTab> {
                                   ),
                                 ],
                               ),
+                              SizedBox(height: 10),
                               Text(
                                 'Festival',
                                 style: TextStyle(
