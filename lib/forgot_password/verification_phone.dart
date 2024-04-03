@@ -1,3 +1,4 @@
+import 'package:employee_attendance/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pin_put/pin_put.dart';
@@ -13,13 +14,22 @@ class VerificationPhone extends StatefulWidget {
 }
 
 class _VerificationPhoneState extends State<VerificationPhone> {
-  final _pinPutController = TextEditingController();
+  AuthController authController = Get.find();
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    startTimer();
+    setState(() {
+      authController.startTimer();
+    });
+  }
+
+  @override
+  void dispose() {
+    authController.timer.cancel();
+    super.dispose();
+    setState(() {});
   }
 
   @override
@@ -33,13 +43,17 @@ class _VerificationPhoneState extends State<VerificationPhone> {
           onPressed: () {
             Get.back();
           },
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+            size: 20,
+          ),
         ),
       ),
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -48,53 +62,64 @@ class _VerificationPhoneState extends State<VerificationPhone> {
                 ),
                 const Text(
                   "Enter Verification Code",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
-                ),
-                SizedBox(
-                  height: Get.height * 0.01,
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),
                 const Text(
                   "we have sent the code verification to your mobile number.",
                   style: TextStyle(color: Colors.grey),
                 ),
                 SizedBox(
-                  height: Get.height * 0.04,
+                  height: Get.height * 0.03,
                 ),
-                Center(child: Image.asset("assets/images/forgot_password.png")),
+                Center(
+                    child: Image.asset("assets/images/verification_code.png",
+                        height: Get.height * 0.35)),
                 SizedBox(
-                  height: Get.height * 0.04,
+                  height: Get.height * 0.05,
                 ),
                 PinPut(
                     fieldsCount: 4,
-                    eachFieldHeight: 70.0,
-                    eachFieldWidth: 65,
+                    eachFieldHeight: Get.height * 0.07,
+                    eachFieldWidth: Get.height * 0.07,
                     eachFieldMargin: const EdgeInsets.symmetric(horizontal: 10),
-                    controller: _pinPutController,
+                    controller: authController.pinPutController,
                     submittedFieldDecoration: BoxDecoration(
                       border: Border.all(color: Colors.blue),
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     selectedFieldDecoration: BoxDecoration(
                       color: Colors.blue.shade50,
                       border: Border.all(color: Colors.blue),
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     followingFieldDecoration: BoxDecoration(
                       border: Border.all(color: Colors.black12),
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                     )),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    _start <= 0
-                        ? TextButton(
-                            onPressed: () {},
-                            child: const Text(
-                              "Resend it",
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                          )
-                        : Text("${_start.toString()}")
+                    Row(
+                      children: [
+                        Obx(
+                          () => authController.start.value != 0
+                              ? Text("${authController.start.value}")
+                              : const SizedBox.shrink(),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            if (authController.start.value == 0) {
+                              authController.start.value = 30;
+                              authController.startTimer();
+                            }
+                          },
+                          child: const Text(
+                            "Resend it",
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
                 SizedBox(
@@ -111,11 +136,5 @@ class _VerificationPhoneState extends State<VerificationPhone> {
         ],
       ),
     );
-  }
-
-  int _start = 30;
-
-  void startTimer() {
-    const oneSec = Duration(seconds: 1);
   }
 }

@@ -12,22 +12,32 @@ class PrivacyPolicyPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.white,
-        elevation: 0,
-        title: const Text("Privacy Policy",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+        elevation: 0,
+        title: const Text(
+          "Privacy Policy",
+          style: TextStyle(
+              fontSize: 15,
+              letterSpacing: 0.5,
+              color: Colors.black,
+              fontWeight: FontWeight.w900),
         ),
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios_new,
+              size: 20,
+              color: Colors.black,
+            )),
       ),
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -36,38 +46,46 @@ class PrivacyPolicyPage extends StatelessWidget {
                 ),
                 const Row(
                   children: [
-                    Text("Last update: ",style: TextStyle(
-                        color: Colors.grey
-                    ),),
-                    Text("12/8/2023",style: TextStyle(
-                        color: Colors.grey
-                    ),),
+                    Text(
+                      "Last update: ",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    Text(
+                      "12/8/2023",
+                      style: TextStyle(color: Colors.grey),
+                    ),
                   ],
                 ),
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                Text(profileController.text3,style: const TextStyle(
-                    height: 1.3,fontSize: 15
-                )),
+                Text(profileController.text3,
+                    style: const TextStyle(height: 1.3)),
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                const Text("Privacy Policy",style: TextStyle(
-                    color: Colors.blue,fontWeight: FontWeight.w600,fontSize: 18
-                ),),
+                const Text(
+                  "Privacy Policy",
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18),
+                ),
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                Text(profileController.text4,style: const TextStyle(
-                    height: 1.4,fontSize: 15
-                ),),
-                Text(profileController.text5,style: const TextStyle(
-                    height: 1.4,fontSize: 15
-                ),),
-                Text(profileController.text6,style: const TextStyle(
-                    height: 1.4,fontSize: 15
-                ),),
+                Text(
+                  profileController.text4,
+                  style: const TextStyle(height: 1.4),
+                ),
+                Text(
+                  profileController.text5,
+                  style: const TextStyle(height: 1.4),
+                ),
+                Text(
+                  profileController.text6,
+                  style: const TextStyle(height: 1.4),
+                ),
               ],
             ),
           ),

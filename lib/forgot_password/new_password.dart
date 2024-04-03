@@ -30,13 +30,13 @@ class _NewPasswordState extends State<NewPassword> {
           onPressed: () {
             Get.back();
           },
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black,size: 20,),
         ),
       ),
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,21 +45,18 @@ class _NewPasswordState extends State<NewPassword> {
                 ),
                 const Text(
                   "Enter New Password",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
-                ),
-                SizedBox(
-                  height: Get.height * 0.01,
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),
                 const Text(
                   "Please enter your new password.",
                   style: TextStyle(color: Colors.grey),
                 ),
                 SizedBox(
-                  height: Get.height * 0.04,
+                  height: Get.height * 0.03,
                 ),
-                Center(child: Image.asset("assets/images/forgot_password.png")),
+                Center(child: Image.asset("assets/images/new_password.png",height: Get.height*0.33)),
                 SizedBox(
-                  height: Get.height * 0.04,
+                  height: Get.height * 0.05,
                 ),
                 Container(
                     decoration: BoxDecoration(
@@ -76,9 +73,9 @@ class _NewPasswordState extends State<NewPassword> {
                       ),
                       labelText: "Enter New Password",
                       labelStyle: const TextStyle(
-                        color: Colors.black
+                        color: Colors.blue
                       ),
-                      contentPadding: const EdgeInsets.all(10),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                       suffixIcon: IconButton(
                         icon: Icon(passwordVisible
                             ? Icons.visibility
@@ -113,9 +110,9 @@ class _NewPasswordState extends State<NewPassword> {
                       ),
                       labelText: "Re-Enter Password",
                       labelStyle: const TextStyle(
-                          color: Colors.black
+                          color: Colors.blue
                       ),
-                      contentPadding: const EdgeInsets.all(10),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                       suffixIcon: IconButton(
                         icon: Icon(passwordVisible
                             ? Icons.visibility

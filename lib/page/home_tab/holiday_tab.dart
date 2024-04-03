@@ -35,7 +35,7 @@ class _HolidayTabState extends State<HolidayTab> {
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     padding: const EdgeInsets.only(right: 20),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
                         boxShadow: const [
                           BoxShadow(
@@ -48,12 +48,11 @@ class _HolidayTabState extends State<HolidayTab> {
                           height: 100,
                           width: 20,
                           decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(15),
-                                topLeft: Radius.circular(15)),
-                            // color: Color(0xffE7E7E8),
-                            color: Colors.blue
-                          ),
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(15),
+                                  topLeft: Radius.circular(15)),
+                              // color: Color(0xffE7E7E8),
+                              color: Colors.blue),
                         ),
                         const SizedBox(width: 10),
                         const Expanded(

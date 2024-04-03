@@ -22,9 +22,10 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          fontFamily: "Spectral-Regular",
-          primaryColor: Colors.black,
-          useMaterial3: false),
+        fontFamily: "Spectral-Regular",
+        primaryColor: Colors.black,
+        useMaterial3: false,
+      ),
       initialBinding: BindingController(),
       home: const Splash(),
     );

@@ -1,10 +1,11 @@
+import 'dart:io';
+
 import 'package:employee_attendance/controller/profile_controller.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:employee_attendance/widget/listTile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-// import 'package:image_picker/image_picker.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../profile_pages/my_profile.dart';
 import '../../profile_pages/privacy_policy.dart';
@@ -27,30 +28,54 @@ class _ProfileTabState extends State<ProfileTab> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 SizedBox(
                   height: Get.height * 0.05,
                 ),
                 Stack(alignment: Alignment.bottomRight, children: [
-                  Image.asset("assets/images/user_profile.png", height: 120),
+                  SizedBox(
+                    height: Get.height * 0.16,
+                    width: Get.width * 0.35,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(60),
+                      child: profileController.image == null
+                          ? Image.asset(
+                              "assets/images/user_profile.png",
+                            )
+                          : Image.file(
+                              File(profileController.image!.path),
+                              fit: BoxFit.cover,
+                            ),
+                    ),
+                  ),
                   FloatingActionButton.small(
+                    backgroundColor: const Color(0xff3085FE),
+                    shape: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10)),
                     onPressed: () async {
-                      // profileController.image = await profileController.picker.pickImage(source: ImageSource.gallery);
+                      profileController.image = await profileController.picker
+                          .pickImage(source: ImageSource.gallery);
+                      setState(() {});
                     },
-                    child: Image.asset("assets/images/camera.png"),
+                    child: Image.asset(
+                      "assets/images/camera.png",
+                      height: Get.height * 0.03,
+                      color: Colors.white,
+                    ),
                   ),
                 ]),
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
                 const Text(
-                  "Parth Patel",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  "Michael Mitc",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
-                  height: Get.height * 0.01,
+                  height: Get.height * 0.004,
                 ),
                 const Text(
                   "Lead UI/UX Designer",
@@ -61,7 +86,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                CustomButton(buttonText: "Edit Profie", onTap: () {}),
+                CustomButton(buttonText: "Edit Profile", onTap: () {}),
                 // SizedBox(
                 //   width: double.maxFinite,
                 //   height: Get.height * 0.07,
@@ -78,48 +103,57 @@ class _ProfileTabState extends State<ProfileTab> {
                 //   ),
                 // ),
                 SizedBox(
-                  height: Get.height * 0.02,
+                  height: Get.height * 0.04,
                 ),
                 listTile(
-                    onTap: () {
-                      Get.to(const MyProfilePage());
-                    },
-                    data: "My Profile",
-                    image: "assets/images/profile_home.png",
-                    icon: Icons.arrow_forward_ios_outlined),
+                  onTap: () {
+                    Get.to(const MyProfilePage());
+                  },
+                  data: "My Profile",
+                  image: "assets/images/profile_home.png",
+                ),
                 listTile(
-                    onTap: () {},
-                    data: "Settings",
-                    image: "assets/images/setting.png",
-                    icon: Icons.arrow_forward_ios_outlined),
+                  onTap: () {},
+                  data: "Settings",
+                  image: "assets/images/setting.png",
+                ),
                 listTile(
-                    onTap: () {
-                      Get.to(const TermsConditionsPage());
-                    },
-                    data: "Terms & Conditions",
-                    image: "assets/images/terms-and-conditions.png",
-                    icon: Icons.arrow_forward_ios_outlined),
+                  onTap: () {
+                    Get.to(const TermsConditionsPage());
+                  },
+                  data: "Terms & Conditions",
+                  image: "assets/images/terms-and-conditions.png",
+                ),
                 listTile(
-                    onTap: () {
-                      Get.to(const PrivacyPolicyPage());
-                    },
-                    data: "Privacy Policy",
-                    image: "assets/images/privacy_policy.png",
-                    icon: Icons.arrow_forward_ios_outlined),
-                ListTile(
-                    onTap: () {},
-                    leading: Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color(0xfffff2f1),
-                        ),
-                        child: Image.asset("assets/images/logout.png",
-                            height: 20, color: const Color(0xffFE6C42))),
-                    title: const Text("Log Out",
+                  onTap: () {
+                    Get.to(const PrivacyPolicyPage());
+                  },
+                  data: "Privacy Policy",
+                  image: "assets/images/privacy_policy.png",
+                ),
+                Row(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xfffff2f1),
+                          ),
+                          child: Image.asset("assets/images/logout.png",
+                              height: Get.height * 0.025,
+                              color: const Color(0xffFE6C42))),
+                    ),
+                    SizedBox(
+                      width: Get.width * 0.04,
+                    ),
+                    const Text("Log Out",
                         style: TextStyle(
                             color: Color(0xffFE6C42),
-                            fontWeight: FontWeight.w500))),
+                            fontWeight: FontWeight.w500)),
+                  ],
+                ),
               ],
             ),
           ),
