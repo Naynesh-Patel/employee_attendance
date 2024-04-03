@@ -227,32 +227,35 @@ class _LoginState extends State<Login> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                children: [
-                  const Text(
-                    "Congratulations",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Color(0xff4490FE),
-                      fontWeight: FontWeight.bold,
+              Center(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Congratulations",
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Color(0xff4490FE),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Image.asset(
-                    "assets/images/congratulations.png",
-                    height: 25,
-                  ),
-                ],
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Image.asset(
+                      "assets/images/congratulations.png",
+                      height: 25,
+                    ),
+                  ],
+                ),
               ),
               const Text(
                 "Your account is ready to use",
                 style: TextStyle(
-                  fontSize: 13,
-                  color: Color(0xff616366),
-                  fontWeight: FontWeight.w500,
-                ),
+                    fontSize: 13,
+                    color: Color(0xff616366),
+                    fontWeight: FontWeight.w400),
               ),
               const SizedBox(
                 height: 20,

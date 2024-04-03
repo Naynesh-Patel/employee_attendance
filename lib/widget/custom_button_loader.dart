@@ -15,7 +15,7 @@ class CustomButtonLoader extends StatelessWidget {
               width: 25,
               height: 25,
               child: CircularProgressIndicator(
-                  color: Colors.white, strokeWidth: 2))),
+                  color: Colors.black, strokeWidth: 2))),
     );
   }
 }
