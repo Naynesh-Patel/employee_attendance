@@ -1,10 +1,11 @@
 import 'package:employee_attendance/controller/leaves_controller.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
+
+import '../../widget/flutter_toast.dart';
 
 class ApplyLeaves extends StatefulWidget {
   const ApplyLeaves({super.key});
@@ -355,14 +356,4 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
     );
   }
 
-  showTost({msg}) {
-    return Fluttertoast.showToast(
-        msg: msg,
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: const Color(0xff3085FE),
-        textColor: Colors.white,
-        fontSize: 16.0);
-  }
 }
