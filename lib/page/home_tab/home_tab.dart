@@ -1,6 +1,6 @@
+import 'package:employee_attendance/page/home_tab/users_attendance.dart';
 import 'package:employee_attendance/profile_pages/notification.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_swipe_button/flutter_swipe_button.dart';
 import 'package:get/get.dart';
 import 'package:horizontal_date_picker_flutter/horizontal_date_picker_flutter.dart';
 
@@ -338,64 +338,69 @@ class _HomeTabState extends State<HomeTab> {
                                 ),
                               ),
                               Expanded(
-                                child: Container(
-                                  // height: 133,
-                                  width: double.maxFinite,
-                                  margin: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.white,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 20),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              padding: const EdgeInsets.all(8),
-                                              decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xffEAF3FF),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10)),
-                                              child: Image.asset(
-                                                'assets/images/calendar_icon_colour.png',
-                                                height: 15,
-                                                width: 15,
+                                child: InkWell(
+                                  onTap: () {
+                                    Get.to(UserAttendance());
+                                  },
+                                  child: Container(
+                                    // height: 133,
+                                    width: double.maxFinite,
+                                    margin: const EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Colors.white,
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 20),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Container(
+                                                padding: const EdgeInsets.all(8),
+                                                decoration: BoxDecoration(
+                                                    color:
+                                                        const Color(0xffEAF3FF),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10)),
+                                                child: Image.asset(
+                                                  'assets/images/calendar_icon_colour.png',
+                                                  height: 15,
+                                                  width: 15,
+                                                ),
                                               ),
-                                            ),
-                                            const SizedBox(width: 10),
-                                            const Text(
-                                              "Total Days",
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w400,
-                                                  color: Color(0xff2E3034)),
-                                            )
-                                          ],
-                                        ),
-                                        const Text(
-                                          '28',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 14,
-                                              color: Color(0xff2B2E31)),
-                                        ),
-                                        const Text(
-                                          'Working Days',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 12,
-                                              color: Color(0xff46494C)),
-                                        )
-                                      ],
+                                              const SizedBox(width: 10),
+                                              const Text(
+                                                "Total Days",
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Color(0xff2E3034)),
+                                              )
+                                            ],
+                                          ),
+                                          const Text(
+                                            '28',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 14,
+                                                color: Color(0xff2B2E31)),
+                                          ),
+                                          const Text(
+                                            'Working Days',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 12,
+                                                color: Color(0xff46494C)),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -587,7 +592,7 @@ class _HomeTabState extends State<HomeTab> {
           //       ),
           //     ),
           //   ),
-          // )
+          // ),
         ],
       ),
     );
