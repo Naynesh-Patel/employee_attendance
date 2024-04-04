@@ -11,12 +11,14 @@ class NewPassword extends StatefulWidget {
 
 class _NewPasswordState extends State<NewPassword> {
 
-  bool passwordVisible=false;
+  bool enterPasswordVisible=false;
+  bool reEnterPasswordVisible=false;
 
   @override
   void initState(){
     super.initState();
-    passwordVisible=true;
+    enterPasswordVisible=true;
+    reEnterPasswordVisible=true;
   }
 
   @override
@@ -64,7 +66,7 @@ class _NewPasswordState extends State<NewPassword> {
                       borderRadius: BorderRadius.circular(10)
                     ),
                   child: TextField(
-                    obscureText: passwordVisible,
+                    obscureText: enterPasswordVisible,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Enter New Password",
@@ -77,13 +79,13 @@ class _NewPasswordState extends State<NewPassword> {
                       ),
                       contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                       suffixIcon: IconButton(
-                        icon: Icon(passwordVisible
+                        icon: Icon(enterPasswordVisible
                             ? Icons.visibility
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
                                 () {
-                              passwordVisible = !passwordVisible;
+                              enterPasswordVisible = !enterPasswordVisible;
                             },
                           );
                         },
@@ -101,7 +103,7 @@ class _NewPasswordState extends State<NewPassword> {
                       borderRadius: BorderRadius.circular(10)
                   ),
                   child: TextField(
-                    obscureText: passwordVisible,
+                    obscureText: reEnterPasswordVisible,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Re-Enter Password",
@@ -114,13 +116,13 @@ class _NewPasswordState extends State<NewPassword> {
                       ),
                       contentPadding: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
                       suffixIcon: IconButton(
-                        icon: Icon(passwordVisible
+                        icon: Icon(reEnterPasswordVisible
                             ? Icons.visibility
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
                                 () {
-                              passwordVisible = !passwordVisible;
+                              reEnterPasswordVisible = !reEnterPasswordVisible;
                             },
                           );
                         },

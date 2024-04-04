@@ -51,7 +51,7 @@ class _ChangePasswordState extends State<ChangePassword> {
               ),
               decoration: InputDecoration(
                   labelText: 'Password',
-                  labelStyle: TextStyle(color: Color(0xff3085FE), fontSize: 12),
+                  labelStyle: const TextStyle(color: Color(0xff3085FE), fontSize: 12),
                   contentPadding: EdgeInsets.all(8),
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -97,11 +97,11 @@ class _ChangePasswordState extends State<ChangePassword> {
                         ? Icons.visibility
                         : Icons.visibility_off),
                   ),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xff3085FE))),
-                  enabledBorder: OutlineInputBorder(
+                  enabledBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xff3085FE))),
-                  border: OutlineInputBorder()),
+                  border: const OutlineInputBorder()),
             ),
           ],
         ),

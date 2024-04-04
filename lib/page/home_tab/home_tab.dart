@@ -15,7 +15,7 @@ class _HomeTabState extends State<HomeTab> {
   bool isButtonSwiped = false;
 
   @override
-  Widget build(BuildContext context) {
+  Scaffold build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffFAFAFA),
       appBar: AppBar(
@@ -87,7 +87,7 @@ class _HomeTabState extends State<HomeTab> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    HorizontalDatePicker(
+                      HorizontalDatePicker(
                       borderRadius: BorderRadius.circular(12),
                       unSelectedItemColor: Colors.white,
                       monthTextStyle: const TextStyle(

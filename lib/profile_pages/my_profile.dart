@@ -12,6 +12,7 @@ class MyProfilePage extends StatefulWidget {
 
 class _MyProfilePageState extends State<MyProfilePage>
     with TickerProviderStateMixin {
+
   ProfileController profileController = Get.find();
 
   @override
@@ -79,7 +80,7 @@ class _MyProfilePageState extends State<MyProfilePage>
                       child: const Center(
                           child: Text('Personal',
                               maxLines: 1,
-                              style: TextStyle(fontWeight: FontWeight.w400))),
+                              style: TextStyle(fontWeight: FontWeight.w400,overflow: TextOverflow.clip))),
                     ),
                   ),
                   Tab(
@@ -92,7 +93,7 @@ class _MyProfilePageState extends State<MyProfilePage>
                       child: const Center(
                           child: Text('Professional',
                               maxLines: 1,
-                              style: TextStyle(fontWeight: FontWeight.w400))),
+                              style: TextStyle(fontWeight: FontWeight.w400,overflow: TextOverflow.clip))),
                     ),
                   ),
                   Tab(
@@ -106,7 +107,9 @@ class _MyProfilePageState extends State<MyProfilePage>
                           child: Text(
                         'Documents',
                         maxLines: 1,
-                        style: TextStyle(fontWeight: FontWeight.w400),
+                        style: TextStyle(fontWeight: FontWeight.w400,overflow: TextOverflow.clip
+
+                        ),
                       )),
                     ),
                   ),
@@ -116,7 +119,8 @@ class _MyProfilePageState extends State<MyProfilePage>
             SizedBox(
               height: Get.height * 0.02,
             ),
-            Expanded(
+            Expanded
+              (
               child: TabBarView(
                   controller: profileController.tabController,
                   children: [
