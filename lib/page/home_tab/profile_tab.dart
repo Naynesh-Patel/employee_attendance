@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../profile_pages/edit_profile.dart';
 import '../../profile_pages/my_profile.dart';
 import '../../profile_pages/privacy_policy.dart';
 import '../../profile_pages/terms & conditions.dart';
@@ -86,7 +87,9 @@ class _ProfileTabState extends State<ProfileTab> {
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                CustomButton(buttonText: "Edit Profile", onTap: () {}),
+                CustomButton(buttonText: "Edit Profile", onTap: () {
+                  Get.to(const EditProfile());
+                }),
                 SizedBox(
                   height: Get.height * 0.04,
                 ),

@@ -340,7 +340,6 @@ class _HomeTabState extends State<HomeTab> {
                               Expanded(
                                 child: InkWell(
                                   onTap: () {
-                                    Get.to(UserAttendance());
                                   },
                                   child: Container(
                                     // height: 133,

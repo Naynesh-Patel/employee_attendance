@@ -249,6 +249,7 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
               ),
               const SizedBox(height: 4),
               Container(
+                height: Get.height*0.2,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(color: const Color(0xff3085FE))),
@@ -280,15 +281,15 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                 buttonText: 'Apply Leave',
                 onTap: () {
                   if (leavesController.title.text.isEmpty) {
-                    showTost(msg: "filled it");
+                    showToast(msg: "filled it");
                   } else if (leavesController.contactNumber.text.isEmpty) {
-                    showTost(msg: 'enter contact number');
+                    showToast(msg: 'enter contact number');
                   } else if (leavesController.formatSDate.text.isEmpty) {
-                    showTost(msg: 'select date');
+                    showToast(msg: 'select date');
                   } else if (leavesController.formatEDate.text.isEmpty) {
-                    showTost(msg: 'select date');
+                    showToast(msg: 'select date');
                   } else if (leavesController.reason.text.isEmpty) {
-                    showTost(msg: 'enter reason');
+                    showToast(msg: 'enter reason');
                   } else {
                     showModalBottomSheet(
                       context: context,
