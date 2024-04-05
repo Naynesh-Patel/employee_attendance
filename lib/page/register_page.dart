@@ -1,9 +1,6 @@
 import 'package:employee_attendance/controller/auth_controller.dart';
-import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:employee_attendance/widget/text_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:get/get.dart';
 
