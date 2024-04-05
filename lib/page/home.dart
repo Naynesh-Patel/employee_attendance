@@ -3,6 +3,9 @@ import 'package:employee_attendance/page/home_tab/home_tab.dart';
 import 'package:employee_attendance/page/home_tab/leaves_tab.dart';
 import 'package:employee_attendance/page/home_tab/profile_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'home_tab/team_member_tab.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -47,7 +50,7 @@ class _HomeState extends State<Home> {
                 // isExtended: true,
                 backgroundColor: const Color(0xff3085FE),
                 onPressed: () {
-                  setState(() {});
+                  Get.to(const TeamMember());
                 },
                 // isExtended: true,
                 child: Image.asset(

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../profile_pages/edit_profile.dart';
 import '../../profile_pages/my_profile.dart';
 import '../../profile_pages/privacy_policy.dart';
 import '../../profile_pages/terms & conditions.dart';
@@ -32,7 +33,7 @@ class _ProfileTabState extends State<ProfileTab> {
             child: Column(
               children: [
                 SizedBox(
-                  height: Get.height * 0.05,
+                  height: Get.height * 0.04,
                 ),
                 Stack(alignment: Alignment.bottomRight, children: [
                   SizedBox(
@@ -86,22 +87,9 @@ class _ProfileTabState extends State<ProfileTab> {
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                CustomButton(buttonText: "Edit Profile", onTap: () {}),
-                // SizedBox(
-                //   width: double.maxFinite,
-                //   height: Get.height * 0.07,
-                //   child: ElevatedButton(
-                //     onPressed: () {},
-                //     child: const Text("Edit Profile"),
-                //     style: ButtonStyle(
-                //         backgroundColor:
-                //             MaterialStatePropertyAll(Color(0xff3085fe)),
-                //         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                //             RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.circular(12),
-                //         ))),
-                //   ),
-                // ),
+                CustomButton(buttonText: "Edit Profile", onTap: () {
+                  Get.to(const EditProfile());
+                }),
                 SizedBox(
                   height: Get.height * 0.04,
                 ),
@@ -115,7 +103,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 listTile(
                   onTap: () {},
                   data: "Settings",
-                  image: "assets/images/setting.png",
+                  image: "assets/images/setting .png",
                 ),
                 listTile(
                   onTap: () {
