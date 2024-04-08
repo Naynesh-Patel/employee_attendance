@@ -1,8 +1,11 @@
 import 'package:employee_attendance/controller/auth_controller.dart';
+import 'package:employee_attendance/widget/flutter_toast.dart';
 import 'package:employee_attendance/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:get/get.dart';
+
+import 'login.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -82,57 +85,57 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelStyle: TextStyle(
                           color: !authController.focusNode5.hasFocus
                               ? authController.firstName.text.isEmpty
-                              ? Colors.black54
-                              : Colors.blue
+                                  ? Colors.black54
+                                  : Colors.blue
                               : Colors.blue),
                       hintText: "First Name",
                       focusNode: authController.focusNode5,
                       border: Border.all(
                           color: !authController.focusNode5.hasFocus
                               ? authController.firstName.text.isNotEmpty
-                              ? Colors.blue
-                              : Colors.black12
+                                  ? Colors.blue
+                                  : Colors.black12
                               : Colors.blue),
                     ),
-                    SizedBox(height: Get.height*0.02),
+                    SizedBox(height: Get.height * 0.02),
                     PTextField(
                       controller: authController.lastName,
                       labelText: "Last Name",
                       labelStyle: TextStyle(
                           color: !authController.focusNode6.hasFocus
                               ? authController.lastName.text.isEmpty
-                              ? Colors.black54
-                              : Colors.blue
+                                  ? Colors.black54
+                                  : Colors.blue
                               : Colors.blue),
                       hintText: "Last Name",
                       focusNode: authController.focusNode6,
                       border: Border.all(
                           color: !authController.focusNode6.hasFocus
                               ? authController.lastName.text.isNotEmpty
-                              ? Colors.blue
-                              : Colors.black12
+                                  ? Colors.blue
+                                  : Colors.black12
                               : Colors.blue),
                     ),
-                    SizedBox(height: Get.height*0.02),
+                    SizedBox(height: Get.height * 0.02),
                     PTextField(
                       controller: authController.registerEmail,
                       labelText: "Email Address",
                       labelStyle: TextStyle(
                           color: !authController.focusNode7.hasFocus
                               ? authController.registerEmail.text.isEmpty
-                              ? Colors.black54
-                              : Colors.blue
+                                  ? Colors.black54
+                                  : Colors.blue
                               : Colors.blue),
                       hintText: "Email Address",
                       focusNode: authController.focusNode7,
                       border: Border.all(
                           color: !authController.focusNode7.hasFocus
                               ? authController.registerEmail.text.isNotEmpty
-                              ? Colors.blue
-                              : Colors.black12
+                                  ? Colors.blue
+                                  : Colors.black12
                               : Colors.blue),
                     ),
-                    SizedBox(height: Get.height*0.02),
+                    SizedBox(height: Get.height * 0.02),
                     PTextField(
                       controller: authController.registerPassword,
                       obscureText: authController.registerPasswordVisible,
@@ -141,14 +144,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelStyle: TextStyle(
                           color: !authController.focusNode8.hasFocus
                               ? authController.registerPassword.text.isEmpty
-                              ? Colors.black54
-                              : Colors.blue:Colors.blue
-                      ),
+                                  ? Colors.black54
+                                  : Colors.blue
+                              : Colors.blue),
                       border: Border.all(
                           color: !authController.focusNode8.hasFocus
                               ? authController.registerPassword.text.isNotEmpty
-                              ? Colors.blue
-                              : Colors.black12
+                                  ? Colors.blue
+                                  : Colors.black12
                               : Colors.blue),
                       focusNode: authController.focusNode8,
                       suffixIcon: IconButton(
@@ -157,15 +160,15 @@ class _RegisterPageState extends State<RegisterPage> {
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
-                                () {
+                            () {
                               authController.registerPasswordVisible =
-                              !authController.registerPasswordVisible;
+                                  !authController.registerPasswordVisible;
                             },
                           );
                         },
                       ),
                     ),
-                    SizedBox(height: Get.height*0.02),
+                    SizedBox(height: Get.height * 0.02),
                     PTextField(
                       controller: authController.confirmPassword,
                       obscureText: authController.confirmPasswordVisible,
@@ -174,14 +177,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelStyle: TextStyle(
                           color: !authController.focusNode9.hasFocus
                               ? authController.confirmPassword.text.isEmpty
-                              ? Colors.black54
-                              : Colors.blue:Colors.blue
-                      ),
+                                  ? Colors.black54
+                                  : Colors.blue
+                              : Colors.blue),
                       border: Border.all(
                           color: !authController.focusNode9.hasFocus
                               ? authController.confirmPassword.text.isNotEmpty
-                              ? Colors.blue
-                              : Colors.black12
+                                  ? Colors.blue
+                                  : Colors.black12
                               : Colors.blue),
                       focusNode: authController.focusNode9,
                       suffixIcon: IconButton(
@@ -190,9 +193,9 @@ class _RegisterPageState extends State<RegisterPage> {
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
-                                () {
+                            () {
                               authController.confirmPasswordVisible =
-                              !authController.confirmPasswordVisible;
+                                  !authController.confirmPasswordVisible;
                             },
                           );
                         },
@@ -205,17 +208,14 @@ class _RegisterPageState extends State<RegisterPage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          side: const BorderSide(
-                            color: Colors.grey
-                          ),
-                          value: authController.isBlank, onChanged: (value) {
-                          setState(() {
-                            authController.isBlank=value!;
-                          });
-                        },),
-                        // Text("I agree to "),
-                        // Text("Terms & Conditions & Privacy Policy"),
-                        // Text("set out by this side."),
+                          side: const BorderSide(color: Colors.grey),
+                          value: authController.isBlank,
+                          onChanged: (value) {
+                            setState(() {
+                              authController.isBlank = value!;
+                            });
+                          },
+                        ),
                       ],
                     ),
                     const SizedBox(
@@ -224,18 +224,53 @@ class _RegisterPageState extends State<RegisterPage> {
                     InkWell(
                       borderRadius: BorderRadius.circular(8),
                       onTap: () {
+                        if (authController.firstName.text.isEmpty) {
+                          showToast(msg: "Enter your Name");
+                        } else if (authController.lastName.text.isEmpty) {
+                          showToast(msg: "Enter your Surname");
+                        } else if (authController.registerEmail.text.isEmpty) {
+                          showToast(msg: "Enter Email");
+                        } else if (!RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(authController.registerEmail.text)) {
+                          showToast(msg: "Enter valid Email");
+                        } else if (authController
+                            .registerPassword.text.isEmpty) {
+                          showToast(msg: "Create Password");
+                        } else if (authController.registerPassword.text.length <
+                            8) {
+                          showToast(
+                              msg: "Password required at least 8 characters");
+                        } else if (authController
+                            .confirmPassword.text.isEmpty) {
+                          showToast(msg: "Re-Enter Password");
+                        } else if (authController.confirmPassword.text !=
+                            authController.registerPassword.text) {
+                          showToast(msg: "Password not matched");
+                        }else if(!authController.isBlank){
+                          showToast(msg: "Apply the conditions");
+                        }else {
+                          // Get.offAll(Ho)
+                          setState(() {
+
+                          });
+                        }
                       },
                       child: Container(
                         constraints: const BoxConstraints(maxHeight: 50),
-                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 12, horizontal: 16),
                         decoration: BoxDecoration(
+
                             borderRadius: BorderRadius.circular(8),
-                            color: Color(0xffEEEFF0)),
+                            color:!authController.isBlank
+                                ? const Color(0xffEEEFF0)
+                                : const Color(0xff3085FE)),
                         child: const Center(
                             child: Text(
-                              "Register",
-                              style: TextStyle(color: Colors.black, fontSize: 17),
-                            )),
+                          "Register",
+                          style: TextStyle(color: Colors.black, fontSize: 17),
+                        )),
                       ),
                     ),
                     const SizedBox(
@@ -291,7 +326,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Center(
                       child: InkWell(
                         onTap: () {
-                          // Get.to(page);
+                          Get.to(const Login());
                         },
                         child: RichText(
                           text: const TextSpan(
@@ -321,70 +356,69 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  // Future<void> showDialogHome() async {
-  //   return showDialog<void>(
-  //     context: context,
-  //     barrierDismissible: false, // user must tap button!
-  //     builder: (BuildContext context) {
-  //       return AlertDialog(
-  //         backgroundColor: const Color(0xffffffff),
-  //         content: SingleChildScrollView(
-  //             child: Column(
-  //               mainAxisSize: MainAxisSize.min,
-  //               children: [
-  //                 Image.asset(
-  //                   "assets/images/login.png",
-  //                   width: 150,
-  //                   height: 150,
-  //                 ),
-  //                 const SizedBox(
-  //                   height: 20,
-  //                 ),
-  //                 Center(
-  //                   child: Row(
-  //                     mainAxisSize: MainAxisSize.min,
-  //                     mainAxisAlignment: MainAxisAlignment.center,
-  //                     children: [
-  //                       const Text(
-  //                         "Congratulations",
-  //                         style: TextStyle(
-  //                           fontSize: 24,
-  //                           color: Color(0xff4490FE),
-  //                           fontWeight: FontWeight.bold,
-  //                         ),
-  //                       ),
-  //                       const SizedBox(
-  //                         width: 5,
-  //                       ),
-  //                       Image.asset(
-  //                         "assets/images/congratulations.png",
-  //                         height: 25,
-  //                       ),
-  //                     ],
-  //                   ),
-  //                 ),
-  //                 const Text(
-  //                   "Your account is ready to use",
-  //                   style: TextStyle(
-  //                       fontSize: 13,
-  //                       color: Color(0xff616366),
-  //                       fontWeight: FontWeight.w400),
-  //                 ),
-  //                 const SizedBox(
-  //                   height: 20,
-  //                 ),
-  //                 CustomButton(
-  //                   buttonText: 'Back to Home',
-  //                   onTap: () {
-  //                     Get.to(const Home());
-  //                     // Navigator.of(context).pop();
-  //                   },
-  //                 ),
-  //               ],
-  //             )),
-  //       );
-  //     },
-  //   );
-  // }
+// Future<void> showDialogHome() async {
+//   return showDialog<void>(
+//     context: context,
+//     barrierDismissible: false, // user must tap button!
+//     builder: (BuildContext context) {
+//       return AlertDialog(
+//         backgroundColor: const Color(0xffffffff),
+//         content: SingleChildScrollView(
+//             child: Column(
+//               mainAxisSize: MainAxisSize.min,
+//               children: [
+//                 Image.asset(
+//                   "assets/images/login.png",
+//                   width: 150,
+//                   height: 150,
+//                 ),
+//                 const SizedBox(
+//                   height: 20,
+//                 ),
+//                 Center(
+//                   child: Row(
+//                     mainAxisSize: MainAxisSize.min,
+//                     mainAxisAlignment: MainAxisAlignment.center,
+//                     children: [
+//                       const Text(
+//                         "Congratulations",
+//                         style: TextStyle(
+//                           fontSize: 24,
+//                           color: Color(0xff4490FE),
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                       const SizedBox(
+//                         width: 5,
+//                       ),
+//                       Image.asset(
+//                         "assets/images/congratulations.png",
+//                         height: 25,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 const Text(
+//                   "Your account is ready to use",
+//                   style: TextStyle(
+//                       fontSize: 13,
+//                       color: Color(0xff616366),
+//                       fontWeight: FontWeight.w400),
+//                 ),
+//                 const SizedBox(
+//                   height: 20,
+//                 ),
+//                 CustomButton(
+//                   buttonText: 'Back to Home',
+//                   onTap: () {
+//                     Get.to(const Home());
+//                     // Navigator.of(context).pop();
+//                   },
+//                 ),
+//               ],
+//             )),
+//       );
+//     },
+//   );
+// }
 }
-

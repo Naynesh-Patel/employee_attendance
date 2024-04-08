@@ -152,10 +152,10 @@ class _NewPasswordState extends State<NewPassword> {
                                   msg: "Password required at least 8 characters");
                             } else if (authController.reEnterPassword.text
                                 .isEmpty) {
-                              showToast(msg: "Reenter Password");
+                              showToast(msg: "Re-Enter Password");
                             } else if (authController.reEnterPassword.text !=
                                 authController.newPassword.text) {
-                              showToast(msg: "Password not match");
+                              showToast(msg: "Password not matched");
                             } else {
                               return null;
                             }
