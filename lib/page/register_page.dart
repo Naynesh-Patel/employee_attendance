@@ -247,22 +247,20 @@ class _RegisterPageState extends State<RegisterPage> {
                         } else if (authController.confirmPassword.text !=
                             authController.registerPassword.text) {
                           showToast(msg: "Password not matched");
-                        }else if(!authController.isBlank){
+                        } else if (!authController.isBlank) {
                           showToast(msg: "Apply the conditions");
-                        }else {
+                        } else {
                           // Get.offAll(Ho)
-                          setState(() {
-
-                          });
+                          setState(() {});
                         }
                       },
                       child: Container(
                         constraints: const BoxConstraints(maxHeight: 50),
-                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 12, horizontal: 16),
                         decoration: BoxDecoration(
-
                             borderRadius: BorderRadius.circular(8),
-                            color:!authController.isBlank
+                            color: !authController.isBlank
                                 ? const Color(0xffEEEFF0)
                                 : const Color(0xff3085FE)),
                         child: const Center(

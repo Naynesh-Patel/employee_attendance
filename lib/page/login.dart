@@ -19,7 +19,6 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   AuthController authController = Get.find();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +93,7 @@ class _LoginState extends State<Login> {
                                   : Colors.black12
                               : Colors.blue),
                     ),
-                    SizedBox(height: Get.height*0.02),
+                    SizedBox(height: Get.height * 0.02),
                     PTextField(
                       controller: authController.loginPassword,
                       obscureText: authController.loginPasswordVisible,
@@ -103,14 +102,14 @@ class _LoginState extends State<Login> {
                       labelStyle: TextStyle(
                           color: !authController.focusNode4.hasFocus
                               ? authController.loginPassword.text.isEmpty
-                              ? Colors.black54
-                              : Colors.blue:Colors.blue
-                      ),
+                                  ? Colors.black54
+                                  : Colors.blue
+                              : Colors.blue),
                       border: Border.all(
                           color: !authController.focusNode4.hasFocus
                               ? authController.loginPassword.text.isNotEmpty
-                              ? Colors.blue
-                              : Colors.black12
+                                  ? Colors.blue
+                                  : Colors.black12
                               : Colors.blue),
                       focusNode: authController.focusNode4,
                       suffixIcon: IconButton(
@@ -119,9 +118,9 @@ class _LoginState extends State<Login> {
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
-                                () {
+                            () {
                               authController.loginPasswordVisible =
-                              !authController.loginPasswordVisible;
+                                  !authController.loginPasswordVisible;
                             },
                           );
                         },
@@ -151,17 +150,17 @@ class _LoginState extends State<Login> {
                     CustomButton(
                       buttonText: 'Login',
                       onTap: () {
-                        if(authController.loginEmail.text.isEmpty){
+                        if (authController.loginEmail.text.isEmpty) {
                           showToast(msg: "Enter Email");
-                        }else if(
-                        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                            .hasMatch(authController.loginEmail.text)
-                        ){
+                        } else if (!RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(authController.loginEmail.text)) {
                           showToast(msg: "Enter valid Email");
-                        } else if(authController.loginPassword.text.isEmpty){
+                        } else if (authController.loginPassword.text.isEmpty) {
                           showToast(msg: "Enter Password");
-                        } else{
-                        showDialogHome();}
+                        } else {
+                          showDialogHome();
+                        }
                       },
                     ),
                     const SizedBox(
@@ -180,7 +179,9 @@ class _LoginState extends State<Login> {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        authController.googleSignIn();
+                      },
                       child: Container(
                         width: Get.width,
                         padding: const EdgeInsets.symmetric(
