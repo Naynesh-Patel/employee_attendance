@@ -1,4 +1,5 @@
 import 'package:employee_attendance/controller/auth_controller.dart';
+import 'package:employee_attendance/page/login.dart';
 import 'package:employee_attendance/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -213,6 +214,22 @@ class _RegisterPageState extends State<RegisterPage> {
                             });
                           },
                         ),
+                        RichText(
+                          text: const TextSpan(
+                            text: 'I agree to the',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.black,
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: ' Terms & Conditions & Privacy Policy',
+                                style: TextStyle(
+                                    color: Color(0xff3E8DFE), fontSize: 12),
+                              ),
+                            ],
+                          ),
+                        ),
                         // Text("I agree to "),
                         // Text("Terms & Conditions & Privacy Policy"),
                         // Text("set out by this side."),
@@ -230,7 +247,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             vertical: 12, horizontal: 16),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            color: Color(0xffEEEFF0)),
+                            color: const Color(0xffEEEFF0)),
                         child: const Center(
                             child: Text(
                           "Register",
@@ -291,7 +308,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Center(
                       child: InkWell(
                         onTap: () {
-                          Get.to(const RegisterPage());
+                          Get.to(Login());
                         },
                         child: RichText(
                           text: const TextSpan(
