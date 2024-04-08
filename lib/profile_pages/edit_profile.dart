@@ -37,9 +37,7 @@ class _EditProfileState extends State<EditProfile> {
             )),
       ),
       body: Column(
-        children: [
-
-        ],
+        children: [],
       ),
     );
   }

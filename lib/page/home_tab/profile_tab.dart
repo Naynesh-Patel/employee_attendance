@@ -87,9 +87,11 @@ class _ProfileTabState extends State<ProfileTab> {
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
-                CustomButton(buttonText: "Edit Profile", onTap: () {
-                  Get.to(const EditProfile());
-                }),
+                CustomButton(
+                    buttonText: "Edit Profile",
+                    onTap: () {
+                      Get.to(const EditProfile());
+                    }),
                 SizedBox(
                   height: Get.height * 0.04,
                 ),
@@ -107,7 +109,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 ),
                 listTile(
                   onTap: () {
-                    Get.to(const TermsConditionsPage());
+                    Get.to(TermsConditionsPage());
                   },
                   data: "Terms & Conditions",
                   image: "assets/images/terms-and-conditions.png",

@@ -86,7 +86,7 @@ class _HomeTabState extends State<HomeTab> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                      HorizontalDatePicker(
+                    HorizontalDatePicker(
                       borderRadius: BorderRadius.circular(12),
                       unSelectedItemColor: Colors.white,
                       monthTextStyle: const TextStyle(
@@ -338,8 +338,7 @@ class _HomeTabState extends State<HomeTab> {
                               ),
                               Expanded(
                                 child: InkWell(
-                                  onTap: () {
-                                  },
+                                  onTap: () {},
                                   child: Container(
                                     // height: 133,
                                     width: double.maxFinite,
@@ -360,7 +359,8 @@ class _HomeTabState extends State<HomeTab> {
                                           Row(
                                             children: [
                                               Container(
-                                                padding: const EdgeInsets.all(8),
+                                                padding:
+                                                    const EdgeInsets.all(8),
                                                 decoration: BoxDecoration(
                                                     color:
                                                         const Color(0xffEAF3FF),

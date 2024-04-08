@@ -53,7 +53,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                   labelText: 'Password',
                   labelStyle:
                       const TextStyle(color: Color(0xff3085FE), fontSize: 12),
-                  contentPadding: EdgeInsets.all(8),
+                  contentPadding: const EdgeInsets.all(8),
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -81,13 +81,14 @@ class _ChangePasswordState extends State<ChangePassword> {
                   return null;
                 }
               },
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
               ),
               decoration: InputDecoration(
                   labelText: 'Confirm Password',
-                  labelStyle: TextStyle(color: Color(0xff3085FE), fontSize: 12),
-                  contentPadding: EdgeInsets.all(8),
+                  labelStyle:
+                      const TextStyle(color: Color(0xff3085FE), fontSize: 12),
+                  contentPadding: const EdgeInsets.all(8),
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -98,11 +99,11 @@ class _ChangePasswordState extends State<ChangePassword> {
                         ? Icons.visibility
                         : Icons.visibility_off),
                   ),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xff3085FE))),
-                  enabledBorder: OutlineInputBorder(
+                  enabledBorder: const OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xff3085FE))),
-                  border: OutlineInputBorder()),
+                  border: const OutlineInputBorder()),
             ),
           ],
         ),
