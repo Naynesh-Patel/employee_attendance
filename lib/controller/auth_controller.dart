@@ -56,6 +56,6 @@ class AuthController extends GetxController {
   FocusNode focusNode8 = FocusNode();
   FocusNode focusNode9 = FocusNode();
 
-  bool isBlank=true;
+  bool isBlank=false;
 
 }

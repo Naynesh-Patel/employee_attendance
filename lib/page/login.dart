@@ -3,6 +3,7 @@ import 'package:employee_attendance/forgot_password/forgot_password_page.dart';
 import 'package:employee_attendance/page/home.dart';
 import 'package:employee_attendance/page/register_page.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
+import 'package:employee_attendance/widget/flutter_toast.dart';
 import 'package:employee_attendance/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -126,9 +127,6 @@ class _LoginState extends State<Login> {
                         },
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -148,12 +146,22 @@ class _LoginState extends State<Login> {
                       ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     CustomButton(
                       buttonText: 'Login',
                       onTap: () {
-                        showDialogHome();
+                        if(authController.loginEmail.text.isEmpty){
+                          showToast(msg: "Enter Email");
+                        }else if(
+                        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(authController.loginEmail.text)
+                        ){
+                          showToast(msg: "Enter valid Email");
+                        } else if(authController.loginPassword.text.isEmpty){
+                          showToast(msg: "Enter Password");
+                        } else{
+                        showDialogHome();}
                       },
                     ),
                     const SizedBox(
