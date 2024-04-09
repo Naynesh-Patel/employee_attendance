@@ -28,34 +28,4 @@ class AuthController extends GetxController {
     );
   }
 
-  bool enterPasswordVisible=false;
-  bool reEnterPasswordVisible=false;
-  bool loginPasswordVisible=false;
-  bool registerPasswordVisible=false;
-  bool confirmPasswordVisible=false;
-
-  TextEditingController firstName=TextEditingController();
-  TextEditingController lastName=TextEditingController();
-  TextEditingController registerEmail=TextEditingController();
-  TextEditingController registerPassword=TextEditingController();
-  TextEditingController confirmPassword=TextEditingController();
-
-  TextEditingController newPassword=TextEditingController();
-  TextEditingController reEnterPassword=TextEditingController();
-
-  TextEditingController loginEmail=TextEditingController();
-  TextEditingController loginPassword=TextEditingController();
-
-  FocusNode focusNode1 = FocusNode();
-  FocusNode focusNode2 = FocusNode();
-  FocusNode focusNode3 = FocusNode();
-  FocusNode focusNode4 = FocusNode();
-  FocusNode focusNode5 = FocusNode();
-  FocusNode focusNode6 = FocusNode();
-  FocusNode focusNode7 = FocusNode();
-  FocusNode focusNode8 = FocusNode();
-  FocusNode focusNode9 = FocusNode();
-
-  bool isBlank=false;
-
 }
