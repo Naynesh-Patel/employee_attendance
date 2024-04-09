@@ -16,4 +16,59 @@ class ProfileController extends GetxController {
   final ImagePicker picker = ImagePicker();
   XFile? image;
 
+  bool enterPasswordVisible=false;
+  bool reEnterPasswordVisible=false;
+  bool loginPasswordVisible=false;
+  bool registerPasswordVisible=false;
+  bool confirmPasswordVisible=false;
+
+  TextEditingController firstName=TextEditingController();
+  TextEditingController lastName=TextEditingController();
+  TextEditingController registerEmail=TextEditingController();
+  TextEditingController registerPassword=TextEditingController();
+  TextEditingController confirmPassword=TextEditingController();
+
+  TextEditingController newPassword=TextEditingController();
+  TextEditingController reEnterPassword=TextEditingController();
+
+  TextEditingController loginEmail=TextEditingController();
+  TextEditingController loginPassword=TextEditingController();
+
+  FocusNode focusNode1 = FocusNode();
+  FocusNode focusNode2 = FocusNode();
+  FocusNode focusNode3 = FocusNode();
+  FocusNode focusNode4 = FocusNode();
+  FocusNode focusNode5 = FocusNode();
+  FocusNode focusNode6 = FocusNode();
+  FocusNode focusNode7 = FocusNode();
+  FocusNode focusNode8 = FocusNode();
+  FocusNode focusNode9 = FocusNode();
+
+  bool isBlank=false;
+
+//   Edit Profile
+
+  TextEditingController eFirstName=TextEditingController();
+  TextEditingController eLastName=TextEditingController();
+  TextEditingController eEmail=TextEditingController();
+  TextEditingController phoneNumber=TextEditingController();
+  TextEditingController address=TextEditingController();
+
+  FocusNode focusNode10 = FocusNode();
+  FocusNode focusNode11 = FocusNode();
+  FocusNode focusNode12 = FocusNode();
+  FocusNode focusNode13 = FocusNode();
+  FocusNode focusNode14 = FocusNode();
+
+//   Change Password
+
+  bool changePasswordVisible=false;
+  bool changePasswordVisible2=false;
+
+  TextEditingController changePassword=TextEditingController();
+  TextEditingController changePassword2=TextEditingController();
+
+  FocusNode focusNode15 = FocusNode();
+  FocusNode focusNode16 = FocusNode();
+
 }

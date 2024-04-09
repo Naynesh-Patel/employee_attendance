@@ -62,7 +62,7 @@ class _NotificationPageState extends State<NotificationPage> {
   notification(image, text, text1, status) {
     return InkWell(
       onTap: () {
-        Get.to(const ChangePassword());
+        // Get.to(const ChangePassword());
       },
       child: Row(
         children: [

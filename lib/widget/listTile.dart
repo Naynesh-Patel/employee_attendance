@@ -82,3 +82,28 @@ Widget textsTile ({required String text1, required String text2}) {
     ],
   );
 }
+
+Widget textsTile2 ({
+  required String text,
+  void Function()? onTap
+}) {
+  return InkWell(
+    onTap: onTap,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: Get.height*0.02,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(text,style: const TextStyle(
+                fontSize: 18,fontWeight: FontWeight.w500
+            ),),
+            const Icon( Icons.arrow_forward_ios_outlined,color: Colors.black87,size: 16,),
+          ],
+        ),
+        Divider(color: Colors.grey.shade200),
+      ],
+    ),
+  );
+}

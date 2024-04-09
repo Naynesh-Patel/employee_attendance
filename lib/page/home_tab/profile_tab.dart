@@ -10,6 +10,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../profile_pages/edit_profile.dart';
 import '../../profile_pages/my_profile.dart';
 import '../../profile_pages/privacy_policy.dart';
+import '../../profile_pages/setting_page.dart';
 import '../../profile_pages/terms & conditions.dart';
 
 class ProfileTab extends StatefulWidget {
@@ -20,6 +21,7 @@ class ProfileTab extends StatefulWidget {
 }
 
 class _ProfileTabState extends State<ProfileTab> {
+
   ProfileController profileController = Get.find();
 
   @override
@@ -35,20 +37,13 @@ class _ProfileTabState extends State<ProfileTab> {
                 SizedBox(
                   height: Get.height * 0.04,
                 ),
-                Stack(alignment: Alignment.bottomRight, children: [
+                profileController.image == null
+                ? Stack(alignment: Alignment.bottomRight, children: [
                   SizedBox(
                     height: Get.height * 0.16,
                     width: Get.width * 0.35,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(60),
-                      child: profileController.image == null
-                          ? Image.asset(
-                              "assets/images/user_profile.png",
-                            )
-                          : Image.file(
-                              File(profileController.image!.path),
-                              fit: BoxFit.cover,
-                            ),
+                    child: Image.asset(
+                      "assets/images/user_profile.png",
                     ),
                   ),
                   FloatingActionButton.small(
@@ -67,7 +62,14 @@ class _ProfileTabState extends State<ProfileTab> {
                       color: Colors.white,
                     ),
                   ),
-                ]),
+                ])
+                : SizedBox(
+                  height: Get.height * 0.16,
+                  width: Get.width * 0.35,
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(60),
+                      child: Image.file(File(profileController.image!.path),fit: BoxFit.cover,)),
+                ),
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
@@ -103,7 +105,9 @@ class _ProfileTabState extends State<ProfileTab> {
                   image: "assets/images/profile_home.png",
                 ),
                 listTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(Setting());
+                  },
                   data: "Settings",
                   image: "assets/images/setting .png",
                 ),

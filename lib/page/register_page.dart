@@ -1,10 +1,11 @@
-import 'package:employee_attendance/controller/auth_controller.dart';
+import 'package:employee_attendance/controller/profile_controller.dart';
 import 'package:employee_attendance/widget/flutter_toast.dart';
 import 'package:employee_attendance/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:get/get.dart';
 
+import 'home.dart';
 import 'login.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -15,12 +16,13 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  AuthController authController = Get.find();
+
+  ProfileController profileController = Get.find();
 
   @override
   void initState() {
     super.initState();
-    authController.registerPasswordVisible = true;
+    profileController.registerPasswordVisible = true;
   }
 
   @override
@@ -80,89 +82,89 @@ class _RegisterPageState extends State<RegisterPage> {
                       height: 20,
                     ),
                     PTextField(
-                      controller: authController.firstName,
+                      controller: profileController.firstName,
                       labelText: "First Name",
                       labelStyle: TextStyle(
-                          color: !authController.focusNode5.hasFocus
-                              ? authController.firstName.text.isEmpty
+                          color: !profileController.focusNode5.hasFocus
+                              ? profileController.firstName.text.isEmpty
                                   ? Colors.black54
                                   : Colors.blue
                               : Colors.blue),
                       hintText: "First Name",
-                      focusNode: authController.focusNode5,
+                      focusNode: profileController.focusNode5,
                       border: Border.all(
-                          color: !authController.focusNode5.hasFocus
-                              ? authController.firstName.text.isNotEmpty
+                          color: !profileController.focusNode5.hasFocus
+                              ? profileController.firstName.text.isNotEmpty
                                   ? Colors.blue
                                   : Colors.black12
                               : Colors.blue),
                     ),
                     SizedBox(height: Get.height * 0.02),
                     PTextField(
-                      controller: authController.lastName,
+                      controller: profileController.lastName,
                       labelText: "Last Name",
                       labelStyle: TextStyle(
-                          color: !authController.focusNode6.hasFocus
-                              ? authController.lastName.text.isEmpty
+                          color: !profileController.focusNode6.hasFocus
+                              ? profileController.lastName.text.isEmpty
                                   ? Colors.black54
                                   : Colors.blue
                               : Colors.blue),
                       hintText: "Last Name",
-                      focusNode: authController.focusNode6,
+                      focusNode: profileController.focusNode6,
                       border: Border.all(
-                          color: !authController.focusNode6.hasFocus
-                              ? authController.lastName.text.isNotEmpty
+                          color: !profileController.focusNode6.hasFocus
+                              ? profileController.lastName.text.isNotEmpty
                                   ? Colors.blue
                                   : Colors.black12
                               : Colors.blue),
                     ),
                     SizedBox(height: Get.height * 0.02),
                     PTextField(
-                      controller: authController.registerEmail,
+                      controller: profileController.registerEmail,
                       labelText: "Email Address",
                       labelStyle: TextStyle(
-                          color: !authController.focusNode7.hasFocus
-                              ? authController.registerEmail.text.isEmpty
+                          color: !profileController.focusNode7.hasFocus
+                              ? profileController.registerEmail.text.isEmpty
                                   ? Colors.black54
                                   : Colors.blue
                               : Colors.blue),
                       hintText: "Email Address",
-                      focusNode: authController.focusNode7,
+                      focusNode: profileController.focusNode7,
                       border: Border.all(
-                          color: !authController.focusNode7.hasFocus
-                              ? authController.registerEmail.text.isNotEmpty
+                          color: !profileController.focusNode7.hasFocus
+                              ? profileController.registerEmail.text.isNotEmpty
                                   ? Colors.blue
                                   : Colors.black12
                               : Colors.blue),
                     ),
                     SizedBox(height: Get.height * 0.02),
                     PTextField(
-                      controller: authController.registerPassword,
-                      obscureText: authController.registerPasswordVisible,
+                      controller: profileController.registerPassword,
+                      obscureText: profileController.registerPasswordVisible,
                       hintText: "Password",
                       labelText: "Password",
                       labelStyle: TextStyle(
-                          color: !authController.focusNode8.hasFocus
-                              ? authController.registerPassword.text.isEmpty
+                          color: !profileController.focusNode8.hasFocus
+                              ? profileController.registerPassword.text.isEmpty
                                   ? Colors.black54
                                   : Colors.blue
                               : Colors.blue),
                       border: Border.all(
-                          color: !authController.focusNode8.hasFocus
-                              ? authController.registerPassword.text.isNotEmpty
+                          color: !profileController.focusNode8.hasFocus
+                              ? profileController.registerPassword.text.isNotEmpty
                                   ? Colors.blue
                                   : Colors.black12
                               : Colors.blue),
-                      focusNode: authController.focusNode8,
+                      focusNode: profileController.focusNode8,
                       suffixIcon: IconButton(
-                        icon: Icon(authController.registerPasswordVisible
+                        icon: Icon(profileController.registerPasswordVisible
                             ? Icons.visibility
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
                             () {
-                              authController.registerPasswordVisible =
-                                  !authController.registerPasswordVisible;
+                              profileController.registerPasswordVisible =
+                                  !profileController.registerPasswordVisible;
                             },
                           );
                         },
@@ -170,38 +172,38 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     SizedBox(height: Get.height * 0.02),
                     PTextField(
-                      controller: authController.confirmPassword,
-                      obscureText: authController.confirmPasswordVisible,
+                      controller: profileController.confirmPassword,
+                      obscureText: profileController.confirmPasswordVisible,
                       hintText: "Confirm Password",
                       labelText: "Confirm Password",
                       labelStyle: TextStyle(
-                          color: !authController.focusNode9.hasFocus
-                              ? authController.confirmPassword.text.isEmpty
+                          color: !profileController.focusNode9.hasFocus
+                              ? profileController.confirmPassword.text.isEmpty
                                   ? Colors.black54
                                   : Colors.blue
                               : Colors.blue),
                       border: Border.all(
-                          color: !authController.focusNode9.hasFocus
-                              ? authController.confirmPassword.text.isNotEmpty
+                          color: !profileController.focusNode9.hasFocus
+                              ? profileController.confirmPassword.text.isNotEmpty
                                   ? Colors.blue
                                   : Colors.black12
                               : Colors.blue),
-                      focusNode: authController.focusNode9,
+                      focusNode: profileController.focusNode9,
                       suffixIcon: IconButton(
-                        icon: Icon(authController.confirmPasswordVisible
+                        icon: Icon(profileController.confirmPasswordVisible
                             ? Icons.visibility
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
                             () {
-                              authController.confirmPasswordVisible =
-                                  !authController.confirmPasswordVisible;
+                              profileController.confirmPasswordVisible =
+                                  !profileController.confirmPasswordVisible;
                             },
                           );
                         },
                       ),
                     ),
-                    // SizedBox(height: Get.height*0.02),
+                    SizedBox(height: Get.height*0.01),
                     Row(
                       children: [
                         Checkbox(
@@ -209,13 +211,33 @@ class _RegisterPageState extends State<RegisterPage> {
                             borderRadius: BorderRadius.circular(5),
                           ),
                           side: const BorderSide(color: Colors.grey),
-                          value: authController.isBlank,
+                          value: profileController.isBlank,
                           onChanged: (value) {
                             setState(() {
-                              authController.isBlank = value!;
+                              profileController.isBlank = value!;
                             });
                           },
                         ),
+                        Flexible(
+                          child: RichText(
+                            overflow: TextOverflow.clip,
+                            text: TextSpan(
+                            text: "I agree to the ",
+                            style: TextStyle(
+                              color: Colors.black
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: ' Terms & Conditions & Privacy Policy',
+                                  style: TextStyle(
+                                      color: Color(0xff73ACFE),
+                                      fontSize: 14)),
+                              TextSpan(
+                                text: " see out by this side."
+                              )
+                            ],
+                          ),),
+                        )
                       ],
                     ),
                     const SizedBox(
@@ -223,35 +245,35 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     InkWell(
                       borderRadius: BorderRadius.circular(8),
+<<<<<<<<< Temporary merge branch 1
                       onTap: () {
-                        if (authController.firstName.text.isEmpty) {
+                        if (profileController.firstName.text.isEmpty) {
                           showToast(msg: "Enter your Name");
-                        } else if (authController.lastName.text.isEmpty) {
+                        } else if (profileController.lastName.text.isEmpty) {
                           showToast(msg: "Enter your Surname");
-                        } else if (authController.registerEmail.text.isEmpty) {
+                        } else if (profileController.registerEmail.text.isEmpty) {
                           showToast(msg: "Enter Email");
                         } else if (!RegExp(
                                 r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                            .hasMatch(authController.registerEmail.text)) {
+                            .hasMatch(profileController.registerEmail.text)) {
                           showToast(msg: "Enter valid Email");
-                        } else if (authController
+                        } else if (profileController
                             .registerPassword.text.isEmpty) {
                           showToast(msg: "Create Password");
-                        } else if (authController.registerPassword.text.length <
+                        } else if (profileController.registerPassword.text.length <
                             8) {
                           showToast(
                               msg: "Password required at least 8 characters");
-                        } else if (authController
+                        } else if (profileController
                             .confirmPassword.text.isEmpty) {
                           showToast(msg: "Re-Enter Password");
-                        } else if (authController.confirmPassword.text !=
-                            authController.registerPassword.text) {
+                        } else if (profileController.confirmPassword.text !=
+                            profileController.registerPassword.text) {
                           showToast(msg: "Password not matched");
-                        } else if (!authController.isBlank) {
+                        }else if(!profileController.isBlank){
                           showToast(msg: "Apply the conditions");
-                        } else {
-                          // Get.offAll(Ho)
-                          setState(() {});
+                        }else {
+                          Get.offAll(Home());
                         }
                       },
                       child: Container(
@@ -259,14 +281,15 @@ class _RegisterPageState extends State<RegisterPage> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 12, horizontal: 16),
                         decoration: BoxDecoration(
+
                             borderRadius: BorderRadius.circular(8),
-                            color: !authController.isBlank
+                            color:!profileController.isBlank
                                 ? const Color(0xffEEEFF0)
                                 : const Color(0xff3085FE)),
-                        child: const Center(
+                        child: Center(
                             child: Text(
                           "Register",
-                          style: TextStyle(color: Colors.black, fontSize: 17),
+                          style: TextStyle(color: !profileController.isBlank?Colors.black:Colors.white, fontSize: 17),
                         )),
                       ),
                     ),

@@ -1,4 +1,4 @@
-import 'package:employee_attendance/controller/auth_controller.dart';
+import 'package:employee_attendance/controller/profile_controller.dart';
 import 'package:employee_attendance/forgot_password/forgot_password_page.dart';
 import 'package:employee_attendance/page/home.dart';
 import 'package:employee_attendance/page/register_page.dart';
@@ -17,7 +17,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  AuthController authController = Get.find();
+
+  ProfileController profileController =Get.find();
+
 
   @override
   Widget build(BuildContext context) {
@@ -76,51 +78,51 @@ class _LoginState extends State<Login> {
                       height: 20,
                     ),
                     PTextField(
-                      controller: authController.loginEmail,
+                      controller: profileController.loginEmail,
                       labelText: "Email Address",
                       labelStyle: TextStyle(
-                          color: !authController.focusNode3.hasFocus
-                              ? authController.loginEmail.text.isEmpty
+                          color: !profileController.focusNode3.hasFocus
+                              ? profileController.loginEmail.text.isEmpty
                                   ? Colors.black54
                                   : Colors.blue
                               : Colors.blue),
                       hintText: "Email Address",
-                      focusNode: authController.focusNode3,
+                      focusNode: profileController.focusNode3,
                       border: Border.all(
-                          color: !authController.focusNode3.hasFocus
-                              ? authController.loginEmail.text.isNotEmpty
+                          color: !profileController.focusNode3.hasFocus
+                              ? profileController.loginEmail.text.isNotEmpty
                                   ? Colors.blue
                                   : Colors.black12
                               : Colors.blue),
                     ),
-                    SizedBox(height: Get.height * 0.02),
+                    SizedBox(height: Get.height*0.02),
                     PTextField(
-                      controller: authController.loginPassword,
-                      obscureText: authController.loginPasswordVisible,
+                      controller: profileController.loginPassword,
+                      obscureText: profileController.loginPasswordVisible,
                       hintText: "Password",
                       labelText: "Password",
                       labelStyle: TextStyle(
-                          color: !authController.focusNode4.hasFocus
-                              ? authController.loginPassword.text.isEmpty
-                                  ? Colors.black54
-                                  : Colors.blue
-                              : Colors.blue),
+                          color: !profileController.focusNode4.hasFocus
+                              ? profileController.loginPassword.text.isEmpty
+                              ? Colors.black54
+                              : Colors.blue:Colors.blue
+                      ),
                       border: Border.all(
-                          color: !authController.focusNode4.hasFocus
-                              ? authController.loginPassword.text.isNotEmpty
-                                  ? Colors.blue
-                                  : Colors.black12
+                          color: !profileController.focusNode4.hasFocus
+                              ? profileController.loginPassword.text.isNotEmpty
+                              ? Colors.blue
+                              : Colors.black12
                               : Colors.blue),
-                      focusNode: authController.focusNode4,
+                      focusNode: profileController.focusNode4,
                       suffixIcon: IconButton(
-                        icon: Icon(authController.loginPasswordVisible
+                        icon: Icon(profileController.loginPasswordVisible
                             ? Icons.visibility
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
-                            () {
-                              authController.loginPasswordVisible =
-                                  !authController.loginPasswordVisible;
+                                () {
+                                  profileController.loginPasswordVisible =
+                              !profileController.loginPasswordVisible;
                             },
                           );
                         },
@@ -150,17 +152,19 @@ class _LoginState extends State<Login> {
                     CustomButton(
                       buttonText: 'Login',
                       onTap: () {
-                        if (authController.loginEmail.text.isEmpty) {
+                        if(profileController.loginEmail.text.isEmpty){
                           showToast(msg: "Enter Email");
-                        } else if (!RegExp(
-                                r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                            .hasMatch(authController.loginEmail.text)) {
+                        }else if(
+                        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(profileController.loginEmail.text)
+                        ){
                           showToast(msg: "Enter valid Email");
-                        } else if (authController.loginPassword.text.isEmpty) {
+                        } else if(profileController.loginPassword.text.isEmpty){
                           showToast(msg: "Enter Password");
-                        } else {
-                          showDialogHome();
-                        }
+                        }else if(profileController.loginPassword.text.length<8){
+                          showToast(msg: "Password required at least 8 characters");
+                        }else{
+                        showDialogHome();}
                       },
                     ),
                     const SizedBox(
@@ -179,9 +183,7 @@ class _LoginState extends State<Login> {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {
-                        authController.googleSignIn();
-                      },
+                      onTap: () {},
                       child: Container(
                         width: Get.width,
                         padding: const EdgeInsets.symmetric(
@@ -218,7 +220,7 @@ class _LoginState extends State<Login> {
                     Center(
                       child: InkWell(
                         onTap: () {
-                          Get.to(RegisterPage());
+                          Get.to(const RegisterPage());
                         },
                         child: RichText(
                           text: const TextSpan(

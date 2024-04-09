@@ -1,4 +1,4 @@
-import 'package:employee_attendance/controller/auth_controller.dart';
+import 'package:employee_attendance/controller/profile_controller.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:employee_attendance/widget/flutter_toast.dart';
 import 'package:employee_attendance/widget/text_field.dart';
@@ -14,13 +14,14 @@ class NewPassword extends StatefulWidget {
 }
 
 class _NewPasswordState extends State<NewPassword> {
-  AuthController authController = Get.find();
+
+  ProfileController profileController =Get.find();
 
   @override
   void initState() {
     super.initState();
-    authController.enterPasswordVisible = true;
-    authController.reEnterPasswordVisible = true;
+    profileController.enterPasswordVisible = true;
+    profileController.reEnterPasswordVisible = true;
   }
 
   @override
@@ -72,32 +73,32 @@ class _NewPasswordState extends State<NewPassword> {
                         height: Get.height * 0.05,
                       ),
                       PTextField(
-                        controller: authController.newPassword,
-                        obscureText: authController.enterPasswordVisible,
+                        controller: profileController.newPassword,
+                        obscureText: profileController.enterPasswordVisible,
                         hintText: "Enter New Password",
                         labelText: "Enter New Password",
                         labelStyle: TextStyle(
-                            color: !authController.focusNode1.hasFocus
-                                ? authController.newPassword.text.isEmpty
+                            color: !profileController.focusNode1.hasFocus
+                                ? profileController.newPassword.text.isEmpty
                                 ? Colors.black54
                                 : Colors.blue:Colors.blue
                         ),
                         border: Border.all(
-                            color: !authController.focusNode1.hasFocus
-                                ? authController.newPassword.text.isNotEmpty
+                            color: !profileController.focusNode1.hasFocus
+                                ? profileController.newPassword.text.isNotEmpty
                                 ? Colors.blue
                                 : Colors.black12
                                 : Colors.blue),
-                        focusNode: authController.focusNode1,
+                        focusNode: profileController.focusNode1,
                         suffixIcon: IconButton(
-                          icon: Icon(authController.enterPasswordVisible
+                          icon: Icon(profileController.enterPasswordVisible
                               ? Icons.visibility
                               : Icons.visibility_off),
                           onPressed: () {
                             setState(
                                   () {
-                                authController.enterPasswordVisible =
-                                !authController.enterPasswordVisible;
+                                    profileController.enterPasswordVisible =
+                                !profileController.enterPasswordVisible;
                               },
                             );
                           },
@@ -107,32 +108,32 @@ class _NewPasswordState extends State<NewPassword> {
                         height: Get.height * 0.02,
                       ),
                       PTextField(
-                        controller: authController.reEnterPassword,
-                        obscureText: authController.reEnterPasswordVisible,
+                        controller: profileController.reEnterPassword,
+                        obscureText: profileController.reEnterPasswordVisible,
                         hintText: "Re-Enter Password",
                         labelText: "Re-Enter Password",
                         labelStyle: TextStyle(
-                            color: !authController.focusNode2.hasFocus
-                                ? authController.reEnterPassword.text.isEmpty
+                            color: !profileController.focusNode2.hasFocus
+                                ? profileController.reEnterPassword.text.isEmpty
                                 ? Colors.black54
                                 : Colors.blue:Colors.blue
                         ),
                         border: Border.all(
-                            color: !authController.focusNode2.hasFocus
-                                ? authController.reEnterPassword.text.isNotEmpty
+                            color: !profileController.focusNode2.hasFocus
+                                ? profileController.reEnterPassword.text.isNotEmpty
                                 ? Colors.blue
                                 : Colors.black12
                                 : Colors.blue),
-                        focusNode: authController.focusNode2,
+                        focusNode: profileController.focusNode2,
                         suffixIcon: IconButton(
-                          icon: Icon(authController.reEnterPasswordVisible
+                          icon: Icon(profileController.reEnterPasswordVisible
                               ? Icons.visibility
                               : Icons.visibility_off),
                           onPressed: () {
                             setState(
                                   () {
-                                authController.reEnterPasswordVisible =
-                                !authController.reEnterPasswordVisible;
+                                    profileController.reEnterPasswordVisible =
+                                !profileController.reEnterPasswordVisible;
                               },
                             );
                           },
@@ -144,17 +145,17 @@ class _NewPasswordState extends State<NewPassword> {
                       CustomButton(
                           buttonText: "Update Password",
                           onTap: () {
-                            if (authController.newPassword.text.isEmpty) {
+                            if (profileController.newPassword.text.isEmpty) {
                               showToast(msg: "Enter Password");
-                            } else if (authController.newPassword.text.length <
+                            } else if (profileController.newPassword.text.length <
                                 8) {
                               showToast(
                                   msg: "Password required at least 8 characters");
-                            } else if (authController.reEnterPassword.text
+                            } else if (profileController.reEnterPassword.text
                                 .isEmpty) {
                               showToast(msg: "Re-Enter Password");
-                            } else if (authController.reEnterPassword.text !=
-                                authController.newPassword.text) {
+                            } else if (profileController.reEnterPassword.text !=
+                                profileController.newPassword.text) {
                               showToast(msg: "Password not matched");
                             } else {
                               return null;
