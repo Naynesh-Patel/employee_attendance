@@ -16,7 +16,6 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-
   ProfileController profileController = Get.find();
 
   @override
@@ -151,7 +150,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               : Colors.blue),
                       border: Border.all(
                           color: !profileController.focusNode8.hasFocus
-                              ? profileController.registerPassword.text.isNotEmpty
+                              ? profileController
+                                      .registerPassword.text.isNotEmpty
                                   ? Colors.blue
                                   : Colors.black12
                               : Colors.blue),
@@ -184,7 +184,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               : Colors.blue),
                       border: Border.all(
                           color: !profileController.focusNode9.hasFocus
-                              ? profileController.confirmPassword.text.isNotEmpty
+                              ? profileController
+                                      .confirmPassword.text.isNotEmpty
                                   ? Colors.blue
                                   : Colors.black12
                               : Colors.blue),
@@ -203,7 +204,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         },
                       ),
                     ),
-                    SizedBox(height: Get.height*0.01),
+                    SizedBox(height: Get.height * 0.01),
                     Row(
                       children: [
                         Checkbox(
@@ -222,21 +223,19 @@ class _RegisterPageState extends State<RegisterPage> {
                           child: RichText(
                             overflow: TextOverflow.clip,
                             text: TextSpan(
-                            text: "I agree to the ",
-                            style: TextStyle(
-                              color: Colors.black
+                              text: "I agree to the ",
+                              style: TextStyle(color: Colors.black),
+                              children: <TextSpan>[
+                                TextSpan(
+                                    text:
+                                        ' Terms & Conditions & Privacy Policy',
+                                    style: TextStyle(
+                                        color: Color(0xff73ACFE),
+                                        fontSize: 14)),
+                                TextSpan(text: " see out by this side.")
+                              ],
                             ),
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: ' Terms & Conditions & Privacy Policy',
-                                  style: TextStyle(
-                                      color: Color(0xff73ACFE),
-                                      fontSize: 14)),
-                              TextSpan(
-                                text: " see out by this side."
-                              )
-                            ],
-                          ),),
+                          ),
                         )
                       ],
                     ),
@@ -245,13 +244,13 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     InkWell(
                       borderRadius: BorderRadius.circular(8),
-<<<<<<<<< Temporary merge branch 1
                       onTap: () {
                         if (profileController.firstName.text.isEmpty) {
                           showToast(msg: "Enter your Name");
                         } else if (profileController.lastName.text.isEmpty) {
                           showToast(msg: "Enter your Surname");
-                        } else if (profileController.registerEmail.text.isEmpty) {
+                        } else if (profileController
+                            .registerEmail.text.isEmpty) {
                           showToast(msg: "Enter Email");
                         } else if (!RegExp(
                                 r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -260,7 +259,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         } else if (profileController
                             .registerPassword.text.isEmpty) {
                           showToast(msg: "Create Password");
-                        } else if (profileController.registerPassword.text.length <
+                        } else if (profileController
+                                .registerPassword.text.length <
                             8) {
                           showToast(
                               msg: "Password required at least 8 characters");
@@ -270,9 +270,9 @@ class _RegisterPageState extends State<RegisterPage> {
                         } else if (profileController.confirmPassword.text !=
                             profileController.registerPassword.text) {
                           showToast(msg: "Password not matched");
-                        }else if(!profileController.isBlank){
+                        } else if (!profileController.isBlank) {
                           showToast(msg: "Apply the conditions");
-                        }else {
+                        } else {
                           Get.offAll(Home());
                         }
                       },
@@ -281,15 +281,18 @@ class _RegisterPageState extends State<RegisterPage> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 12, horizontal: 16),
                         decoration: BoxDecoration(
-
                             borderRadius: BorderRadius.circular(8),
-                            color:!profileController.isBlank
+                            color: !profileController.isBlank
                                 ? const Color(0xffEEEFF0)
                                 : const Color(0xff3085FE)),
                         child: Center(
                             child: Text(
                           "Register",
-                          style: TextStyle(color: !profileController.isBlank?Colors.black:Colors.white, fontSize: 17),
+                          style: TextStyle(
+                              color: !profileController.isBlank
+                                  ? Colors.black
+                                  : Colors.white,
+                              fontSize: 17),
                         )),
                       ),
                     ),

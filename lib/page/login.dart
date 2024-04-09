@@ -17,9 +17,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
-  ProfileController profileController =Get.find();
-
+  ProfileController profileController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +93,7 @@ class _LoginState extends State<Login> {
                                   : Colors.black12
                               : Colors.blue),
                     ),
-                    SizedBox(height: Get.height*0.02),
+                    SizedBox(height: Get.height * 0.02),
                     PTextField(
                       controller: profileController.loginPassword,
                       obscureText: profileController.loginPasswordVisible,
@@ -104,14 +102,14 @@ class _LoginState extends State<Login> {
                       labelStyle: TextStyle(
                           color: !profileController.focusNode4.hasFocus
                               ? profileController.loginPassword.text.isEmpty
-                              ? Colors.black54
-                              : Colors.blue:Colors.blue
-                      ),
+                                  ? Colors.black54
+                                  : Colors.blue
+                              : Colors.blue),
                       border: Border.all(
                           color: !profileController.focusNode4.hasFocus
                               ? profileController.loginPassword.text.isNotEmpty
-                              ? Colors.blue
-                              : Colors.black12
+                                  ? Colors.blue
+                                  : Colors.black12
                               : Colors.blue),
                       focusNode: profileController.focusNode4,
                       suffixIcon: IconButton(
@@ -120,9 +118,9 @@ class _LoginState extends State<Login> {
                             : Icons.visibility_off),
                         onPressed: () {
                           setState(
-                                () {
-                                  profileController.loginPasswordVisible =
-                              !profileController.loginPasswordVisible;
+                            () {
+                              profileController.loginPasswordVisible =
+                                  !profileController.loginPasswordVisible;
                             },
                           );
                         },
@@ -152,19 +150,22 @@ class _LoginState extends State<Login> {
                     CustomButton(
                       buttonText: 'Login',
                       onTap: () {
-                        if(profileController.loginEmail.text.isEmpty){
+                        if (profileController.loginEmail.text.isEmpty) {
                           showToast(msg: "Enter Email");
-                        }else if(
-                        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                            .hasMatch(profileController.loginEmail.text)
-                        ){
+                        } else if (!RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(profileController.loginEmail.text)) {
                           showToast(msg: "Enter valid Email");
-                        } else if(profileController.loginPassword.text.isEmpty){
+                        } else if (profileController
+                            .loginPassword.text.isEmpty) {
                           showToast(msg: "Enter Password");
-                        }else if(profileController.loginPassword.text.length<8){
-                          showToast(msg: "Password required at least 8 characters");
-                        }else{
-                        showDialogHome();}
+                        } else if (profileController.loginPassword.text.length <
+                            8) {
+                          showToast(
+                              msg: "Password required at least 8 characters");
+                        } else {
+                          showDialogHome();
+                        }
                       },
                     ),
                     const SizedBox(
