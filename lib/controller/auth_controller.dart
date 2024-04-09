@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:employee_attendance/page/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -65,7 +66,7 @@ class AuthController extends GetxController {
     try {
       await _googleSignIn.signIn();
     } catch (error) {
-      // Get.to(Home());
+      Get.to(Home());
       print('Error signing in: $error');
     }
   }

@@ -218,7 +218,7 @@ class _LoginState extends State<Login> {
                     Center(
                       child: InkWell(
                         onTap: () {
-                          Get.to(const RegisterPage());
+                          Get.to(RegisterPage());
                         },
                         child: RichText(
                           text: const TextSpan(
