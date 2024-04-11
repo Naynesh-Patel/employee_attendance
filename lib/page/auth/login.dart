@@ -1,7 +1,8 @@
+import 'package:employee_attendance/controller/auth_controller.dart';
 import 'package:employee_attendance/controller/profile_controller.dart';
-import 'package:employee_attendance/forgot_password/forgot_password_page.dart';
-import 'package:employee_attendance/page/home.dart';
-import 'package:employee_attendance/page/register_page.dart';
+import 'package:employee_attendance/page/auth/register.dart';
+import 'package:employee_attendance/page/forgot_password/forgot_password.dart';
+import 'package:employee_attendance/page/home/home.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:employee_attendance/widget/flutter_toast.dart';
 import 'package:employee_attendance/widget/text_field.dart';
@@ -18,6 +19,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   ProfileController profileController = Get.find();
+  AuthController authController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -184,7 +186,9 @@ class _LoginState extends State<Login> {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        authController.googleSignIn();
+                      },
                       child: Container(
                         width: Get.width,
                         padding: const EdgeInsets.symmetric(
@@ -293,14 +297,14 @@ class _LoginState extends State<Login> {
                   ],
                 ),
               ),
-              const Text(
+              Text(
                 "Your account is ready to use",
                 style: TextStyle(
                     fontSize: 13,
                     color: Color(0xff616366),
                     fontWeight: FontWeight.w400),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
               CustomButton(

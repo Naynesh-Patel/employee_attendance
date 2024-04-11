@@ -12,7 +12,6 @@ class MyProfilePage extends StatefulWidget {
 
 class _MyProfilePageState extends State<MyProfilePage>
     with TickerProviderStateMixin {
-
   ProfileController profileController = Get.find();
 
   @override
@@ -80,7 +79,9 @@ class _MyProfilePageState extends State<MyProfilePage>
                       child: const Center(
                           child: Text('Personal',
                               maxLines: 1,
-                              style: TextStyle(fontWeight: FontWeight.w400,overflow: TextOverflow.clip))),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  overflow: TextOverflow.clip))),
                     ),
                   ),
                   Tab(
@@ -93,7 +94,9 @@ class _MyProfilePageState extends State<MyProfilePage>
                       child: const Center(
                           child: Text('Professional',
                               maxLines: 1,
-                              style: TextStyle(fontWeight: FontWeight.w400,overflow: TextOverflow.clip))),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  overflow: TextOverflow.clip))),
                     ),
                   ),
                   Tab(
@@ -107,9 +110,9 @@ class _MyProfilePageState extends State<MyProfilePage>
                           child: Text(
                         'Documents',
                         maxLines: 1,
-                        style: TextStyle(fontWeight: FontWeight.w400,overflow: TextOverflow.clip
-
-                        ),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            overflow: TextOverflow.clip),
                       )),
                     ),
                   ),
@@ -119,18 +122,24 @@ class _MyProfilePageState extends State<MyProfilePage>
             SizedBox(
               height: Get.height * 0.02,
             ),
-            Expanded
-              (
+            Expanded(
               child: TabBarView(
                   controller: profileController.tabController,
                   children: [
-                    Column(
+                    ListView(
+                      shrinkWrap: true,
                       children: [
-                        textsTile(text1: "Full Name", text2: "Michael Mitc"),
-                        textsTile(
-                            text1: "Email Address", text2: "p12@gmail.com"),
-                        textsTile(text1: "Phone Number", text2: "0123456789"),
-                        textsTile(text1: "Address", text2: "33,surat"),
+                        Column(
+                          children: [
+                            textsTile(
+                                text1: "Full Name", text2: "Michael Mitc"),
+                            textsTile(
+                                text1: "Email Address", text2: "p12@gmail.com"),
+                            textsTile(
+                                text1: "Phone Number", text2: "0123456789"),
+                            textsTile(text1: "Address", text2: "33,surat"),
+                          ],
+                        ),
                       ],
                     ),
                     ListView(

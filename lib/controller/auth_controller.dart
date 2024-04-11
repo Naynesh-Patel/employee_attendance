@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthController extends GetxController {
   TextEditingController emailTextEditingController = TextEditingController();
@@ -28,4 +29,17 @@ class AuthController extends GetxController {
     );
   }
 
+  Future<void> googleSignIn() async {
+    GoogleSignIn googleSignIn = GoogleSignIn();
+    try {
+      GoogleSignInAccount? account = await googleSignIn.signIn();
+      if (account != null) {
+        print('User signed in: ${account.displayName}');
+      } else {
+        print('User cancelled sign-in.');
+      }
+    } catch (error) {
+      print('Error signing in: $error');
+    }
+  }
 }

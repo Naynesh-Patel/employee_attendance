@@ -1,9 +1,9 @@
 import 'package:employee_attendance/controller/auth_controller.dart';
+import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
-import '../widget/custom_button.dart';
 import 'new_password.dart';
 
 class VerificationEmail extends StatefulWidget {
@@ -71,8 +71,7 @@ class _VerificationEmailState extends State<VerificationEmail> {
                 Center(
                     child: Image.asset(
                   "assets/images/verification_code.png",
-                  height: Get.height * 0.37
-                      ,
+                  height: Get.height * 0.37,
                 )),
                 SizedBox(
                   height: Get.height * 0.05,

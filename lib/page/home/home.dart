@@ -1,11 +1,10 @@
-import 'package:employee_attendance/page/home_tab/holiday_tab.dart';
-import 'package:employee_attendance/page/home_tab/home_tab.dart';
-import 'package:employee_attendance/page/home_tab/leaves_tab.dart';
-import 'package:employee_attendance/page/home_tab/profile_tab.dart';
+import 'package:employee_attendance/page/home/home_tab/holiday_tab.dart';
+import 'package:employee_attendance/page/home/home_tab/home_tab.dart';
+import 'package:employee_attendance/page/home/home_tab/leaves_tab.dart';
+import 'package:employee_attendance/page/home/home_tab/profile_tab.dart';
+import 'package:employee_attendance/page/home/home_tab/team_member_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'home_tab/team_member_tab.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -34,7 +33,7 @@ class _HomeState extends State<Home> {
           length: 4,
           child: Scaffold(
             bottomNavigationBar: menu(),
-            body: const TabBarView(
+            body: TabBarView(
               children: [
                 HomeTab(),
                 LeavesTab(),
@@ -48,9 +47,9 @@ class _HomeState extends State<Home> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24)),
                 // isExtended: true,
-                backgroundColor: const Color(0xff3085FE),
+                backgroundColor: Color(0xff3085FE),
                 onPressed: () {
-                  Get.to(const TeamMember());
+                  Get.to(TeamMemberTab());
                 },
                 // isExtended: true,
                 child: Image.asset(
@@ -73,31 +72,6 @@ class _HomeState extends State<Home> {
         indicatorColor: Colors.white,
         onTap: onItemTapped,
         tabs: [
-          // Tab(
-          //     icon: Icon(
-          //   Icons.home,
-          //   color: Color(0xff000000),
-          //   size: 30,
-          // )
-          // ),
-          // Tab(
-          //     icon: Icon(
-          //   Icons.calendar_month_rounded,
-          //   color: Color(0xff000000),
-          //   size: 30,
-          // )),
-          // Tab(
-          //     icon: Icon(
-          //   Icons.beach_access,
-          //   color: Color(0xff000000),
-          //   size: 30,
-          // )),
-          // Tab(
-          //     icon: Icon(
-          //   Icons.person,
-          //   color: Color(0xff000000),
-          //   size: 30,
-          // )),
           Tab(
               icon: Image.asset(
             "assets/images/home_icon.png",

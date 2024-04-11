@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class TermsConditionsPage extends StatelessWidget {
-  const TermsConditionsPage({super.key});
+class TermsConditions extends StatelessWidget {
+  const TermsConditions({super.key});
 
   @override
   Widget build(BuildContext context) {

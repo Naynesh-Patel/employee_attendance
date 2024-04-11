@@ -11,11 +11,12 @@ class CustomButtonLoader extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4), color: Colors.black),
       child: const Center(
-          child: SizedBox(
-              width: 25,
-              height: 25,
-              child: CircularProgressIndicator(
-                  color: Colors.black, strokeWidth: 2))),
+        child: SizedBox(
+          width: 25,
+          height: 25,
+          child: CircularProgressIndicator(color: Colors.black, strokeWidth: 2),
+        ),
+      ),
     );
   }
 }

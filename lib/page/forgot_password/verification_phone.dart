@@ -1,9 +1,9 @@
 import 'package:employee_attendance/controller/auth_controller.dart';
+import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
-import '../widget/custom_button.dart';
 import 'new_password.dart';
 
 class VerificationPhone extends StatefulWidget {

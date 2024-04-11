@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PTextField extends StatefulWidget {
-
   final TextEditingController? controller;
   final String? hintText;
   final String? labelText;
@@ -13,7 +12,8 @@ class PTextField extends StatefulWidget {
   final BoxBorder? border;
   final TextStyle? labelStyle;
 
-  const PTextField({super.key,
+  const PTextField({
+    super.key,
     this.hintText,
     this.labelText,
     this.suffixIcon,
@@ -29,43 +29,29 @@ class PTextField extends StatefulWidget {
 }
 
 class _PTextFieldState extends State<PTextField> {
-
-  AuthController authController =Get.find();
+  AuthController authController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: widget.border,
-          borderRadius: BorderRadius.circular(10)),
+          border: widget.border, borderRadius: BorderRadius.circular(10)),
       child: TextField(
         controller: widget.controller,
-        obscureText: widget.obscureText??false,
+        obscureText: widget.obscureText ?? false,
         focusNode: widget.focusNode,
         decoration: InputDecoration(
             border: InputBorder.none,
             hintText: widget.hintText,
-            hintStyle: const TextStyle(color: Colors.black26,fontSize: 15),
+            hintStyle: const TextStyle(color: Colors.black26, fontSize: 15),
             labelText: widget.labelText,
             labelStyle: widget.labelStyle,
-            contentPadding: const EdgeInsets.only(
-                top: 7,left: 10,right: 10),
+            contentPadding: const EdgeInsets.only(top: 7, left: 10, right: 10),
             suffixIcon: widget.suffixIcon,
             alignLabelWithHint: false),
         keyboardType: TextInputType.visiblePassword,
         textInputAction: TextInputAction.done,
-        // onTap: () {
-        //   setState(() {
-        //
-        //   });
-        // },
-        // onSubmitted: (value) {
-        //   setState(() {
-        //
-        //   });
-        // },
       ),
     );
   }
 }
-

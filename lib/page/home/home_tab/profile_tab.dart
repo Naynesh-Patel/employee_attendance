@@ -1,17 +1,16 @@
 import 'dart:io';
 
 import 'package:employee_attendance/controller/profile_controller.dart';
+import 'package:employee_attendance/page/privacy/privacy_policy.dart';
+import 'package:employee_attendance/page/privacy/terms%20&%20conditions.dart';
+import 'package:employee_attendance/page/profile_pages/edit_profile.dart';
+import 'package:employee_attendance/page/profile_pages/my_profile.dart';
+import 'package:employee_attendance/page/profile_pages/setting.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:employee_attendance/widget/listTile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-
-import '../../profile_pages/edit_profile.dart';
-import '../../profile_pages/my_profile.dart';
-import '../../profile_pages/privacy_policy.dart';
-import '../../profile_pages/setting_page.dart';
-import '../../profile_pages/terms & conditions.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({Key? key}) : super(key: key);
@@ -21,7 +20,6 @@ class ProfileTab extends StatefulWidget {
 }
 
 class _ProfileTabState extends State<ProfileTab> {
-
   ProfileController profileController = Get.find();
 
   @override
@@ -38,38 +36,42 @@ class _ProfileTabState extends State<ProfileTab> {
                   height: Get.height * 0.04,
                 ),
                 profileController.image == null
-                ? Stack(alignment: Alignment.bottomRight, children: [
-                  SizedBox(
-                    height: Get.height * 0.16,
-                    width: Get.width * 0.35,
-                    child: Image.asset(
-                      "assets/images/user_profile.png",
-                    ),
-                  ),
-                  FloatingActionButton.small(
-                    backgroundColor: const Color(0xff3085FE),
-                    shape: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(10)),
-                    onPressed: () async {
-                      profileController.image = await profileController.picker
-                          .pickImage(source: ImageSource.gallery);
-                      setState(() {});
-                    },
-                    child: Image.asset(
-                      "assets/images/camera.png",
-                      height: Get.height * 0.03,
-                      color: Colors.white,
-                    ),
-                  ),
-                ])
-                : SizedBox(
-                  height: Get.height * 0.16,
-                  width: Get.width * 0.35,
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.circular(60),
-                      child: Image.file(File(profileController.image!.path),fit: BoxFit.cover,)),
-                ),
+                    ? Stack(alignment: Alignment.bottomRight, children: [
+                        SizedBox(
+                          height: Get.height * 0.16,
+                          width: Get.width * 0.35,
+                          child: Image.asset(
+                            "assets/images/user_profile.png",
+                          ),
+                        ),
+                        FloatingActionButton.small(
+                          backgroundColor: const Color(0xff3085FE),
+                          shape: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(10)),
+                          onPressed: () async {
+                            profileController.image = await profileController
+                                .picker
+                                .pickImage(source: ImageSource.gallery);
+                            setState(() {});
+                          },
+                          child: Image.asset(
+                            "assets/images/camera.png",
+                            height: Get.height * 0.03,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ])
+                    : SizedBox(
+                        height: Get.height * 0.16,
+                        width: Get.width * 0.35,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(60),
+                            child: Image.file(
+                              File(profileController.image!.path),
+                              fit: BoxFit.cover,
+                            )),
+                      ),
                 SizedBox(
                   height: Get.height * 0.02,
                 ),
@@ -99,7 +101,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 ),
                 listTile(
                   onTap: () {
-                    Get.to(const MyProfilePage());
+                    Get.to(MyProfilePage());
                   },
                   data: "My Profile",
                   image: "assets/images/profile_home.png",
@@ -113,14 +115,14 @@ class _ProfileTabState extends State<ProfileTab> {
                 ),
                 listTile(
                   onTap: () {
-                    Get.to(TermsConditionsPage());
+                    Get.to(TermsConditions());
                   },
                   data: "Terms & Conditions",
                   image: "assets/images/terms-and-conditions.png",
                 ),
                 listTile(
                   onTap: () {
-                    Get.to(const PrivacyPolicyPage());
+                    Get.to(const PrivacyPolicy());
                   },
                   data: "Privacy Policy",
                   image: "assets/images/privacy_policy.png",

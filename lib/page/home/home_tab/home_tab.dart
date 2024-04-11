@@ -1,4 +1,4 @@
-import 'package:employee_attendance/profile_pages/notification.dart';
+import 'package:employee_attendance/page/profile_pages/notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:horizontal_date_picker_flutter/horizontal_date_picker_flutter.dart';

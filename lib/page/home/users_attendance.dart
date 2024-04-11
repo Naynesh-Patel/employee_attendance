@@ -25,7 +25,8 @@ class _UserAttendanceState extends State<UserAttendance> {
         backgroundColor: Colors.white,
         title: const Text(
           'Jack Patel',
-          style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17,color: Colors.black),
+          style: TextStyle(
+              fontWeight: FontWeight.w900, fontSize: 17, color: Colors.black),
         ),
       ),
       body: Padding(
@@ -64,7 +65,7 @@ class _UserAttendanceState extends State<UserAttendance> {
                               color: Colors.blue),
                         ),
                         const SizedBox(width: 10),
-                         Expanded(
+                        Expanded(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,21 +73,19 @@ class _UserAttendanceState extends State<UserAttendance> {
                               const Text(
                                 'Date and Year',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 13),
+                                    fontWeight: FontWeight.w800, fontSize: 13),
                               ),
                               const SizedBox(height: 10),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
-                                    padding:  const EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(8),
                                     decoration: BoxDecoration(
-                                        color:
-                                        const Color(0xffEAF3FF),
+                                        color: const Color(0xffEAF3FF),
                                         borderRadius:
-                                        BorderRadius.circular(
-                                            10)),
+                                            BorderRadius.circular(10)),
                                     child: Image.asset(
                                       'assets/images/check-in_icon.png',
                                       height: 15,
@@ -104,13 +103,11 @@ class _UserAttendanceState extends State<UserAttendance> {
                                     ),
                                   ),
                                   Container(
-                                    padding:  const EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(8),
                                     decoration: BoxDecoration(
-                                        color:
-                                        const Color(0xffEAF3FF),
+                                        color: const Color(0xffEAF3FF),
                                         borderRadius:
-                                        BorderRadius.circular(
-                                            10)),
+                                            BorderRadius.circular(10)),
                                     child: Image.asset(
                                       'assets/images/check_out_icon.png',
                                       height: 15,

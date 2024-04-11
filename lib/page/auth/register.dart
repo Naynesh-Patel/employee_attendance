@@ -1,11 +1,12 @@
+import 'package:employee_attendance/controller/auth_controller.dart';
 import 'package:employee_attendance/controller/profile_controller.dart';
+import 'package:employee_attendance/page/home/home.dart';
 import 'package:employee_attendance/widget/flutter_toast.dart';
 import 'package:employee_attendance/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:get/get.dart';
 
-import 'home.dart';
 import 'login.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   ProfileController profileController = Get.find();
+  AuthController authController = Get.find();
 
   @override
   void initState() {
@@ -312,7 +314,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        authController.googleSignIn();
+                      },
                       child: Container(
                         width: Get.width,
                         padding: const EdgeInsets.symmetric(

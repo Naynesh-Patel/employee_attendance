@@ -1,15 +1,16 @@
-import 'package:employee_attendance/page/home_tab/users_attendance.dart';
+import 'package:employee_attendance/page/home/users_attendance.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class TeamMember extends StatefulWidget {
-  const TeamMember({super.key});
+class TeamMemberTab extends StatefulWidget {
+  const TeamMemberTab({super.key});
 
   @override
-  State<TeamMember> createState() => _TeamMemberState();
+  State<TeamMemberTab> createState() => _TeamMemberTabState();
 }
 
-class _TeamMemberState extends State<TeamMember> {
+class _TeamMemberTabState extends State<TeamMemberTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,10 +22,10 @@ class _TeamMemberState extends State<TeamMember> {
             SizedBox(
               height: Get.height * 0.08,
             ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
                   "Team Members",
                   style: TextStyle(
                       fontSize: 15,
@@ -32,14 +33,13 @@ class _TeamMemberState extends State<TeamMember> {
                       color: Colors.black,
                       fontWeight: FontWeight.w900),
                 ),
-            Image.asset(
-                    "assets/images/menu.png",
-                    width: Get.width * 0.06,
-                  ),
-          ],
-        ),
-            SizedBox(height: Get.height*0.02
+                Image.asset(
+                  "assets/images/menu.png",
+                  width: Get.width * 0.06,
+                ),
+              ],
             ),
+            SizedBox(height: Get.height * 0.02),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
@@ -115,7 +115,7 @@ class _TeamMemberState extends State<TeamMember> {
                                     context: context,
                                     builder: (context) {
                                       return SizedBox(
-                                        height: Get.height * 0.16,
+                                        height: Get.height * 0.18,
                                         child: Padding(
                                           padding: const EdgeInsets.all(15),
                                           child: Column(
@@ -126,34 +126,56 @@ class _TeamMemberState extends State<TeamMember> {
                                                   height: 2,
                                                   decoration: BoxDecoration(
                                                       color: Colors.grey,
-                                                    borderRadius: BorderRadius.circular(5)
-                                                  ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5)),
                                                 ),
                                               ),
-                                              SizedBox(height: Get.height*0.02,),
-                                              Row(
-                                                children: [
-                                                  Image.asset(
-                                                    "assets/images/call.png",
-                                                    height: Get.height * 0.03,
-                                                  ),
-                                                  SizedBox(width: Get.width*0.03,),
-                                                  const Text("Call",style: TextStyle(
-                                                    fontSize: 16
-                                                  ),)
-                                                ],
+                                              SizedBox(
+                                                height: Get.height * 0.02,
                                               ),
-                                              SizedBox(height: Get.height*0.02,),
+                                              InkWell(
+                                                onTap: () {
+                                                  makePhoneCall();
+                                                },
+                                                child: Row(
+                                                  children: [
+                                                    Image.asset(
+                                                      "assets/images/call.png",
+                                                      height: Get.height * 0.03,
+                                                    ),
+                                                    SizedBox(
+                                                      width: Get.width * 0.03,
+                                                    ),
+                                                    const Text(
+                                                      "Call",
+                                                      style: TextStyle(
+                                                          fontSize: 16),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: Get.height * 0.02,
+                                              ),
                                               Row(
                                                 children: [
                                                   Image.asset(
                                                     "assets/images/delete.png",
-                                                    height: Get.height * 0.03,color: const Color(0xffFF8F85),
+                                                    height: Get.height * 0.03,
+                                                    color:
+                                                        const Color(0xffFF8F85),
                                                   ),
-                                                  SizedBox(width: Get.width*0.03,),
-                                                  const Text("Delete",style: TextStyle(
-                                                      fontSize: 16,color: Color(0xffFF8F85)
-                                                  ),)
+                                                  SizedBox(
+                                                    width: Get.width * 0.03,
+                                                  ),
+                                                  const Text(
+                                                    "Delete",
+                                                    style: TextStyle(
+                                                        fontSize: 16,
+                                                        color:
+                                                            Color(0xffFF8F85)),
+                                                  )
                                                 ],
                                               ),
                                             ],
@@ -212,5 +234,14 @@ class _TeamMemberState extends State<TeamMember> {
         ),
       ),
     );
+  }
+
+  makePhoneCall() async {
+    const phoneNumber = '+917359085239';
+    if (await canLaunch(phoneNumber)) {
+      await launch(phoneNumber);
+    } else {
+      throw 'Could not launch $phoneNumber';
+    }
   }
 }

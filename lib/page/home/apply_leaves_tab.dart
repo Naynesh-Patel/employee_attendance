@@ -1,11 +1,10 @@
 import 'package:employee_attendance/controller/leaves_controller.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
+import 'package:employee_attendance/widget/flutter_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
-
-import '../../widget/flutter_toast.dart';
 
 class ApplyLeaves extends StatefulWidget {
   const ApplyLeaves({super.key});
@@ -341,7 +340,6 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                                   child: CustomButton(
                                       buttonText: 'Done',
                                       onTap: () {
-                                        Get.back();
                                         Get.back();
                                       }),
                                 )

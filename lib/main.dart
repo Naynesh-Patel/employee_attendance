@@ -1,4 +1,4 @@
-import 'package:employee_attendance/page/home_tab/splash.dart';
+import 'package:employee_attendance/page/home/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: false,
       ),
       initialBinding: BindingController(),
-      home: const Splash(),
+      home: Splash(),
     );
   }
 }

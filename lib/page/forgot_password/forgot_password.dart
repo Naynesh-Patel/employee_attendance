@@ -1,9 +1,8 @@
 import 'package:employee_attendance/controller/auth_controller.dart';
-import 'package:employee_attendance/forgot_password/verification_email.dart';
-import 'package:employee_attendance/forgot_password/verification_phone.dart';
+import 'package:employee_attendance/page/forgot_password/verification_email.dart';
+import 'package:employee_attendance/page/forgot_password/verification_phone.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -14,8 +13,7 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
-
-  AuthController authController=Get.find();
+  AuthController authController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -65,11 +63,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   height: Get.height * 0.04,
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   decoration: BoxDecoration(
                       border: Border.all(
-                        color:
-                            authController.selectedOption != 1 ? Colors.black12 : Colors.blue,
+                        color: authController.selectedOption != 1
+                            ? Colors.black12
+                            : Colors.blue,
                       ),
                       borderRadius: BorderRadius.circular(10)),
                   child: Row(
@@ -85,8 +85,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         child: Image.asset(
                           "assets/images/email.png",
                           height: 18,
-                          color:
-                              authController.selectedOption != 1 ? Colors.black : Colors.white,
+                          color: authController.selectedOption != 1
+                              ? Colors.black
+                              : Colors.white,
                         ),
                       ),
                       const Column(
@@ -94,31 +95,33 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         children: [
                           Text(
                             "Email",
-                            style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 15),
                           ),
                           Text("parth@gmail.com"),
                         ],
                       ),
-            const Spacer(),
-            Transform.scale(
-                    scale: 1.4,
-                    child: Radio(
-                      // activeColor: Colors.blue,
-                      fillColor: MaterialStateProperty.resolveWith((states) {
-                        if (states.contains(MaterialState.selected)) {
-                          return Colors.blue;
-                        }
-                        // inactive
-                        return Colors.black12;
-                      }),
-                      value: 1,
-                      groupValue: authController.selectedOption,
-                      onChanged: (value) {
-                        authController.selectedOption = value!;
-                        setState(() {});
-                      },
-                    ),
-                  )
+                      const Spacer(),
+                      Transform.scale(
+                        scale: 1.4,
+                        child: Radio(
+                          // activeColor: Colors.blue,
+                          fillColor:
+                              MaterialStateProperty.resolveWith((states) {
+                            if (states.contains(MaterialState.selected)) {
+                              return Colors.blue;
+                            }
+                            // inactive
+                            return Colors.black12;
+                          }),
+                          value: 1,
+                          groupValue: authController.selectedOption,
+                          onChanged: (value) {
+                            authController.selectedOption = value!;
+                            setState(() {});
+                          },
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -126,11 +129,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   height: Get.height * 0.02,
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   decoration: BoxDecoration(
                       border: Border.all(
-                        color:
-                        authController.selectedOption != 2 ? Colors.black12 : Colors.blue,
+                        color: authController.selectedOption != 2
+                            ? Colors.black12
+                            : Colors.blue,
                       ),
                       borderRadius: BorderRadius.circular(10)),
                   child: Row(
@@ -146,8 +151,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         child: Image.asset(
                           "assets/images/telephone.png",
                           height: 18,
-                          color:
-                          authController.selectedOption != 2 ? Colors.black : Colors.white,
+                          color: authController.selectedOption != 2
+                              ? Colors.black
+                              : Colors.white,
                         ),
                       ),
                       const Column(
@@ -155,7 +161,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         children: [
                           Text(
                             "Phone Number",
-                            style: TextStyle(fontWeight: FontWeight.w600,fontSize: 15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 15),
                           ),
                           Text("0128212820"),
                         ],
@@ -165,7 +172,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         scale: 1.4,
                         child: Radio(
                           // activeColor: Colors.blue,
-                          fillColor: MaterialStateProperty.resolveWith((states) {
+                          fillColor:
+                              MaterialStateProperty.resolveWith((states) {
                             if (states.contains(MaterialState.selected)) {
                               return Colors.blue;
                             }

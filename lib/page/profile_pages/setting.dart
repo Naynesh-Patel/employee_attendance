@@ -1,8 +1,7 @@
+import 'package:employee_attendance/page/profile_pages/change_password.dart';
 import 'package:employee_attendance/widget/listTile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'change_password.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
@@ -38,10 +37,12 @@ class Setting extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            textsTile2(text: "Change Password",
-            onTap: () {
-              Get.to(ChangePassword());
-            },),
+            textsTile2(
+              text: "Change Password",
+              onTap: () {
+                Get.to(ChangePassword());
+              },
+            ),
           ],
         ),
       ),

@@ -14,8 +14,7 @@ class NewPassword extends StatefulWidget {
 }
 
 class _NewPasswordState extends State<NewPassword> {
-
-  ProfileController profileController =Get.find();
+  ProfileController profileController = Get.find();
 
   @override
   void initState() {
@@ -80,14 +79,14 @@ class _NewPasswordState extends State<NewPassword> {
                         labelStyle: TextStyle(
                             color: !profileController.focusNode1.hasFocus
                                 ? profileController.newPassword.text.isEmpty
-                                ? Colors.black54
-                                : Colors.blue:Colors.blue
-                        ),
+                                    ? Colors.black54
+                                    : Colors.blue
+                                : Colors.blue),
                         border: Border.all(
                             color: !profileController.focusNode1.hasFocus
                                 ? profileController.newPassword.text.isNotEmpty
-                                ? Colors.blue
-                                : Colors.black12
+                                    ? Colors.blue
+                                    : Colors.black12
                                 : Colors.blue),
                         focusNode: profileController.focusNode1,
                         suffixIcon: IconButton(
@@ -96,9 +95,9 @@ class _NewPasswordState extends State<NewPassword> {
                               : Icons.visibility_off),
                           onPressed: () {
                             setState(
-                                  () {
-                                    profileController.enterPasswordVisible =
-                                !profileController.enterPasswordVisible;
+                              () {
+                                profileController.enterPasswordVisible =
+                                    !profileController.enterPasswordVisible;
                               },
                             );
                           },
@@ -115,14 +114,15 @@ class _NewPasswordState extends State<NewPassword> {
                         labelStyle: TextStyle(
                             color: !profileController.focusNode2.hasFocus
                                 ? profileController.reEnterPassword.text.isEmpty
-                                ? Colors.black54
-                                : Colors.blue:Colors.blue
-                        ),
+                                    ? Colors.black54
+                                    : Colors.blue
+                                : Colors.blue),
                         border: Border.all(
                             color: !profileController.focusNode2.hasFocus
-                                ? profileController.reEnterPassword.text.isNotEmpty
-                                ? Colors.blue
-                                : Colors.black12
+                                ? profileController
+                                        .reEnterPassword.text.isNotEmpty
+                                    ? Colors.blue
+                                    : Colors.black12
                                 : Colors.blue),
                         focusNode: profileController.focusNode2,
                         suffixIcon: IconButton(
@@ -131,9 +131,9 @@ class _NewPasswordState extends State<NewPassword> {
                               : Icons.visibility_off),
                           onPressed: () {
                             setState(
-                                  () {
-                                    profileController.reEnterPasswordVisible =
-                                !profileController.reEnterPasswordVisible;
+                              () {
+                                profileController.reEnterPasswordVisible =
+                                    !profileController.reEnterPasswordVisible;
                               },
                             );
                           },
@@ -147,12 +147,14 @@ class _NewPasswordState extends State<NewPassword> {
                           onTap: () {
                             if (profileController.newPassword.text.isEmpty) {
                               showToast(msg: "Enter Password");
-                            } else if (profileController.newPassword.text.length <
+                            } else if (profileController
+                                    .newPassword.text.length <
                                 8) {
                               showToast(
-                                  msg: "Password required at least 8 characters");
-                            } else if (profileController.reEnterPassword.text
-                                .isEmpty) {
+                                  msg:
+                                      "Password required at least 8 characters");
+                            } else if (profileController
+                                .reEnterPassword.text.isEmpty) {
                               showToast(msg: "Re-Enter Password");
                             } else if (profileController.reEnterPassword.text !=
                                 profileController.newPassword.text) {
@@ -167,7 +169,6 @@ class _NewPasswordState extends State<NewPassword> {
               ],
             );
           },
-        )
-    );
+        ));
   }
 }

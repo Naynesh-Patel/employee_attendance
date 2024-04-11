@@ -1,10 +1,9 @@
 import 'package:employee_attendance/controller/binding_controller.dart';
 import 'package:employee_attendance/controller/leaves_controller.dart';
-import 'package:employee_attendance/page/home_tab/apply_leaves_tab.dart';
+import 'package:employee_attendance/page/home/apply_leaves_tab.dart';
+import 'package:employee_attendance/widget/leave_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../widget/leave_container.dart';
 
 class LeavesTab extends StatefulWidget {
   const LeavesTab({super.key});
@@ -68,7 +67,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
               Row(
                 children: [
                   Expanded(
-                    child: container(
+                    child: LeaveWidget(
                         text1: 'Leave',
                         text2: 'Balance',
                         text3: '20',
@@ -80,7 +79,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                             color: Color(0xff3085FE))),
                   ),
                   Expanded(
-                      child: container(
+                      child: LeaveWidget(
                           text1: 'Leave',
                           text2: 'Approved',
                           text3: '2',
@@ -95,7 +94,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
               Row(
                 children: [
                   Expanded(
-                    child: container(
+                    child: LeaveWidget(
                         text1: 'Leave',
                         text2: 'Pending',
                         text3: '4',
@@ -107,7 +106,7 @@ class _LeavesTabState extends State<LeavesTab> with TickerProviderStateMixin {
                             color: Color(0xff30BEB6))),
                   ),
                   Expanded(
-                      child: container(
+                      child: LeaveWidget(
                           text1: 'Leave',
                           text2: 'Cancelled',
                           text3: '10',
