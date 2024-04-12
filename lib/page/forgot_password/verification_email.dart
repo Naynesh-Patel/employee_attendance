@@ -110,7 +110,7 @@ class _VerificationEmailState extends State<VerificationEmail> {
                           authController.startTimer();
                         }
                       },
-                      child: const Text(
+                      child: Text(
                         "Resend it",
                         style: TextStyle(color: Colors.blue),
                       ),

@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
                     ),
                     RichText(
                       text: const TextSpan(
-                        text: 'Welcome Back \nTo ',
+                        text: 'Welcome Back ✋ \nTo',
                         style: TextStyle(
                           fontSize: 27,
                           color: Colors.black,

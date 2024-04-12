@@ -128,7 +128,7 @@ class _VerificationPhoneState extends State<VerificationPhone> {
                 CustomButton(
                     buttonText: "Verify",
                     onTap: () {
-                      Get.to(const NewPassword());
+                      Get.to(NewPassword());
                     })
               ],
             ),

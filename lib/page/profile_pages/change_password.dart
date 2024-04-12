@@ -1,5 +1,6 @@
 import 'package:employee_attendance/controller/profile_controller.dart';
 import 'package:employee_attendance/widget/custom_button.dart';
+import 'package:employee_attendance/widget/flutter_toast.dart';
 import 'package:employee_attendance/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -122,84 +123,23 @@ class _ChangePasswordState extends State<ChangePassword> {
                     },
                   ),
                 ),
-                // TextFormField(
-                //   validator: (value) {
-                //     if (value!.isEmpty) {
-                //       return 'Please Enter Password';
-                //     } else {
-                //       return null;
-                //     }
-                //   },
-                //   style: const TextStyle(
-                //     color: Colors.black,
-                //   ),
-                //   decoration: InputDecoration(
-                //       labelText: 'Password',
-                //       labelStyle:
-                //           const TextStyle(color: Color(0xff3085FE), fontSize: 12),
-                //       contentPadding: const EdgeInsets.all(8),
-                //       suffixIcon: IconButton(
-                //         onPressed: () {
-                //           setState(() {
-                //             passwordVisible = !passwordVisible;
-                //           });
-                //         },
-                //         icon: Icon(passwordVisible
-                //             ? Icons.visibility
-                //             : Icons.visibility_off),
-                //       ),
-                //       focusedBorder: const OutlineInputBorder(
-                //           borderSide: BorderSide(color: Color(0xff3085FE))),
-                //       enabledBorder: const OutlineInputBorder(
-                //           borderSide: BorderSide(color: Color(0xff3085FE))),
-                //       border: const OutlineInputBorder()),
-                // ),
-                // const SizedBox(
-                //   height: 20,
-                // ),
-                // TextFormField(
-                //   validator: (value) {
-                //     if (value!.isEmpty) {
-                //       return 'Please Enter Confirm Password';
-                //     } else {
-                //       return null;
-                //     }
-                //   },
-                //   style: const TextStyle(
-                //     color: Colors.black,
-                //   ),
-                //   decoration: InputDecoration(
-                //       labelText: 'Confirm Password',
-                //       labelStyle:
-                //           const TextStyle(color: Color(0xff3085FE), fontSize: 12),
-                //       contentPadding: const EdgeInsets.all(8),
-                //       suffixIcon: IconButton(
-                //         onPressed: () {
-                //           setState(() {
-                //             passwordVisible = !passwordVisible;
-                //           });
-                //         },
-                //         icon: Icon(passwordVisible
-                //             ? Icons.visibility
-                //             : Icons.visibility_off),
-                //       ),
-                //       focusedBorder: const OutlineInputBorder(
-                //           borderSide: BorderSide(color: Color(0xff3085FE))),
-                //       enabledBorder: const OutlineInputBorder(
-                //           borderSide: BorderSide(color: Color(0xff3085FE))),
-                //       border: const OutlineInputBorder()),
-                // ),
               ],
             ),
           );
         },
       ),
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         child: CustomButton(
           buttonText: 'Update',
           onTap: () {
-            Get.back();
+            if (profileController.changePassword.text.isEmpty) {
+              showToast(msg: "Enter your Password");
+            } else if (profileController.changePassword2.text.isEmpty) {
+              showToast(msg: "Enter your Confirm Password");
+            } else {
+              Get.back();
+            }
           },
         ),
       ),
