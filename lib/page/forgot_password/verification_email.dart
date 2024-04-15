@@ -58,7 +58,7 @@ class _VerificationEmailState extends State<VerificationEmail> {
                   height: Get.height * 0.01,
                 ),
                 const Text(
-                  "Enter Verification Code",
+                  "com.employee attendanceon Code",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
                 ),
                 const Text(

@@ -160,7 +160,6 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                       initialDate: DateTime.now(),
                       firstDate: DateTime(2016),
                       lastDate: DateTime(2030));
-
                   leavesController.sDate.text = date.toString();
 
                   leavesController.formatSDate.text =
@@ -205,7 +204,6 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                       initialDate: DateTime.now(),
                       firstDate: DateTime(2016),
                       lastDate: DateTime(2030));
-
                   leavesController.eDate.text = date.toString();
                   leavesController.formatEDate.text =
                       DateFormat("MMM dd, yyyy").format(date!);

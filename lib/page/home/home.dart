@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
         labelColor: Colors.white,
         unselectedLabelColor: Colors.white70,
         indicatorSize: TabBarIndicatorSize.tab,
-        isScrollable: true,
+        // isScrollable: true,
         indicatorPadding: EdgeInsets.all(5.0),
         indicatorColor: Colors.white,
         onTap: onItemTapped,

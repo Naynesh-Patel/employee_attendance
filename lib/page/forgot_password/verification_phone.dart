@@ -51,6 +51,7 @@ class _VerificationPhoneState extends State<VerificationPhone> {
         ),
       ),
       body: ListView(
+        shrinkWrap: true,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),

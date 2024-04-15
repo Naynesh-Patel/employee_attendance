@@ -53,6 +53,7 @@ class _EditProfileState extends State<EditProfile> {
                 physics: BouncingScrollPhysics(),
                 children: [
                   Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       SizedBox(
                         height: Get.height * 0.02,
